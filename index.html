@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overcode - Sites Belíssimos com Performance Absurda | Desenvolvimento Web Profissional</title>
+    <meta name="description" content="Landing pages profissionais com SEO e estrutura de anúncios desde o dia 1. Sites ultra-rápidos, design moderno e foco em conversão. A partir de R$ 999.">
+    
+    <!-- Preconnect para otimização -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Overcode - Sites Belíssimos com Performance Absurda">
+    <meta property="og:description" content="Landing pages profissionais com SEO e estrutura de anúncios desde o dia 1">
+    <meta property="og:url" content="https://overcode.dev">
+    <meta property="og:image" content="https://overcode.dev/og-image.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Overcode - Sites Belíssimos com Performance Absurda">
+    <meta name="twitter:description" content="Landing pages profissionais com SEO e estrutura de anúncios desde o dia 1">
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="site.webmanifest">
+    <!-- Conteúdo do manifest como comentário:
+    {
+      "name": "Overcode",
+      "short_name": "Overcode",
+      "theme_color": "#6C3CF9",
+      "background_color": "#1A1A1A",
+      "display": "standalone",
+      "start_url": "/"
+    }
+    -->
+    
+    <!-- CSS Crítico Inline -->
+    <style>
+        :root {
+            --purple-main: #6C3CF9;
+            --purple-light: #B18CFF;
+            --dark: #1A1A1A;
+            --white-soft: #F9F9F9;
+            --gradient-purple: linear-gradient(135deg, #6C3CF9 0%, #4A28C7 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--dark);
+            color: var(--white-soft);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(108, 60, 249, 0.1);
+            padding: 0.75rem 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .nav__wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 50px;
+        }
+        
+        .nav__logo img {
+            height: 36px;
+            width: auto;
+            display: block;
+        }
+        
+        .nav__menu {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 1.5rem;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav__link {
+            color: var(--white-soft);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        
+        .nav__cta {
+            padding: 0.65rem 1.4rem;
+            background: var(--gradient-purple);
+            color: var(--white-soft);
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-left: 1rem;
+        }
+        
+        .nav__toggle {
+            display: none;
+        }
+        
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: radial-gradient(ellipse at top, rgba(108, 60, 249, 0.2) 0%, transparent 60%),
+                        linear-gradient(180deg, #1A1A1A 0%, #0A0A0A 100%);
+        }
+        
+        @media (max-width: 968px) {
+            .nav__toggle {
+                display: block;
+                background: none;
+                border: none;
+                padding: 0.5rem;
+                cursor: pointer;
+            }
+            
+            .nav__toggle-line {
+                display: block;
+                width: 24px;
+                height: 2px;
+                background: var(--white-soft);
+                margin: 5px 0;
+            }
+            
+            .nav__menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background: rgba(26, 26, 26, 0.98);
+                flex-direction: column;
+                justify-content: center;
+                padding: 2rem;
+                transition: right 0.3s ease;
+            }
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet Principal -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Overcode",
+      "description": "Desenvolvimento de sites de alta performance com foco em conversão",
+      "url": "https://overcode.dev",
+      "sameAs": ["https://instagram.com/overcode.dev"],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "BR"
+      },
+      "priceRange": "R$ 999 - R$ 5000"
+    }
+    </script>
+</head>
+<body>
+    <!-- Canvas para partículas -->
+    <canvas id="particles-canvas" aria-hidden="true"></canvas>
+    
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container">
+            <nav class="nav__wrapper" role="navigation" aria-label="Menu principal">
+                <a href="#inicio" class="nav__logo" aria-label="Overcode - Página inicial">
+                    <img src="logo.png" alt="Overcode" width="150" height="36">
+                </a>
+                
+                <button class="nav__toggle" aria-label="Abrir menu" aria-expanded="false">
+                    <span class="nav__toggle-line"></span>
+                    <span class="nav__toggle-line"></span>
+                    <span class="nav__toggle-line"></span>
+                </button>
+                
+                <ul class="nav__menu">
+                    <li><a href="#inicio" class="nav__link">Início</a></li>
+                    <li><a href="#servicos" class="nav__link">Serviços</a></li>
+                    <li><a href="#portfolio" class="nav__link">Portfólio</a></li>
+                    <li><a href="#depoimentos" class="nav__link">Depoimentos</a></li>
+                    <li><a href="#precos" class="nav__link">Preços</a></li>
+                    <li><a href="#faq" class="nav__link">FAQ</a></li>
+                    <li><a href="#contato" class="nav__link">Contato</a></li>
+                    <li><a href="https://wa.me/55{{SEUNUMERO}}?text=Quero%20meu%20site%20Overcode" class="nav__cta" target="_blank" rel="noopener">Falar no WhatsApp</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main role="main">
+        <!-- Hero Section -->
+        <section id="inicio" class="hero">
+            <div class="container">
+                <div class="hero__content" data-reveal>
+                    <h1 class="hero__title">Sites belíssimos.<br>Performance absurda.<br>Resultados reais.</h1>
+                    <p class="hero__subtitle">Landing pages profissionais com SEO + estrutura de anúncios desde o dia 1.</p>
+                    
+                    <div class="hero__actions">
+                        <a href="https://wa.me/55{{SEUNUMERO}}?text=Quero%20meu%20site%20Overcode" class="btn btn--primary" target="_blank" rel="noopener">
+                            <span>Quero meu site</span>
+                        </a>
+                        <a href="#portfolio" class="btn btn--secondary">
+                            <span>Ver portfólio</span>
+                        </a>
+                    </div>
+                    
+                    <div class="hero__badges">
+                        <span class="badge">+25 projetos entregues</span>
+                        <span class="badge">Média 4,9/5</span>
+                    </div>
+                </div>
+                
+                <div class="hero__visual" aria-hidden="true">
+                    <div class="hero__glow"></div>
+                    <div class="hero__grid"></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Por que Overcode -->
+        <section id="porque" class="features">
+            <div class="container">
+                <h2 class="section__title" data-reveal>Por que Overcode</h2>
+                
+                <div class="features__grid">
+                    <article class="feature-card" data-reveal>
+                        <div class="feature-card__icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M24 4L6 14V24L24 34L42 24V14L24 4Z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M24 34V44" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-card__title">Carrega em um piscar de olhos</h3>
+                        <p class="feature-card__text">Velocidade de carregamento ultrarrápida com otimizações avançadas e CDN global</p>
+                    </article>
+                    
+                    <article class="feature-card" data-reveal>
+                        <div class="feature-card__icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2"/>
+                                <path d="M24 14V24L32 32" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-card__title">SEO técnico pronto de fábrica</h3>
+                        <p class="feature-card__text">SEO técnico + on-page desde o início para ranquear no Google</p>
+                    </article>
+                    
+                    <article class="feature-card" data-reveal>
+                        <div class="feature-card__icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="8" y="8" width="32" height="32" rx="4" stroke="currentColor" stroke-width="2"/>
+                                <path d="M16 24L22 30L32 18" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-card__title">Design que converte de verdade</h3>
+                        <p class="feature-card__text">Design moderno, conversão como foco e UX otimizada para resultados</p>
+                    </article>
+                    
+                    <article class="feature-card" data-reveal>
+                        <div class="feature-card__icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 24H36M24 12V36" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-card__title">Integração com métricas e Ads</h3>
+                        <p class="feature-card__text">Scripts de Ads e pixels prontos para voar com rastreamento completo</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Serviços -->
+        <section id="servicos" class="services">
+            <div class="container">
+                <h2 class="section__title" data-reveal>Nossos Serviços</h2>
+                <p class="section__subtitle" data-reveal>Soluções completas para sua presença digital</p>
+                
+                <div class="services__content" data-reveal>
+                    <div class="services__list">
+                        <ul class="services__items">
+                            <li>Landing page profissional</li>
+                            <li>Site institucional completo</li>
+                            <li>One-page moderno</li>
+                            <li>Blog básico otimizado</li>
+                            <li>E-commerce sob escopo</li>
+                            <li>Integrações (WhatsApp, Meta Pixel, GA4)</li>
+                            <li>Otimização de conversão</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="services__highlight">
+                        <div class="service-card service-card--featured">
+                            <span class="service-card__badge">Mais vendido</span>
+                            <h3 class="service-card__title">Landing Page Profissional</h3>
+                            <div class="service-card__price">
+                                <span class="service-card__currency">R$</span>
+                                <span class="service-card__value">999</span>
+                            </div>
+                            <ul class="service-card__features">
+                                <li>Design exclusivo e responsivo</li>
+                                <li>SEO on-page completo</li>
+                                <li>Integração com pixel e analytics</li>
+                                <li>Formulário de conversão</li>
+                                <li>Página de obrigado</li>
+                                <li>2 revisões incluídas</li>
+                                <li>Entrega em até 7 dias</li>
+                            </ul>
+                            <a href="https://wa.me/55{{SEUNUMERO}}?text=Quero%20meu%20site%20Overcode" class="btn btn--primary btn--block" target="_blank" rel="noopener">
+                                Começar agora
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Portfólio -->
+        <section id="portfolio" class="portfolio">
+            <div class="container">
+                <h2 class="section__title" data-reveal>Nosso Portfólio</h2>
+                <p class="section__subtitle" data-reveal>Projetos que geram resultados reais</p>
+                
+                <div class="portfolio__filters" data-reveal>
+                    <button class="filter-btn filter-btn--active" data-filter="all">Tudo</button>
+                    <button class="filter-btn" data-filter="landing">Landing Page</button>
+                    <button class="filter-btn" data-filter="institucional">Institucional</button>
+                    <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+                </div>
+                
+                <div class="portfolio__grid">
+                    <article class="portfolio-card" data-category="landing" data-reveal>
+                        <div class="portfolio-card__image">
+                            <div class="portfolio-card__placeholder"></div>
+                        </div>
+                        <div class="portfolio-card__content">
+                            <h3 class="portfolio-card__title">TechStart Solutions</h3>
+                            <p class="portfolio-card__category">SaaS / Tecnologia</p>
+                            <a href="#" class="portfolio-card__link">Ver demo</a>
+                        </div>
+                    </article>
+                    
+                    <article class="portfolio-card" data-category="institucional" data-reveal>
+                        <div class="portfolio-card__image">
+                            <div class="portfolio-card__placeholder"></div>
+                        </div>
+                        <div class="portfolio-card__content">
+                            <h3 class="portfolio-card__title">Advocacia Moderna</h3>
+                            <p class="portfolio-card__category">Jurídico</p>
+                            <a href="#" class="portfolio-card__link">Ver demo</a>
+                        </div>
+                    </article>
+                    
+                    <article class="portfolio-card" data-category="ecommerce" data-reveal>
+                        <div class="portfolio-card__image">
+                            <div class="portfolio-card__placeholder"></div>
+                        </div>
+                        <div class="portfolio-card__content">
+                            <h3 class="portfolio-card__title">Fashion Store</h3>
+                            <p class="portfolio-card__category">Moda / E-commerce</p>
+                            <a href="#" class="portfolio-card__link">Ver demo</a>
+                        </div>
+                    </article>
+                    
+                    <article class="portfolio-card" data-category="landing" data-reveal>
+                        <div class="portfolio-card__image">
+                            <div class="portfolio-card__placeholder"></div>
+                        </div>
+                        <div class="portfolio-card__content">
+                            <h3 class="portfolio-card__title">Fitness Pro Academy</h3>
+                            <p class="portfolio-card__category">Saúde / Educação</p>
+                            <a href="#" class="portfolio-card__link">Ver demo</a>
+                        </div>
+                    </article>
+                    
+                    <article class="portfolio-card" data-category="institucional" data-reveal>
+                        <div class="portfolio-card__image">
+                            <div class="portfolio-card__placeholder"></div>
+                        </div>
+                        <div class="portfolio-card__content">
+                            <h3 class="portfolio-card__title">Clínica Saúde Total</h3>
+                            <p class="portfolio-card__category">Saúde</p>
+                            <a href="#" class="portfolio-card__link">Ver demo</a>
+                        </div>
+                    </article>
+                    
+                    <article class="portfolio-card" data-category="landing" data-reveal>
+                        <div class="portfolio-card__image">
+                            <div class="portfolio-card__placeholder"></div>
+                        </div>
+                        <div class="portfolio-card__content">
+                            <h3 class="portfolio-card__title">Imobiliária Digital</h3>
+                            <p class="portfolio-card__category">Imóveis</p>
+                            <a href="#" class="portfolio-card__link">Ver demo</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Depoimentos -->
+        <section id="depoimentos" class="testimonials">
+            <div class="container">
+                <h2 class="section__title" data-reveal>O que dizem nossos clientes</h2>
+                
+                <div class="testimonials__slider" data-reveal>
+                    <div class="testimonials__track">
+                        <article class="testimonial-card testimonial-card--active">
+                            <div class="testimonial-card__stars" aria-label="5 estrelas">
+                                ★★★★★
+                            </div>
+                            <p class="testimonial-card__text">
+                                "A Overcode transformou completamente nossa presença digital. O site ficou incrível e nossas conversões aumentaram 300% no primeiro mês!"
+                            </p>
+                            <div class="testimonial-card__author">
+                                <div class="testimonial-card__avatar"></div>
+                                <div>
+                                    <strong class="testimonial-card__name">Rafael Santos</strong>
+                                    <span class="testimonial-card__company">CEO - TechStart Solutions</span>
+                                </div>
+                            </div>
+                        </article>
+                        
+                        <article class="testimonial-card">
+                            <div class="testimonial-card__stars" aria-label="5 estrelas">
+                                ★★★★★
+                            </div>
+                            <p class="testimonial-card__text">
+                                "Profissionalismo e qualidade excepcionais. O site carrega super rápido e já aparecemos na primeira página do Google!"
+                            </p>
+                            <div class="testimonial-card__author">
+                                <div class="testimonial-card__avatar"></div>
+                                <div>
+                                    <strong class="testimonial-card__name">Ana Costa</strong>
+                                    <span class="testimonial-card__company">Diretora - Fashion Store</span>
+                                </div>
+                            </div>
+                        </article>
+                        
+                        <article class="testimonial-card">
+                            <div class="testimonial-card__stars" aria-label="5 estrelas">
+                                ★★★★★
+                            </div>
+                            <p class="testimonial-card__text">
+                                "Entrega rápida, suporte excepcional e resultado acima das expectativas. Recomendo a Overcode de olhos fechados!"
+                            </p>
+                            <div class="testimonial-card__author">
+                                <div class="testimonial-card__avatar"></div>
+                                <div>
+                                    <strong class="testimonial-card__name">Carlos Oliveira</strong>
+                                    <span class="testimonial-card__company">Fundador - Fitness Pro Academy</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    
+                    <div class="testimonials__controls">
+                        <button class="testimonials__arrow testimonials__arrow--prev" aria-label="Depoimento anterior">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 18l-6-6 6-6"/>
+                            </svg>
+                        </button>
+                        <button class="testimonials__arrow testimonials__arrow--next" aria-label="Próximo depoimento">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 18l6-6-6-6"/>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="testimonials__dots">
+                        <button class="testimonials__dot testimonials__dot--active" aria-label="Ir para depoimento 1"></button>
+                        <button class="testimonials__dot" aria-label="Ir para depoimento 2"></button>
+                        <button class="testimonials__dot" aria-label="Ir para depoimento 3"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Preços -->
+        <section id="precos" class="pricing">
+            <div class="container">
+                <h2 class="section__title" data-reveal>Planos e Preços</h2>
+                <p class="section__subtitle" data-reveal>Escolha o melhor plano para seu negócio</p>
+                
+                <div class="pricing__grid">
+                    <article class="price-card" data-reveal>
+                        <h3 class="price-card__name">Essencial</h3>
+                        <div class="price-card__value">
+                            <span class="price-card__currency">R$</span>
+                            <span class="price-card__amount">999</span>
+                        </div>
+                        <p class="price-card__description">Perfeito para começar sua presença online</p>
+                        <ul class="price-card__features">
+                            <li>Landing page completa</li>
+                            <li>SEO on-page</li>
+                            <li>Pixel + eventos base</li>
+                            <li>Formulário + Obrigado</li>
+                            <li>Até 2 revisões</li>
+                            <li>Entrega rápida</li>
+                        </ul>
+                        <a href="https://wa.me/55{{SEUNUMERO}}?text=Quero%20o%20plano%20Essencial" class="btn btn--primary btn--block" target="_blank" rel="noopener">
+                            Começar no WhatsApp
+                        </a>
+                    </article>
+                    
+                    <article class="price-card price-card--featured" data-reveal>
+                        <span class="price-card__badge">Mais popular</span>
+                        <h3 class="price-card__name">Profissional</h3>
+                        <div class="price-card__value">
+                            <span class="price-card__currency">R$</span>
+                            <span class="price-card__amount">2.499</span>
+                        </div>
+                        <p class="price-card__description">Para negócios que querem crescer</p>
+                        <ul class="price-card__features">
+                            <li>Site institucional completo</li>
+                            <li>Até 5 páginas</li>
+                            <li>SEO avançado</li>
+                            <li>Todas as integrações</li>
+                            <li>Blog integrado</li>
+                            <li>5 revisões incluídas</li>
+                            <li>Suporte 30 dias</li>
+                        </ul>
+                        <a href="https://wa.me/55{{SEUNUMERO}}?text=Quero%20o%20plano%20Profissional" class="btn btn--primary btn--block" target="_blank" rel="noopener">
+                            Começar no WhatsApp
+                        </a>
+                    </article>
+                    
+                    <article class="price-card" data-reveal>
+                        <h3 class="price-card__name">Avançado</h3>
+                        <div class="price-card__value">
+                            <span class="price-card__currency">R$</span>
+                            <span class="price-card__amount">4.999</span>
+                        </div>
+                        <p class="price-card__description">Solução completa e personalizada</p>
+                        <ul class="price-card__features">
+                            <li>E-commerce ou sistema complexo</li>
+                            <li>Páginas ilimitadas</li>
+                            <li>SEO completo + consultoria</li>
+                            <li>Todas as integrações</li>
+                            <li>Dashboard de métricas</li>
+                            <li>Revisões ilimitadas</li>
+                            <li>Suporte 90 dias</li>
+                        </ul>
+                        <a href="https://wa.me/55{{SEUNUMERO}}?text=Quero%20o%20plano%20Avançado" class="btn btn--secondary btn--block" target="_blank" rel="noopener">
+                            Falar sobre projeto
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQ -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <h2 class="section__title" data-reveal>Perguntas Frequentes</h2>
+                
+                <div class="faq__accordion" data-reveal>
+                    <details class="faq__item">
+                        <summary class="faq__question">
+                            Qual o prazo de entrega do site?
+                            <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </summary>
+                        <div class="faq__answer">
+                            <p>O prazo varia de acordo com o tipo de projeto. Landing pages são entregues em até 7 dias úteis. Sites institucionais levam de 10 a 15 dias úteis. Projetos mais complexos como e-commerce podem levar até 30 dias.</p>
+                        </div>
+                    </details>
+                    
+                    <details class="faq__item">
+                        <summary class="faq__question">
+                            Quantas revisões estão incluídas?
+                            <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </summary>
+                        <div class="faq__answer">
+                            <p>O número de revisões varia por plano: Essencial inclui 2 revisões, Profissional inclui 5 revisões e o plano Avançado tem revisões ilimitadas durante o desenvolvimento.</p>
+                        </div>
+                    </details>
+                    
+                    <details class="faq__item">
+                        <summary class="faq__question">
+                            Vocês oferecem hospedagem e domínio?
+                            <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </summary>
+                        <div class="faq__answer">
+                            <p>Sim! Podemos gerenciar a hospedagem e o registro do domínio para você. A hospedagem tem custo a partir de R$ 29/mês e o domínio R$ 40/ano. Também trabalhamos com hospedagem que você já tenha.</p>
+                        </div>
+                    </details>
+                    
+                    <details class="faq__item">
+                        <summary class="faq__question">
+                            O site vem com integração para anúncios?
+                            <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </summary>
+                        <div class="faq__answer">
+                            <p>Sim! Todos os sites são entregues com Meta Pixel, Google Analytics 4 e Google Tag Manager configurados. Também configuramos eventos de conversão personalizados para rastreamento completo das campanhas.</p>
+                        </div>
+                    </details>
+                    
+                    <details class="faq__item">
+                        <summary class="faq__question">
+                            Como funciona a garantia?
+                            <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </summary>
+                        <div class="faq__answer">
+                            <p>Oferecemos garantia de 7 dias após a entrega. Se você não ficar satisfeito com o resultado, devolvemos 100% do seu investimento. Além disso, garantimos suporte técnico conforme o plano contratado.</p>
+                        </div>
+                    </details>
+                    
+                    <details class="faq__item">
+                        <summary class="faq__question">
+                            Posso fazer alterações depois da entrega?
+                            <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </summary>
+                        <div class="faq__answer">
+                            <p>Sim! Oferecemos pacotes de manutenção mensal a partir de R$ 199 para pequenas alterações. Para mudanças maiores, fazemos um orçamento personalizado. Você também recebe acesso ao painel administrativo para alterações básicas.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contato -->
+        <section id="contato" class="contact">
+            <div class="container">
+                <h2 class="section__title" data-reveal>Vamos tirar seu projeto do papel?</h2>
+                <p class="section__subtitle" data-reveal>Entre em contato e receba um orçamento personalizado</p>
+                
+                <div class="contact__content">
+                    <div class="contact__info" data-reveal>
+                        <h3 class="contact__heading">Fale conosco</h3>
+                        <p class="contact__text">Resposta em até 2 horas durante o horário comercial</p>
+                        
+                        <div class="contact__buttons">
+                            <a href="https://wa.me/55{{SEUNUMERO}}?text=Quero%20meu%20site%20Overcode" class="btn btn--primary btn--large" target="_blank" rel="noopener">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM16.46 15.18L14.86 16.78C14.66 16.98 14.39 17.08 14.12 17.08C13.85 17.08 13.58 16.98 13.38 16.78L11.28 14.68C11.08 14.48 10.98 14.21 10.98 13.94V8.5C10.98 7.95 11.43 7.5 11.98 7.5C12.53 7.5 12.98 7.95 12.98 8.5V13.52L14.84 15.38C15.24 15.78 15.24 16.42 14.84 16.82Z"/>
+                                </svg>
+                                Enviar no WhatsApp
+                            </a>
+                            
+                            <a href="mailto:contato@overcode.dev" class="btn btn--secondary btn--large">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"/>
+                                </svg>
+                                Enviar por e-mail
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <form class="contact__form" data-reveal>
+                        <div class="form__group">
+                            <label for="name" class="form__label">Nome completo</label>
+                            <input type="text" id="name" name="name" class="form__input" required>
+                        </div>
+                        
+                        <div class="form__group">
+                            <label for="email" class="form__label">E-mail</label>
+                            <input type="email" id="email" name="email" class="form__input" required>
+                        </div>
+                        
+                        <div class="form__group">
+                            <label for="company" class="form__label">Empresa</label>
+                            <input type="text" id="company" name="company" class="form__input">
+                        </div>
+                        
+                        <div class="form__group">
+                            <label for="message" class="form__label">Mensagem</label>
+                            <textarea id="message" name="message" class="form__textarea" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn--primary btn--block">
+                            Enviar mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <img src="assets/logo-overcode.svg" alt="Overcode" width="120" height="32" class="logo--light">
+                    <p class="footer__tagline">Sites belíssimos com performance absurda</p>
+                </div>
+                
+                <nav class="footer__nav" aria-label="Menu rodapé">
+                    <ul class="footer__links">
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#portfolio">Portfólio</a></li>
+                        <li><a href="#precos">Preços</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="footer__social">
+                    <a href="https://instagram.com/overcode.dev" target="_blank" rel="noopener" aria-label="Instagram">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.405a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copy">© 2025 Overcode. Todos os direitos reservados.</p>
+                <p class="footer__made">Feito por Overcode</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Cursor customizado -->
+    <div class="cursor" aria-hidden="true"></div>
+    <div class="cursor-follower" aria-hidden="true"></div>
+    
+    <!-- Scripts -->
+    <!-- Placeholder para Meta Pixel -->
+    <!-- 
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID');
+    fbq('track', 'PageView');
+    </script>
+    -->
+    
+    <!-- Placeholder para Google Analytics -->
+    <!-- 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    -->
+    
+    <script src="script.js" defer></script>
+</body>
+</html>
