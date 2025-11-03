@@ -224,80 +224,37 @@
                 filterBtns.forEach(b => b.classList.remove('filter-btn--active'));
                 btn.classList.add('filter-btn--active');
                 
-                // Filter cards
                 const filter = btn.dataset.filter;
+                let visibleIndex = 0;
                 
-                portfolioCards.forEach((card, index) => {
+                portfolioCards.forEach((card) => {
                     const category = card.dataset.category;
+                    const shouldShow = filter === 'all' || category === filter;
                     
-                    if (filter === 'all' || category === filter) {
+                    if (shouldShow) {
+                        // Show with stagger
+                        card.classList.remove('hidden');
+                        card.classList.remove('hide');
+                        
                         setTimeout(() => {
-                            card.classList.remove('portfolio-card--hidden');
-                            card.style.animation = 'fadeInUp 0.5s ease forwards';
-                        }, index * 50);
+                            card.classList.add('fade-in');
+                            
+                            // Remove animation class after it completes
+                            setTimeout(() => {
+                                card.classList.remove('fade-in');
+                            }, 500);
+                        }, visibleIndex * 100);
+                        
+                        visibleIndex++;
                     } else {
-                        card.style.animation = 'fadeInUp 0.5s ease reverse';
-                        setTimeout(() => {
-                            card.classList.add('portfolio-card--hidden');
-                        }, 300);
+                        // Hide immediately
+                        card.classList.remove('fade-in');
+                        card.classList.add('hide');
+                        card.classList.add('hidden');
                     }
                 });
             });
         });
-    }
-
-    // ============================================
-    // Testimonials Slider
-    // ============================================
-    function initTestimonials() {
-        const testimonials = document.querySelectorAll('.testimonial-card');
-        const prevBtn = document.querySelector('.testimonials__arrow--prev');
-        const nextBtn = document.querySelector('.testimonials__arrow--next');
-        const dots = document.querySelectorAll('.testimonials__dot');
-        
-        if (!testimonials.length) return;
-        
-        let currentIndex = 0;
-        
-        function showTestimonial(index) {
-            testimonials.forEach(t => t.classList.remove('testimonial-card--active'));
-            dots.forEach(d => d.classList.remove('testimonials__dot--active'));
-            
-            testimonials[index].classList.add('testimonial-card--active');
-            if (dots[index]) {
-                dots[index].classList.add('testimonials__dot--active');
-            }
-            
-            const track = document.querySelector('.testimonials__track');
-            if (track) {
-                track.style.transform = `translateX(-${index * 100}%)`;
-            }
-        }
-        
-        function nextTestimonial() {
-            currentIndex = (currentIndex + 1) % testimonials.length;
-            showTestimonial(currentIndex);
-        }
-        
-        function prevTestimonial() {
-            currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
-            showTestimonial(currentIndex);
-        }
-        
-        if (prevBtn) prevBtn.addEventListener('click', prevTestimonial);
-        if (nextBtn) nextBtn.addEventListener('click', nextTestimonial);
-        
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                currentIndex = index;
-                showTestimonial(currentIndex);
-            });
-        });
-        
-        // Auto-play
-        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            setInterval(nextTestimonial, 5000);
-        }
     }
 
     // ============================================
@@ -309,8 +266,6 @@
         if (!form) return;
         
         form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
             // Get form fields
             const name = form.querySelector('#name');
             const email = form.querySelector('#email');
@@ -322,6 +277,7 @@
             if (!name.value.trim()) {
                 showError(name, 'Por favor, insira seu nome');
                 isValid = false;
+                e.preventDefault();
             } else {
                 removeError(name);
             }
@@ -329,6 +285,7 @@
             if (!isValidEmail(email.value)) {
                 showError(email, 'Por favor, insira um e-mail válido');
                 isValid = false;
+                e.preventDefault();
             } else {
                 removeError(email);
             }
@@ -336,14 +293,17 @@
             if (!message.value.trim()) {
                 showError(message, 'Por favor, insira uma mensagem');
                 isValid = false;
+                e.preventDefault();
             } else {
                 removeError(message);
             }
             
+            // If valid, form will submit naturally to Formspree
             if (isValid) {
-                // Show success message
-                showSuccessMessage();
-                form.reset();
+                // Show loading state
+                const submitBtn = form.querySelector('button[type="submit"]');
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Enviando...';
             }
         });
         
@@ -374,84 +334,6 @@
             }
             field.style.borderColor = '';
         }
-        
-        function showSuccessMessage() {
-            const successDiv = document.createElement('div');
-            successDiv.className = 'form__success';
-            successDiv.textContent = 'Mensagem enviada com sucesso! Entraremos em contato em breve.';
-            successDiv.style.cssText = `
-                position: fixed;
-                top: 100px;
-                right: 20px;
-                background: linear-gradient(135deg, #6C3CF9 0%, #4A28C7 100%);
-                color: white;
-                padding: 1rem 2rem;
-                border-radius: 12px;
-                box-shadow: 0 10px 30px rgba(108, 60, 249, 0.4);
-                z-index: 10000;
-                animation: slideInRight 0.5s ease;
-            `;
-            
-            document.body.appendChild(successDiv);
-            
-            setTimeout(() => {
-                successDiv.style.animation = 'slideOutRight 0.5s ease';
-                setTimeout(() => {
-                    successDiv.remove();
-                }, 500);
-            }, 3000);
-        }
-    }
-
-    // ============================================
-    // Custom Cursor
-    // ============================================
-    function initCursor() {
-        if (window.innerWidth < 1024) return;
-        
-        const cursor = document.querySelector('.cursor');
-        const follower = document.querySelector('.cursor-follower');
-        
-        if (!cursor || !follower) return;
-        
-        let mouseX = 0, mouseY = 0;
-        let followerX = 0, followerY = 0;
-        
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            
-            cursor.style.left = mouseX + 'px';
-            cursor.style.top = mouseY + 'px';
-        });
-        
-        // Smooth follower animation
-        function animateFollower() {
-            followerX += (mouseX - followerX) * 0.1;
-            followerY += (mouseY - followerY) * 0.1;
-            
-            follower.style.left = followerX - 18 + 'px';
-            follower.style.top = followerY - 18 + 'px';
-            
-            requestAnimationFrame(animateFollower);
-        }
-        
-        animateFollower();
-        
-        // Cursor hover effects
-        const hoverElements = document.querySelectorAll('a, button, .btn, .nav__link, .portfolio-card, .filter-btn');
-        
-        hoverElements.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursor.classList.add('cursor--hover');
-                follower.style.transform = 'scale(1.5)';
-            });
-            
-            el.addEventListener('mouseleave', () => {
-                cursor.classList.remove('cursor--hover');
-                follower.style.transform = 'scale(1)';
-            });
-        });
     }
 
     // ============================================
@@ -613,9 +495,7 @@
         initNav();
         initScrollReveal();
         initFilters();
-        initTestimonials();
         initFormValidation();
-        initCursor();
         initParallax();
         initRipple();
         initFAQ();

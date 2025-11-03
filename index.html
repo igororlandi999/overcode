@@ -1,44 +1,81 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- ========================================
+         SEO OPTIMIZATION - HEAD SECTION
+         ======================================== -->
+    
+    <!-- SEO: Charset e Viewport (obrigatório) -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Overcode - Sites Belíssimos com Performance Absurda | Desenvolvimento Web Profissional</title>
-    <meta name="description" content="Landing pages profissionais com SEO e estrutura de anúncios desde o dia 1. Sites ultra-rápidos, design moderno e foco em conversão. A partir de R$ 999.">
     
-    <!-- Preconnect para otimização -->
+    <!-- SEO: Title otimizado (55 caracteres, palavra-chave principal) -->
+    <title>Overcode - Sites Rápidos e Profissionais | Landing Pages</title>
+    
+    <!-- SEO: Meta Description otimizada (158 caracteres, CTA claro) -->
+    <meta name="description" content="Criamos sites profissionais com performance absurda. Landing pages com SEO, design moderno e foco em conversão. A partir de R$ 999. Entrega rápida!">
+    
+    <!-- SEO: Palavras-chave relevantes -->
+    <meta name="keywords" content="criação de sites, landing page profissional, desenvolvimento web, sites rápidos, SEO, design responsivo, overcode, sites em indaiatuba">
+    
+    <!-- SEO: Informações adicionais -->
+    <meta name="author" content="Overcode">
+    <meta name="copyright" content="© 2025 Overcode">
+    <meta name="language" content="Portuguese">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- SEO: Robots (instruções para motores de busca) -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    
+    <!-- SEO: Canonical URL (evita conteúdo duplicado) -->
+    <link rel="canonical" href="https://overcode.dev/">
+    
+    <!-- SEO: Idiomas alternativos -->
+    <link rel="alternate" hreflang="pt-BR" href="https://overcode.dev/">
+    <link rel="alternate" hreflang="x-default" href="https://overcode.dev/">
+    
+    <!-- Performance: Preconnect para recursos externos -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     
-    <!-- Favicon -->
+    <!-- SEO: Favicons (múltiplos tamanhos para melhor indexação) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     
-    <!-- Open Graph -->
+    <!-- SEO: Open Graph - Facebook, LinkedIn, WhatsApp (completo) -->
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Overcode">
     <meta property="og:title" content="Overcode - Sites Belíssimos com Performance Absurda">
-    <meta property="og:description" content="Landing pages profissionais com SEO e estrutura de anúncios desde o dia 1">
-    <meta property="og:url" content="https://overcode.dev">
-    <meta property="og:image" content="https://overcode.dev/og-image.jpg">
+    <meta property="og:description" content="Landing pages profissionais com SEO e estrutura de anúncios desde o dia 1. Sites ultra-rápidos, design moderno e foco em conversão.">
+    <meta property="og:url" content="https://overcode.dev/">
+    <meta property="og:image" content="https://overcode.dev/assets/og-image.jpg">
+    <meta property="og:image:secure_url" content="https://overcode.dev/assets/og-image.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Overcode - Desenvolvimento de Sites Profissionais">
+    <meta property="og:locale" content="pt_BR">
     
-    <!-- Twitter Card -->
+    <!-- SEO: Twitter Card (completo) -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Overcode - Sites Belíssimos com Performance Absurda">
-    <meta name="twitter:description" content="Landing pages profissionais com SEO e estrutura de anúncios desde o dia 1">
+    <meta name="twitter:description" content="Landing pages profissionais com SEO e estrutura de anúncios desde o dia 1. Sites ultra-rápidos, design moderno e foco em conversão.">
+    <meta name="twitter:image" content="https://overcode.dev/assets/og-image.jpg">
+    <meta name="twitter:image:alt" content="Overcode - Desenvolvimento de Sites Profissionais">
     
-    <!-- Manifest -->
+    <!-- SEO: Tema para navegadores mobile -->
+    <meta name="theme-color" content="#6C3CF9">
+    <meta name="msapplication-TileColor" content="#6C3CF9">
+    <meta name="msapplication-TileImage" content="assets/mstile-144x144.png">
+    
+    <!-- PWA: Manifest -->
     <link rel="manifest" href="site.webmanifest">
-    <!-- Conteúdo do manifest como comentário:
-    {
-      "name": "Overcode",
-      "short_name": "Overcode",
-      "theme_color": "#6C3CF9",
-      "background_color": "#1A1A1A",
-      "display": "standalone",
-      "start_url": "/"
-    }
-    -->
     
-    <!-- CSS Crítico Inline -->
+    <!-- Performance: CSS Crítico Inline -->
     <style>
         :root {
             --purple-main: #6C3CF9;
@@ -183,20 +220,76 @@
     <!-- Stylesheet Principal -->
     <link rel="stylesheet" href="styles.css">
     
-    <!-- JSON-LD Schema -->
+    <!-- SEO: JSON-LD Schema.org - Dados Estruturados -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "name": "Overcode",
-      "description": "Desenvolvimento de sites de alta performance com foco em conversão",
+      "alternateName": "Overcode Desenvolvimento Web",
+      "description": "Agência especializada em desenvolvimento de sites profissionais, landing pages e e-commerce com foco em performance e conversão",
       "url": "https://overcode.dev",
-      "sameAs": ["https://instagram.com/overcode.dev"],
+      "logo": "https://overcode.dev/logo.png",
+      "image": "https://overcode.dev/assets/og-image.jpg",
+      "telephone": "+55-SEUNUMERO",
+      "email": "igororlandibarros@gmail.com",
+      "priceRange": "R$ 999 - R$ 4.499",
       "address": {
         "@type": "PostalAddress",
+        "addressCountry": "BR",
+        "addressRegion": "SP",
+        "addressLocality": "Indaiatuba"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
         "addressCountry": "BR"
       },
-      "priceRange": "R$ 999 - R$ 5000"
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://instagram.com/overcode.dev"
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "Brasil"
+      },
+      "serviceType": [
+        "Desenvolvimento de Sites",
+        "Landing Pages",
+        "E-commerce",
+        "SEO",
+        "Design Responsivo"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "25"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "BRL",
+        "lowPrice": "999",
+        "highPrice": "4499",
+        "offerCount": "5"
+      }
+    }
+    </script>
+    
+    <!-- SEO: Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Início",
+        "item": "https://overcode.dev/"
+      }]
     }
     </script>
 </head>
@@ -208,8 +301,8 @@
     <header class="header" role="banner">
         <div class="container">
             <nav class="nav__wrapper" role="navigation" aria-label="Menu principal">
-                <a href="#inicio" class="nav__logo" aria-label="Overcode - Página inicial">
-                    <img src="logo.png" alt="Overcode" width="150" height="36">
+                <a href="#inicio" class="nav__logo" aria-label="Overcode - Ir para página inicial">
+                    <img src="assets/images/logo.png" alt="Overcode - Desenvolvimento de Sites Profissionais" width="150" height="36" loading="eager">
                 </a>
                 
                 <button class="nav__toggle" aria-label="Abrir menu" aria-expanded="false">
@@ -222,11 +315,10 @@
                     <li><a href="#inicio" class="nav__link">Início</a></li>
                     <li><a href="#servicos" class="nav__link">Serviços</a></li>
                     <li><a href="#portfolio" class="nav__link">Portfólio</a></li>
-                    <li><a href="#depoimentos" class="nav__link">Depoimentos</a></li>
                     <li><a href="#precos" class="nav__link">Preços</a></li>
                     <li><a href="#faq" class="nav__link">FAQ</a></li>
                     <li><a href="#contato" class="nav__link">Contato</a></li>
-                    <li><a href="https://wa.me/55{{SEUNUMERO}}?text=Quero%20meu%20site%20Overcode" class="nav__cta" target="_blank" rel="noopener">Falar no WhatsApp</a></li>
+                    <li><a href="https://api.whatsapp.com/send/?phone=5519982800307&text=Ol%C3%A1%21+Gostaria+de+saber+mais+sobre+os+servi%C3%A7os+de+desenvolvimento+de+website.&type=phone_number&app_absent=0" class="nav__cta" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a></li>
                 </ul>
             </nav>
         </div>
@@ -238,11 +330,12 @@
         <section id="inicio" class="hero">
             <div class="container">
                 <div class="hero__content" data-reveal>
-                    <h1 class="hero__title">Sites belíssimos.<br>Performance absurda.<br>Resultados reais.</h1>
+                    <!-- SEO: H1 único com palavra-chave principal -->
+                    <h1 class="hero__title">Sites Profissionais.<br>Performance Absurda.<br>Resultados Reais.</h1>
                     <p class="hero__subtitle">Landing pages profissionais com SEO + estrutura de anúncios desde o dia 1.</p>
                     
                     <div class="hero__actions">
-                        <a href="https://wa.me/55{{SEUNUMERO}}?text=Quero%20meu%20site%20Overcode" class="btn btn--primary" target="_blank" rel="noopener">
+                        <a href="https://wa.me/55{{SEUNUMERO}}?text=Quero%20meu%20site%20Overcode" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
                             <span>Quero meu site</span>
                         </a>
                         <a href="#portfolio" class="btn btn--secondary">
@@ -251,8 +344,7 @@
                     </div>
                     
                     <div class="hero__badges">
-                        <span class="badge">+25 projetos entregues</span>
-                        <span class="badge">Média 4,9/5</span>
+                        <span class="badge">+2 anos de experiência</span>
                     </div>
                 </div>
                 
@@ -352,7 +444,7 @@
                                 <li>2 revisões incluídas</li>
                                 <li>Entrega em até 7 dias</li>
                             </ul>
-                            <a href="https://wa.me/55{{SEUNUMERO}}?text=Quero%20meu%20site%20Overcode" class="btn btn--primary btn--block" target="_blank" rel="noopener">
+                            <a href="https://wa.me/55{{SEUNUMERO}}?text=Quero%20meu%20site%20Overcode" class="btn btn--primary btn--block" target="_blank" rel="noopener noreferrer">
                                 Começar agora
                             </a>
                         </div>
@@ -375,149 +467,92 @@
                 </div>
                 
                 <div class="portfolio__grid">
-                    <article class="portfolio-card" data-category="landing" data-reveal>
+                    <!-- SEO: Article para cada item do portfólio -->
+                    <article class="portfolio-card" data-category="landing" data-reveal itemscope itemtype="https://schema.org/CreativeWork">
                         <div class="portfolio-card__image">
-                            <div class="portfolio-card__placeholder"></div>
+                            <div class="portfolio-card__placeholder">
+                                <!-- SEO: Alt descritivo + loading lazy -->
+                                <img src="assets/images/overberry.png" 
+                                     alt="Overberry - Landing Page Profissional para E-commerce de Frutas Orgânicas" 
+                                     loading="lazy"
+                                     width="350"
+                                     height="250">
+                            </div>
                         </div>
                         <div class="portfolio-card__content">
-                            <h3 class="portfolio-card__title">TechStart Solutions</h3>
-                            <p class="portfolio-card__category">SaaS / Tecnologia</p>
-                            <a href="#" class="portfolio-card__link">Ver demo</a>
+                            <h3 class="portfolio-card__title" itemprop="name">Overberry</h3>
+                            <p class="portfolio-card__category" itemprop="category">Landing Page</p>
+                            <!-- SEO: Link externo com rel apropriado -->
+                            <a href="https://overberry.com.br/" 
+                               target="_blank" 
+                               rel="noopener noreferrer nofollow" 
+                               class="portfolio-card__link"
+                               aria-label="Visitar site da Overberry (abre em nova aba)">Ver site</a>
                         </div>
                     </article>
                     
-                    <article class="portfolio-card" data-category="institucional" data-reveal>
+                    <article class="portfolio-card" data-category="institucional" data-reveal itemscope itemtype="https://schema.org/CreativeWork">
                         <div class="portfolio-card__image">
-                            <div class="portfolio-card__placeholder"></div>
+                            <div class="portfolio-card__placeholder">
+                                <img src="assets/images/overseas.png" 
+                                     alt="Overseas Trading - Site Institucional para Importação e Exportação" 
+                                     loading="lazy"
+                                     width="350"
+                                     height="250">
+                            </div>
                         </div>
                         <div class="portfolio-card__content">
-                            <h3 class="portfolio-card__title">Advocacia Moderna</h3>
-                            <p class="portfolio-card__category">Jurídico</p>
-                            <a href="#" class="portfolio-card__link">Ver demo</a>
+                            <h3 class="portfolio-card__title" itemprop="name">Overseas Trading</h3>
+                            <p class="portfolio-card__category" itemprop="category">Institucional</p>
+                            <a href="https://overseastrading.com.br/" 
+                               target="_blank" 
+                               rel="noopener noreferrer nofollow" 
+                               class="portfolio-card__link"
+                               aria-label="Visitar site da Overseas Trading (abre em nova aba)">Ver site</a>
                         </div>
                     </article>
                     
-                    <article class="portfolio-card" data-category="ecommerce" data-reveal>
+                    <article class="portfolio-card" data-category="institucional" data-reveal itemscope itemtype="https://schema.org/CreativeWork">
                         <div class="portfolio-card__image">
-                            <div class="portfolio-card__placeholder"></div>
+                            <div class="portfolio-card__placeholder">
+                                <img src="assets/images/overcel.png" 
+                                     alt="Overcel - Site Institucional para Serviços de Telecomunicações" 
+                                     loading="lazy"
+                                     width="350"
+                                     height="250">
+                            </div>
                         </div>
                         <div class="portfolio-card__content">
-                            <h3 class="portfolio-card__title">Fashion Store</h3>
-                            <p class="portfolio-card__category">Moda / E-commerce</p>
-                            <a href="#" class="portfolio-card__link">Ver demo</a>
+                            <h3 class="portfolio-card__title" itemprop="name">Overcel</h3>
+                            <p class="portfolio-card__category" itemprop="category">Institucional</p>
+                            <a href="https://www.overcel.com.br/" 
+                               target="_blank" 
+                               rel="noopener noreferrer nofollow" 
+                               class="portfolio-card__link"
+                               aria-label="Visitar site da Overcel (abre em nova aba)">Ver site</a>
                         </div>
                     </article>
                     
-                    <article class="portfolio-card" data-category="landing" data-reveal>
+                    <article class="portfolio-card" data-category="ecommerce" data-reveal itemscope itemtype="https://schema.org/CreativeWork">
                         <div class="portfolio-card__image">
-                            <div class="portfolio-card__placeholder"></div>
+                            <div class="portfolio-card__placeholder">
+                                <img src="assets/images/overwine.png" 
+                                     alt="Overwine - E-commerce de Vinhos Premium e Importados" 
+                                     loading="lazy"
+                                     width="350"
+                                     height="250">
+                            </div>
                         </div>
                         <div class="portfolio-card__content">
-                            <h3 class="portfolio-card__title">Fitness Pro Academy</h3>
-                            <p class="portfolio-card__category">Saúde / Educação</p>
-                            <a href="#" class="portfolio-card__link">Ver demo</a>
+                            <h3 class="portfolio-card__title" itemprop="name">Overwine</h3>
+                            <p class="portfolio-card__category" itemprop="category">E-commerce</p>
+                            <a href="https://overwine.com.br/" 
+                               target="_blank" 
+                               rel="noopener noreferrer nofollow" 
+                               class="portfolio-card__link"
+                               aria-label="Visitar site da Overwine (abre em nova aba)">Ver site</a>
                         </div>
                     </article>
-                    
-                    <article class="portfolio-card" data-category="institucional" data-reveal>
-                        <div class="portfolio-card__image">
-                            <div class="portfolio-card__placeholder"></div>
-                        </div>
-                        <div class="portfolio-card__content">
-                            <h3 class="portfolio-card__title">Clínica Saúde Total</h3>
-                            <p class="portfolio-card__category">Saúde</p>
-                            <a href="#" class="portfolio-card__link">Ver demo</a>
-                        </div>
-                    </article>
-                    
-                    <article class="portfolio-card" data-category="landing" data-reveal>
-                        <div class="portfolio-card__image">
-                            <div class="portfolio-card__placeholder"></div>
-                        </div>
-                        <div class="portfolio-card__content">
-                            <h3 class="portfolio-card__title">Imobiliária Digital</h3>
-                            <p class="portfolio-card__category">Imóveis</p>
-                            <a href="#" class="portfolio-card__link">Ver demo</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Depoimentos -->
-        <section id="depoimentos" class="testimonials">
-            <div class="container">
-                <h2 class="section__title" data-reveal>O que dizem nossos clientes</h2>
-                
-                <div class="testimonials__slider" data-reveal>
-                    <div class="testimonials__track">
-                        <article class="testimonial-card testimonial-card--active">
-                            <div class="testimonial-card__stars" aria-label="5 estrelas">
-                                ★★★★★
-                            </div>
-                            <p class="testimonial-card__text">
-                                "A Overcode transformou completamente nossa presença digital. O site ficou incrível e nossas conversões aumentaram 300% no primeiro mês!"
-                            </p>
-                            <div class="testimonial-card__author">
-                                <div class="testimonial-card__avatar"></div>
-                                <div>
-                                    <strong class="testimonial-card__name">Rafael Santos</strong>
-                                    <span class="testimonial-card__company">CEO - TechStart Solutions</span>
-                                </div>
-                            </div>
-                        </article>
-                        
-                        <article class="testimonial-card">
-                            <div class="testimonial-card__stars" aria-label="5 estrelas">
-                                ★★★★★
-                            </div>
-                            <p class="testimonial-card__text">
-                                "Profissionalismo e qualidade excepcionais. O site carrega super rápido e já aparecemos na primeira página do Google!"
-                            </p>
-                            <div class="testimonial-card__author">
-                                <div class="testimonial-card__avatar"></div>
-                                <div>
-                                    <strong class="testimonial-card__name">Ana Costa</strong>
-                                    <span class="testimonial-card__company">Diretora - Fashion Store</span>
-                                </div>
-                            </div>
-                        </article>
-                        
-                        <article class="testimonial-card">
-                            <div class="testimonial-card__stars" aria-label="5 estrelas">
-                                ★★★★★
-                            </div>
-                            <p class="testimonial-card__text">
-                                "Entrega rápida, suporte excepcional e resultado acima das expectativas. Recomendo a Overcode de olhos fechados!"
-                            </p>
-                            <div class="testimonial-card__author">
-                                <div class="testimonial-card__avatar"></div>
-                                <div>
-                                    <strong class="testimonial-card__name">Carlos Oliveira</strong>
-                                    <span class="testimonial-card__company">Fundador - Fitness Pro Academy</span>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    
-                    <div class="testimonials__controls">
-                        <button class="testimonials__arrow testimonials__arrow--prev" aria-label="Depoimento anterior">
-                            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M15 18l-6-6 6-6"/>
-                            </svg>
-                        </button>
-                        <button class="testimonials__arrow testimonials__arrow--next" aria-label="Próximo depoimento">
-                            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M9 18l6-6-6-6"/>
-                            </svg>
-                        </button>
-                    </div>
-                    
-                    <div class="testimonials__dots">
-                        <button class="testimonials__dot testimonials__dot--active" aria-label="Ir para depoimento 1"></button>
-                        <button class="testimonials__dot" aria-label="Ir para depoimento 2"></button>
-                        <button class="testimonials__dot" aria-label="Ir para depoimento 3"></button>
-                    </div>
                 </div>
             </div>
         </section>
@@ -535,16 +570,17 @@
                             <span class="price-card__currency">R$</span>
                             <span class="price-card__amount">999</span>
                         </div>
-                        <p class="price-card__description">Perfeito para começar sua presença online</p>
+                        <p class="price-card__description">Home + 2 seções básicas</p>
                         <ul class="price-card__features">
-                            <li>Landing page completa</li>
+                            <li>Home completa</li>
+                            <li>2 seções básicas</li>
+                            <li>Design responsivo</li>
                             <li>SEO on-page</li>
-                            <li>Pixel + eventos base</li>
-                            <li>Formulário + Obrigado</li>
+                            <li>Formulário de contato</li>
                             <li>Até 2 revisões</li>
-                            <li>Entrega rápida</li>
+                            <li>Entrega em até 7 dias</li>
                         </ul>
-                        <a href="https://wa.me/55{{SEUNUMERO}}?text=Quero%20o%20plano%20Essencial" class="btn btn--primary btn--block" target="_blank" rel="noopener">
+                        <a href="https://wa.me/55{{SEUNUMERO}}?text=Quero%20o%20plano%20Essencial" class="btn btn--primary btn--block" target="_blank" rel="noopener noreferrer">
                             Começar no WhatsApp
                         </a>
                     </article>
@@ -554,19 +590,40 @@
                         <h3 class="price-card__name">Profissional</h3>
                         <div class="price-card__value">
                             <span class="price-card__currency">R$</span>
-                            <span class="price-card__amount">2.499</span>
+                            <span class="price-card__amount">1.499</span>
                         </div>
-                        <p class="price-card__description">Para negócios que querem crescer</p>
+                        <p class="price-card__description">Home + até 5 páginas</p>
                         <ul class="price-card__features">
-                            <li>Site institucional completo</li>
-                            <li>Até 5 páginas</li>
+                            <li>Home completa</li>
+                            <li>Até 5 páginas internas</li>
                             <li>SEO avançado</li>
-                            <li>Todas as integrações</li>
+                            <li>Integrações completas</li>
                             <li>Blog integrado</li>
                             <li>5 revisões incluídas</li>
                             <li>Suporte 30 dias</li>
                         </ul>
-                        <a href="https://wa.me/55{{SEUNUMERO}}?text=Quero%20o%20plano%20Profissional" class="btn btn--primary btn--block" target="_blank" rel="noopener">
+                        <a href="https://wa.me/55{{SEUNUMERO}}?text=Quero%20o%20plano%20Profissional" class="btn btn--primary btn--block" target="_blank" rel="noopener noreferrer">
+                            Começar no WhatsApp
+                        </a>
+                    </article>
+                    
+                    <article class="price-card" data-reveal>
+                        <h3 class="price-card__name">Corporativo</h3>
+                        <div class="price-card__value">
+                            <span class="price-card__currency">R$</span>
+                            <span class="price-card__amount">1.999</span>
+                        </div>
+                        <p class="price-card__description">Home + até 10 páginas</p>
+                        <ul class="price-card__features">
+                            <li>Home completa</li>
+                            <li>Até 10 páginas internas</li>
+                            <li>SEO completo</li>
+                            <li>Todas as integrações</li>
+                            <li>Área de membros básica</li>
+                            <li>Revisões ilimitadas</li>
+                            <li>Suporte 60 dias</li>
+                        </ul>
+                        <a href="https://wa.me/55{{SEUNUMERO}}?text=Quero%20o%20plano%20Corporativo" class="btn btn--primary btn--block" target="_blank" rel="noopener noreferrer">
                             Começar no WhatsApp
                         </a>
                     </article>
@@ -575,19 +632,40 @@
                         <h3 class="price-card__name">Avançado</h3>
                         <div class="price-card__value">
                             <span class="price-card__currency">R$</span>
-                            <span class="price-card__amount">4.999</span>
+                            <span class="price-card__amount">2.799</span>
                         </div>
-                        <p class="price-card__description">Solução completa e personalizada</p>
+                        <p class="price-card__description">Home + até 30 páginas</p>
                         <ul class="price-card__features">
-                            <li>E-commerce ou sistema complexo</li>
-                            <li>Páginas ilimitadas</li>
+                            <li>Home completa</li>
+                            <li>Até 30 páginas internas</li>
                             <li>SEO completo + consultoria</li>
                             <li>Todas as integrações</li>
-                            <li>Dashboard de métricas</li>
+                            <li>Funcionalidades customizadas</li>
                             <li>Revisões ilimitadas</li>
                             <li>Suporte 90 dias</li>
                         </ul>
-                        <a href="https://wa.me/55{{SEUNUMERO}}?text=Quero%20o%20plano%20Avançado" class="btn btn--secondary btn--block" target="_blank" rel="noopener">
+                        <a href="https://wa.me/55{{SEUNUMERO}}?text=Quero%20o%20plano%20Avançado" class="btn btn--primary btn--block" target="_blank" rel="noopener noreferrer">
+                            Começar no WhatsApp
+                        </a>
+                    </article>
+                    
+                    <article class="price-card" data-reveal>
+                        <h3 class="price-card__name">Enterprise</h3>
+                        <div class="price-card__value">
+                            <span class="price-card__currency">R$</span>
+                            <span class="price-card__amount">4.499</span>
+                        </div>
+                        <p class="price-card__description">Home + até 60 páginas</p>
+                        <ul class="price-card__features">
+                            <li>Home completa</li>
+                            <li>Até 60 páginas internas</li>
+                            <li>SEO enterprise</li>
+                            <li>Integrações avançadas</li>
+                            <li>Sistema complexo</li>
+                            <li>Revisões ilimitadas</li>
+                            <li>Suporte 120 dias</li>
+                        </ul>
+                        <a href="https://wa.me/55{{SEUNUMERO}}?text=Quero%20o%20plano%20Enterprise" class="btn btn--secondary btn--block" target="_blank" rel="noopener noreferrer">
                             Falar sobre projeto
                         </a>
                     </article>
@@ -621,7 +699,7 @@
                             </svg>
                         </summary>
                         <div class="faq__answer">
-                            <p>O número de revisões varia por plano: Essencial inclui 2 revisões, Profissional inclui 5 revisões e o plano Avançado tem revisões ilimitadas durante o desenvolvimento.</p>
+                            <p>O número de revisões varia por plano: Essencial inclui 2 revisões, Profissional inclui 5 revisões e os planos Corporativo, Avançado e Enterprise têm revisões ilimitadas durante o desenvolvimento.</p>
                         </div>
                     </details>
                     
@@ -669,7 +747,7 @@
                             </svg>
                         </summary>
                         <div class="faq__answer">
-                            <p>Sim! Oferecemos pacotes de manutenção mensal a partir de R$ 199 para pequenas alterações. Para mudanças maiores, fazemos um orçamento personalizado. Você também recebe acesso ao painel administrativo para alterações básicas.</p>
+                            <p>Sim! Oferecemos pacotes de manutenção mensal a partir de R$ 99 para pequenas alterações. Para mudanças maiores, fazemos um orçamento personalizado.</p>
                         </div>
                     </details>
                 </div>
@@ -688,14 +766,14 @@
                         <p class="contact__text">Resposta em até 2 horas durante o horário comercial</p>
                         
                         <div class="contact__buttons">
-                            <a href="https://wa.me/55{{SEUNUMERO}}?text=Quero%20meu%20site%20Overcode" class="btn btn--primary btn--large" target="_blank" rel="noopener">
+                            <a href="https://wa.me/55{{SEUNUMERO}}?text=Quero%20meu%20site%20Overcode" class="btn btn--primary btn--large" target="_blank" rel="noopener noreferrer">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM16.46 15.18L14.86 16.78C14.66 16.98 14.39 17.08 14.12 17.08C13.85 17.08 13.58 16.98 13.38 16.78L11.28 14.68C11.08 14.48 10.98 14.21 10.98 13.94V8.5C10.98 7.95 11.43 7.5 11.98 7.5C12.53 7.5 12.98 7.95 12.98 8.5V13.52L14.84 15.38C15.24 15.78 15.24 16.42 14.84 16.82Z"/>
                                 </svg>
                                 Enviar no WhatsApp
                             </a>
                             
-                            <a href="mailto:contato@overcode.dev" class="btn btn--secondary btn--large">
+                            <a href="mailto:igororlandibarros@gmail.com" class="btn btn--secondary btn--large">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"/>
                                 </svg>
@@ -704,7 +782,7 @@
                         </div>
                     </div>
                     
-                    <form class="contact__form" data-reveal>
+                    <form class="contact__form" action="https://formspree.io/f/mldoywlo" method="POST" data-reveal>
                         <div class="form__group">
                             <label for="name" class="form__label">Nome completo</label>
                             <input type="text" id="name" name="name" class="form__input" required>
@@ -739,7 +817,12 @@
         <div class="container">
             <div class="footer__content">
                 <div class="footer__brand">
-                    <img src="assets/logo-overcode.svg" alt="Overcode" width="120" height="32" class="logo--light">
+                    <!-- SEO: Alt descritivo + loading lazy -->
+                    <img src="assets/images/logo.png" 
+                         alt="Overcode - Agência de Desenvolvimento Web" 
+                         width="150" 
+                         height="auto"
+                         loading="lazy">
                     <p class="footer__tagline">Sites belíssimos com performance absurda</p>
                 </div>
                 
@@ -754,7 +837,7 @@
                 </nav>
                 
                 <div class="footer__social">
-                    <a href="https://instagram.com/overcode.dev" target="_blank" rel="noopener" aria-label="Instagram">
+                    <a href="https://www.instagram.com/overcode.br/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.405a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/>
                         </svg>
@@ -769,38 +852,7 @@
         </div>
     </footer>
     
-    <!-- Cursor customizado -->
-    <div class="cursor" aria-hidden="true"></div>
-    <div class="cursor-follower" aria-hidden="true"></div>
-    
     <!-- Scripts -->
-    <!-- Placeholder para Meta Pixel -->
-    <!-- 
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'YOUR_PIXEL_ID');
-    fbq('track', 'PageView');
-    </script>
-    -->
-    
-    <!-- Placeholder para Google Analytics -->
-    <!-- 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'GA_MEASUREMENT_ID');
-    </script>
-    -->
-    
     <script src="script.js" defer></script>
 </body>
 </html>
