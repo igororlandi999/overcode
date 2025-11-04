@@ -1,4 +1,4 @@
 User-agent: *
-Disallow:
+Allow: /
 
-Sitemap: https://overcode.dev/sitemap.xml
+Sitemap: https://overcodebrasil.com.br/sitemap.xml
