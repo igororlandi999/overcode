@@ -4,34 +4,34 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://overcode.dev/</loc>
+    <loc>https://overcodebrasil.com.br/</loc>
     <lastmod>2025-11-03</lastmod>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
 
   <url>
-    <loc>https://overcode.dev/#servicos</loc>
+    <loc>https://overcodebrasil.com.br/#servicos</loc>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://overcode.dev/#portfolio</loc>
+    <loc>https://overcodebrasil.com.br/#portfolio</loc>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://overcode.dev/#precos</loc>
+    <loc>https://overcodebrasil.com.br/#precos</loc>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://overcode.dev/#faq</loc>
+    <loc>https://overcodebrasil.com.br/#faq</loc>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://overcode.dev/#contato</loc>
+    <loc>https://overcodebrasil.com.br/#contato</loc>
     <priority>0.6</priority>
   </url>
 
