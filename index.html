@@ -1,55 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <!-- ========================================
-         SEO OPTIMIZATION - HEAD SECTION
-         ======================================== -->
-    
-    <!-- SEO: Charset e Viewport (obrigatório) -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO: Title otimizado (55 caracteres, palavra-chave principal) -->
     <title>Overcode - Sites Rápidos e Profissionais | Landing Pages</title>
-    
-    <!-- SEO: Meta Description otimizada (158 caracteres, CTA claro) -->
-    <meta name="description" content="Criamos sites profissionais com performance absurda. Landing pages com SEO, design moderno e foco em conversão. A partir de R$ 999. Entrega rápida!">
-    
-    <!-- SEO: Palavras-chave relevantes -->
+    <meta name="description" content="Criamos sites profissionais com performance absurda. Landing pages com SEO, design moderno e foco em conversão. A partir de R$ 497. Entrega em 3 dias úteis!">
     <meta name="keywords" content="criação de sites, landing page profissional, desenvolvimento web, sites rápidos, SEO, design responsivo, overcode, sites em indaiatuba">
-    
-    <!-- SEO: Informações adicionais -->
     <meta name="author" content="Overcode">
     <meta name="copyright" content="© 2025 Overcode">
     <meta name="language" content="Portuguese">
     <meta name="revisit-after" content="7 days">
-    
-    <!-- SEO: Robots (instruções para motores de busca) -->
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="googlebot" content="index, follow">
     
-    <!-- SEO: Canonical URL (evita conteúdo duplicado) -->
     <link rel="canonical" href="https://overcode.dev/">
-    
-    <!-- SEO: Idiomas alternativos -->
     <link rel="alternate" hreflang="pt-BR" href="https://overcode.dev/">
     <link rel="alternate" hreflang="x-default" href="https://overcode.dev/">
     
-    <!-- Performance: Preconnect para recursos externos -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     
-    <!-- SEO: Favicons (múltiplos tamanhos para melhor indexação) -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     
-    <!-- SEO: Open Graph - Facebook, LinkedIn, WhatsApp (completo) -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Overcode">
-    <meta property="og:title" content="Overcode - Sites Belíssimos com Performance Absurda">
+    <meta property="og:title" content="Overcode - Landing Page por R$497 no Pix — Entrega em 3 dias">
     <meta property="og:description" content="Landing pages profissionais com SEO e estrutura de anúncios desde o dia 1. Sites ultra-rápidos, design moderno e foco em conversão.">
     <meta property="og:url" content="https://overcode.dev/">
     <meta property="og:image" content="https://overcode.dev/assets/og-image.jpg">
@@ -60,22 +40,18 @@
     <meta property="og:image:alt" content="Overcode - Desenvolvimento de Sites Profissionais">
     <meta property="og:locale" content="pt_BR">
     
-    <!-- SEO: Twitter Card (completo) -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Overcode - Sites Belíssimos com Performance Absurda">
-    <meta name="twitter:description" content="Landing pages profissionais com SEO e estrutura de anúncios desde o dia 1. Sites ultra-rápidos, design moderno e foco em conversão.">
+    <meta name="twitter:title" content="Overcode - Landing Page por R$497 no Pix — Entrega em 3 dias">
+    <meta name="twitter:description" content="Landing pages profissionais com SEO e estrutura de anúncios desde o dia 1.">
     <meta name="twitter:image" content="https://overcode.dev/assets/og-image.jpg">
     <meta name="twitter:image:alt" content="Overcode - Desenvolvimento de Sites Profissionais">
     
-    <!-- SEO: Tema para navegadores mobile -->
     <meta name="theme-color" content="#6C3CF9">
     <meta name="msapplication-TileColor" content="#6C3CF9">
     <meta name="msapplication-TileImage" content="assets/mstile-144x144.png">
     
-    <!-- PWA: Manifest -->
     <link rel="manifest" href="site.webmanifest">
     
-    <!-- Performance: CSS Crítico Inline -->
     <style>
         :root {
             --purple-main: #6C3CF9;
@@ -83,18 +59,10 @@
             --dark: #1A1A1A;
             --white-soft: #F9F9F9;
             --gradient-purple: linear-gradient(135deg, #6C3CF9 0%, #4A28C7 100%);
+            --promo-bar-height: 44px;
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
             background-color: var(--dark);
@@ -102,54 +70,29 @@
             line-height: 1.6;
             overflow-x: hidden;
         }
-        
+        .promo-bar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1100;
+            height: var(--promo-bar-height);
+            background: linear-gradient(90deg, #4A28C7 0%, #6C3CF9 60%, #8B5CF6 100%);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
         .header {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: var(--promo-bar-height);
+            left: 0; right: 0;
             z-index: 1000;
-            background: rgba(26, 26, 26, 0.95);
+            background: rgba(26,26,26,0.95);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(108, 60, 249, 0.1);
+            border-bottom: 1px solid rgba(108,60,249,0.1);
             padding: 0.75rem 0;
         }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .nav__wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 50px;
-        }
-        
-        .nav__logo img {
-            height: 36px;
-            width: auto;
-            display: block;
-        }
-        
-        .nav__menu {
-            display: flex;
-            align-items: center;
-            list-style: none;
-            gap: 1.5rem;
-            margin: 0;
-            padding: 0;
-        }
-        
-        .nav__link {
-            color: var(--white-soft);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-        }
-        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .nav__wrapper { display: flex; align-items: center; justify-content: space-between; height: 50px; }
+        .nav__logo img { height: 36px; width: auto; display: block; }
+        .nav__menu { display: flex; align-items: center; list-style: none; gap: 1.5rem; margin: 0; padding: 0; }
+        .nav__link { color: var(--white-soft); text-decoration: none; font-weight: 500; font-size: 0.95rem; }
         .nav__cta {
             padding: 0.65rem 1.4rem;
             background: var(--gradient-purple);
@@ -160,20 +103,15 @@
             font-size: 0.95rem;
             margin-left: 1rem;
         }
-        
-        .nav__toggle {
-            display: none;
-        }
-        
+        .nav__toggle { display: none; }
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             position: relative;
-            background: radial-gradient(ellipse at top, rgba(108, 60, 249, 0.2) 0%, transparent 60%),
+            background: radial-gradient(ellipse at top, rgba(108,60,249,0.2) 0%, transparent 60%),
                         linear-gradient(180deg, #1A1A1A 0%, #0A0A0A 100%);
         }
-        
         @media (max-width: 968px) {
             .nav__toggle {
                 display: block;
@@ -182,45 +120,26 @@
                 padding: 0.5rem;
                 cursor: pointer;
             }
-            
-            .nav__toggle-line {
-                display: block;
-                width: 24px;
-                height: 2px;
-                background: var(--white-soft);
-                margin: 5px 0;
-            }
-            
+            .nav__toggle-line { display: block; width: 24px; height: 2px; background: var(--white-soft); margin: 5px 0; }
             .nav__menu {
                 position: fixed;
-                top: 0;
-                right: -100%;
-                width: 100%;
-                height: 100vh;
-                background: rgba(26, 26, 26, 0.98);
+                top: 0; right: -100%;
+                width: 100%; height: 100vh;
+                background: rgba(26,26,26,0.98);
                 flex-direction: column;
                 justify-content: center;
                 padding: 2rem;
                 transition: right 0.3s ease;
             }
         }
-        
         @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
+            * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
         }
     </style>
     
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    
-    <!-- Stylesheet Principal -->
     <link rel="stylesheet" href="styles.css">
     
-    <!-- SEO: JSON-LD Schema.org - Dados Estruturados -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -231,73 +150,54 @@
       "url": "https://overcode.dev",
       "logo": "https://overcode.dev/logo.png",
       "image": "https://overcode.dev/assets/og-image.jpg",
-      "telephone": "+55-SEUNUMERO",
+      "telephone": "+55-19-98280-0307",
       "email": "igororlandibarros@gmail.com",
-      "priceRange": "R$ 999 - R$ 4.499",
+      "priceRange": "R$ 497 - R$ 4.499",
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "BR",
         "addressRegion": "SP",
         "addressLocality": "Indaiatuba"
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "addressCountry": "BR"
-      },
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
         "opens": "09:00",
         "closes": "18:00"
       },
-      "sameAs": [
-        "https://instagram.com/overcode.dev"
-      ],
-      "areaServed": {
-        "@type": "Country",
-        "name": "Brasil"
-      },
-      "serviceType": [
-        "Desenvolvimento de Sites",
-        "Landing Pages",
-        "E-commerce",
-        "SEO",
-        "Design Responsivo"
-      ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "ratingCount": "25"
-      },
-      "offers": {
-        "@type": "AggregateOffer",
-        "priceCurrency": "BRL",
-        "lowPrice": "999",
-        "highPrice": "4499",
-        "offerCount": "5"
-      }
-    }
-    </script>
-    
-    <!-- SEO: Breadcrumb Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Início",
-        "item": "https://overcode.dev/"
-      }]
+      "sameAs": ["https://instagram.com/overcode.br"],
+      "areaServed": { "@type": "Country", "name": "Brasil" },
+      "serviceType": ["Desenvolvimento de Sites","Landing Pages","E-commerce","SEO","Design Responsivo"],
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "25" },
+      "offers": { "@type": "AggregateOffer", "priceCurrency": "BRL", "lowPrice": "497", "highPrice": "4499", "offerCount": "5" }
     }
     </script>
 </head>
 <body>
-    <!-- Canvas para partículas -->
+
+    <!-- Canvas de partículas -->
     <canvas id="particles-canvas" aria-hidden="true"></canvas>
-    
-    <!-- Header -->
+
+    <!-- ==========================================
+         BARRA PROMOCIONAL
+    ========================================== -->
+    <div class="promo-bar" id="promo-bar">
+        <div class="promo-bar__inner container">
+            <p class="promo-bar__text">
+                <span class="promo-bar__tag">Março</span>
+                Landing Page Estratégica por <strong>R$&nbsp;497&nbsp;no&nbsp;Pix</strong> — Entrega em 3 dias úteis
+            </p>
+            <a href="https://api.whatsapp.com/send/?phone=5519982800307&text=Quero%20a%20promo%C3%A7%C3%A3o%20de%20mar%C3%A7o%20%E2%80%94%20Landing%20Page%20por%20R%24497&type=phone_number&app_absent=0"
+               class="promo-bar__btn" target="_blank" rel="noopener noreferrer">
+                Garantir vaga
+            </a>
+            <button class="promo-bar__close" id="promo-bar-close" aria-label="Fechar promoção">&#215;</button>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         HEADER / NAV
+    ========================================== -->
     <header class="header" role="banner">
         <div class="container">
             <nav class="nav__wrapper" role="navigation" aria-label="Menu principal">
@@ -313,53 +213,152 @@
                 
                 <ul class="nav__menu">
                     <li><a href="#inicio" class="nav__link">Início</a></li>
+                    <li><a href="#como-funciona" class="nav__link">Como funciona</a></li>
                     <li><a href="#servicos" class="nav__link">Serviços</a></li>
                     <li><a href="#portfolio" class="nav__link">Portfólio</a></li>
                     <li><a href="#precos" class="nav__link">Preços</a></li>
                     <li><a href="#faq" class="nav__link">FAQ</a></li>
                     <li><a href="#contato" class="nav__link">Contato</a></li>
-                    <li><a href="https://api.whatsapp.com/send/?phone=5519982800307&text=Ol%C3%A1%21+Gostaria+de+saber+mais+sobre+os+servi%C3%A7os+de+desenvolvimento+de+website.&type=phone_number&app_absent=0" class="nav__cta" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a></li>
+                    <li>
+                        <a href="https://api.whatsapp.com/send/?phone=5519982800307&text=Ol%C3%A1%21+Gostaria+de+saber+mais+sobre+os+servi%C3%A7os+de+desenvolvimento+de+website.&type=phone_number&app_absent=0"
+                           class="nav__cta" target="_blank" rel="noopener noreferrer">
+                            Falar no WhatsApp
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>
     </header>
-    
-    <!-- Main Content -->
+
+    <!-- ==========================================
+         MAIN
+    ========================================== -->
     <main role="main">
-        <!-- Hero Section -->
+
+        <!-- ======================================
+             HERO — VERSÃO PROMOCIONAL
+        ====================================== -->
         <section id="inicio" class="hero">
             <div class="container">
                 <div class="hero__content" data-reveal>
-                    <!-- SEO: H1 único com palavra-chave principal -->
-                    <h1 class="hero__title">Sites Profissionais.<br>Performance Absurda.<br>Resultados Reais.</h1>
-                    <p class="hero__subtitle">Landing pages profissionais com SEO + estrutura de anúncios desde o dia 1.</p>
-                    
+                    <div class="hero__promo-tag">Promoção de Março</div>
+                    <h1 class="hero__title">Landing Page Estratégica<br>por <span class="hero__price-highlight">R$&nbsp;497 no Pix</span></h1>
+                    <p class="hero__subtitle">Entrega em 3 dias úteis + Estrutura pronta para tráfego pago</p>
+                    <p class="hero__urgency">Vagas limitadas para março</p>
+
                     <div class="hero__actions">
-                        <a href="https://wa.me/55{{SEUNUMERO}}?text=Quero%20meu%20site%20Overcode" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
-                            <span>Quero meu site</span>
+                        <a href="https://api.whatsapp.com/send/?phone=5519982800307&text=Quero%20a%20Landing%20Page%20por%20R%24497%20%E2%80%94%20promo%C3%A7%C3%A3o%20de%20mar%C3%A7o&type=phone_number&app_absent=0"
+                           class="btn btn--primary" target="_blank" rel="noopener noreferrer">
+                            <span>Quero minha Landing Page</span>
                         </a>
                         <a href="#portfolio" class="btn btn--secondary">
-                            <span>Ver portfólio</span>
+                            <span>Ver exemplos</span>
                         </a>
                     </div>
-                    
+
                     <div class="hero__badges">
+                        <span class="badge">3 dias úteis</span>
+                        <span class="badge">R$ 497 no Pix</span>
                         <span class="badge">+2 anos de experiência</span>
                     </div>
                 </div>
-                
+
                 <div class="hero__visual" aria-hidden="true">
                     <div class="hero__glow"></div>
                     <div class="hero__grid"></div>
                 </div>
             </div>
         </section>
-        
-        <!-- Por que Overcode -->
+
+        <!-- ======================================
+             COMO FUNCIONA — NOVA SEÇÃO
+        ====================================== -->
+        <section id="como-funciona" class="how-it-works">
+            <div class="container">
+                <h2 class="section__title" data-reveal>Como funciona</h2>
+                <p class="section__subtitle" data-reveal>Do pedido à publicação em poucos dias</p>
+
+                <div class="steps__grid">
+                    <article class="step-card" data-reveal>
+                        <div class="step-card__number">01</div>
+                        <div class="step-card__body">
+                            <h3 class="step-card__title">Você paga 30% no Pix</h3>
+                            <p class="step-card__text">Entrada de R$&nbsp;149 para iniciar o projeto imediatamente. Sem burocracia.</p>
+                        </div>
+                    </article>
+
+                    <article class="step-card" data-reveal>
+                        <div class="step-card__number">02</div>
+                        <div class="step-card__body">
+                            <h3 class="step-card__title">Layout em até 3 dias úteis</h3>
+                            <p class="step-card__text">Desenvolvemos e apresentamos o layout completo da sua landing page.</p>
+                        </div>
+                    </article>
+
+                    <article class="step-card" data-reveal>
+                        <div class="step-card__number">03</div>
+                        <div class="step-card__body">
+                            <h3 class="step-card__title">Ajustes por até 3 dias</h3>
+                            <p class="step-card__text">Rodada de revisões e ajustes finos para chegar no resultado ideal.</p>
+                        </div>
+                    </article>
+
+                    <article class="step-card" data-reveal>
+                        <div class="step-card__number">04</div>
+                        <div class="step-card__body">
+                            <h3 class="step-card__title">Publicação + pagamento final</h3>
+                            <p class="step-card__text">Site no ar. Você paga os 70% restantes e já começa a rodar tráfego.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================
+             PARA QUEM — NOVA SEÇÃO
+        ====================================== -->
+        <section id="para-quem" class="target-section">
+            <div class="container">
+                <h2 class="section__title" data-reveal>Para quem é essa oferta</h2>
+
+                <div class="target__grid">
+                    <div class="target__col target__col--yes" data-reveal>
+                        <h3 class="target__col-title target__col-title--yes">Ideal para</h3>
+                        <ul class="target__list">
+                            <li class="target__item target__item--yes">Prestadores de serviço</li>
+                            <li class="target__item target__item--yes">Advogados</li>
+                            <li class="target__item target__item--yes">Clínicas e consultórios</li>
+                            <li class="target__item target__item--yes">Infoprodutores</li>
+                            <li class="target__item target__item--yes">Negócios que querem rodar tráfego pago</li>
+                        </ul>
+                    </div>
+
+                    <div class="target__col target__col--no" data-reveal>
+                        <h3 class="target__col-title target__col-title--no">Não inclui</h3>
+                        <ul class="target__list">
+                            <li class="target__item target__item--no">E-commerce</li>
+                            <li class="target__item target__item--no">Blog</li>
+                            <li class="target__item target__item--no">Sistemas personalizados</li>
+                        </ul>
+                        <div class="target__cta-box">
+                            <p>Precisa de algo maior?</p>
+                            <a href="https://api.whatsapp.com/send/?phone=5519982800307&text=Quero%20um%20or%C3%A7amento%20personalizado&type=phone_number&app_absent=0"
+                               class="btn btn--secondary" target="_blank" rel="noopener noreferrer">
+                                Ver outros planos
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================
+             POR QUE OVERCODE
+        ====================================== -->
         <section id="porque" class="features">
             <div class="container">
                 <h2 class="section__title" data-reveal>Por que Overcode</h2>
-                
+
                 <div class="features__grid">
                     <article class="feature-card" data-reveal>
                         <div class="feature-card__icon">
@@ -371,7 +370,7 @@
                         <h3 class="feature-card__title">Carrega em um piscar de olhos</h3>
                         <p class="feature-card__text">Velocidade de carregamento ultrarrápida com otimizações avançadas e CDN global</p>
                     </article>
-                    
+
                     <article class="feature-card" data-reveal>
                         <div class="feature-card__icon">
                             <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -382,7 +381,7 @@
                         <h3 class="feature-card__title">SEO técnico pronto de fábrica</h3>
                         <p class="feature-card__text">SEO técnico + on-page desde o início para ranquear no Google</p>
                     </article>
-                    
+
                     <article class="feature-card" data-reveal>
                         <div class="feature-card__icon">
                             <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -393,7 +392,7 @@
                         <h3 class="feature-card__title">Design que converte de verdade</h3>
                         <p class="feature-card__text">Design moderno, conversão como foco e UX otimizada para resultados</p>
                     </article>
-                    
+
                     <article class="feature-card" data-reveal>
                         <div class="feature-card__icon">
                             <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -407,13 +406,15 @@
                 </div>
             </div>
         </section>
-        
-        <!-- Serviços -->
+
+        <!-- ======================================
+             SERVIÇOS
+        ====================================== -->
         <section id="servicos" class="services">
             <div class="container">
                 <h2 class="section__title" data-reveal>Nossos Serviços</h2>
                 <p class="section__subtitle" data-reveal>Soluções completas para sua presença digital</p>
-                
+
                 <div class="services__content" data-reveal>
                     <div class="services__list">
                         <ul class="services__items">
@@ -426,14 +427,14 @@
                             <li>Otimização de conversão</li>
                         </ul>
                     </div>
-                    
+
                     <div class="services__highlight">
                         <div class="service-card service-card--featured">
-                            <span class="service-card__badge">Mais vendido</span>
-                            <h3 class="service-card__title">Landing Page Profissional</h3>
+                            <span class="service-card__badge">Oferta de março</span>
+                            <h3 class="service-card__title">Landing Page Estratégica</h3>
                             <div class="service-card__price">
                                 <span class="service-card__currency">R$</span>
-                                <span class="service-card__value">999</span>
+                                <span class="service-card__value">497</span>
                             </div>
                             <ul class="service-card__features">
                                 <li>Design exclusivo e responsivo</li>
@@ -441,129 +442,134 @@
                                 <li>Integração com pixel e analytics</li>
                                 <li>Formulário de conversão</li>
                                 <li>Página de obrigado</li>
-                                <li>2 revisões incluídas</li>
-                                <li>Entrega em até 7 dias</li>
+                                <li>Revisões incluídas</li>
+                                <li>Entrega em até 3 dias úteis</li>
                             </ul>
-                            <a href="https://wa.me/55{{SEUNUMERO}}?text=Quero%20meu%20site%20Overcode" class="btn btn--primary btn--block" target="_blank" rel="noopener noreferrer">
-                                Começar agora
+                            <a href="https://api.whatsapp.com/send/?phone=5519982800307&text=Quero%20a%20Landing%20Page%20por%20R%24497%20%E2%80%94%20promo%C3%A7%C3%A3o%20de%20mar%C3%A7o&type=phone_number&app_absent=0"
+                               class="btn btn--primary btn--block" target="_blank" rel="noopener noreferrer">
+                                Garantir vaga agora
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        
-        <!-- Portfólio -->
+
+        <!-- ======================================
+             PORTFÓLIO
+        ====================================== -->
         <section id="portfolio" class="portfolio">
             <div class="container">
                 <h2 class="section__title" data-reveal>Nosso Portfólio</h2>
                 <p class="section__subtitle" data-reveal>Projetos que geram resultados reais</p>
-                
+
                 <div class="portfolio__filters" data-reveal>
                     <button class="filter-btn filter-btn--active" data-filter="all">Tudo</button>
                     <button class="filter-btn" data-filter="landing">Landing Page</button>
                     <button class="filter-btn" data-filter="institucional">Institucional</button>
                     <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
                 </div>
-                
+
                 <div class="portfolio__grid">
-                    <!-- SEO: Article para cada item do portfólio -->
                     <article class="portfolio-card" data-category="landing" data-reveal itemscope itemtype="https://schema.org/CreativeWork">
                         <div class="portfolio-card__image">
                             <div class="portfolio-card__placeholder">
-                                <!-- SEO: Alt descritivo + loading lazy -->
-                                <img src="assets/images/overberry.png" 
-                                     alt="Overberry - Landing Page Profissional para E-commerce de Frutas Orgânicas" 
-                                     loading="lazy"
-                                     width="350"
-                                     height="250">
+                                <img src="assets/images/overberry.png"
+                                     alt="Overberry - Landing Page Profissional para E-commerce de Frutas Orgânicas"
+                                     loading="lazy" width="350" height="250">
                             </div>
                         </div>
                         <div class="portfolio-card__content">
                             <h3 class="portfolio-card__title" itemprop="name">Overberry</h3>
                             <p class="portfolio-card__category" itemprop="category">Landing Page</p>
-                            <!-- SEO: Link externo com rel apropriado -->
-                            <a href="https://overberry.com.br/" 
-                               target="_blank" 
-                               rel="noopener noreferrer nofollow" 
-                               class="portfolio-card__link"
-                               aria-label="Visitar site da Overberry (abre em nova aba)">Ver site</a>
+                            <a href="https://overberry.com.br/" target="_blank" rel="noopener noreferrer nofollow"
+                               class="portfolio-card__link" aria-label="Visitar site da Overberry (abre em nova aba)">Ver site</a>
                         </div>
                     </article>
-                    
+
                     <article class="portfolio-card" data-category="institucional" data-reveal itemscope itemtype="https://schema.org/CreativeWork">
                         <div class="portfolio-card__image">
                             <div class="portfolio-card__placeholder">
-                                <img src="assets/images/overseas.png" 
-                                     alt="Overseas Trading - Site Institucional para Importação e Exportação" 
-                                     loading="lazy"
-                                     width="350"
-                                     height="250">
+                                <img src="assets/images/overseas.png"
+                                     alt="Overseas Trading - Site Institucional para Importação e Exportação"
+                                     loading="lazy" width="350" height="250">
                             </div>
                         </div>
                         <div class="portfolio-card__content">
                             <h3 class="portfolio-card__title" itemprop="name">Overseas Trading</h3>
                             <p class="portfolio-card__category" itemprop="category">Institucional</p>
-                            <a href="https://overseastrading.com.br/" 
-                               target="_blank" 
-                               rel="noopener noreferrer nofollow" 
-                               class="portfolio-card__link"
-                               aria-label="Visitar site da Overseas Trading (abre em nova aba)">Ver site</a>
+                            <a href="https://overseastrading.com.br/" target="_blank" rel="noopener noreferrer nofollow"
+                               class="portfolio-card__link" aria-label="Visitar site da Overseas Trading (abre em nova aba)">Ver site</a>
                         </div>
                     </article>
-                    
+
                     <article class="portfolio-card" data-category="institucional" data-reveal itemscope itemtype="https://schema.org/CreativeWork">
                         <div class="portfolio-card__image">
                             <div class="portfolio-card__placeholder">
-                                <img src="assets/images/overcel.png" 
-                                     alt="Overcel - Site Institucional para Serviços de Telecomunicações" 
-                                     loading="lazy"
-                                     width="350"
-                                     height="250">
+                                <img src="assets/images/overcel.png"
+                                     alt="Overcel - Site Institucional para Serviços de Telecomunicações"
+                                     loading="lazy" width="350" height="250">
                             </div>
                         </div>
                         <div class="portfolio-card__content">
                             <h3 class="portfolio-card__title" itemprop="name">Overcel</h3>
                             <p class="portfolio-card__category" itemprop="category">Institucional</p>
-                            <a href="https://www.overcel.com.br/" 
-                               target="_blank" 
-                               rel="noopener noreferrer nofollow" 
-                               class="portfolio-card__link"
-                               aria-label="Visitar site da Overcel (abre em nova aba)">Ver site</a>
+                            <a href="https://www.overcel.com.br/" target="_blank" rel="noopener noreferrer nofollow"
+                               class="portfolio-card__link" aria-label="Visitar site da Overcel (abre em nova aba)">Ver site</a>
                         </div>
                     </article>
-                    
+
                     <article class="portfolio-card" data-category="ecommerce" data-reveal itemscope itemtype="https://schema.org/CreativeWork">
                         <div class="portfolio-card__image">
                             <div class="portfolio-card__placeholder">
-                                <img src="assets/images/overwine.png" 
-                                     alt="Overwine - E-commerce de Vinhos Premium e Importados" 
-                                     loading="lazy"
-                                     width="350"
-                                     height="250">
+                                <img src="assets/images/overwine.png"
+                                     alt="Overwine - E-commerce de Vinhos Premium e Importados"
+                                     loading="lazy" width="350" height="250">
                             </div>
                         </div>
                         <div class="portfolio-card__content">
                             <h3 class="portfolio-card__title" itemprop="name">Overwine</h3>
                             <p class="portfolio-card__category" itemprop="category">E-commerce</p>
-                            <a href="https://overwine.com.br/" 
-                               target="_blank" 
-                               rel="noopener noreferrer nofollow" 
-                               class="portfolio-card__link"
-                               aria-label="Visitar site da Overwine (abre em nova aba)">Ver site</a>
+                            <a href="https://overwine.com.br/" target="_blank" rel="noopener noreferrer nofollow"
+                               class="portfolio-card__link" aria-label="Visitar site da Overwine (abre em nova aba)">Ver site</a>
                         </div>
                     </article>
                 </div>
             </div>
         </section>
-        
-        <!-- Preços -->
+
+        <!-- ======================================
+             PREÇOS
+        ====================================== -->
         <section id="precos" class="pricing">
             <div class="container">
                 <h2 class="section__title" data-reveal>Planos e Preços</h2>
                 <p class="section__subtitle" data-reveal>Escolha o melhor plano para seu negócio</p>
-                
+
                 <div class="pricing__grid">
+                    <article class="price-card price-card--promo" data-reveal>
+                        <span class="price-card__badge">Oferta de março</span>
+                        <h3 class="price-card__name">Landing Page</h3>
+                        <div class="price-card__value">
+                            <span class="price-card__currency">R$</span>
+                            <span class="price-card__amount">497</span>
+                        </div>
+                        <p class="price-card__description">Entrega em 3 dias úteis no Pix</p>
+                        <ul class="price-card__features">
+                            <li>Design exclusivo e responsivo</li>
+                            <li>SEO on-page completo</li>
+                            <li>Integrações (Pixel, GA4, GTM)</li>
+                            <li>Formulário de conversão</li>
+                            <li>Página de obrigado</li>
+                            <li>Revisões incluídas</li>
+                            <li>Entrega em até 3 dias úteis</li>
+                        </ul>
+                        <a href="https://api.whatsapp.com/send/?phone=5519982800307&text=Quero%20a%20Landing%20Page%20por%20R%24497%20%E2%80%94%20promo%C3%A7%C3%A3o%20de%20mar%C3%A7o&type=phone_number&app_absent=0"
+                           class="btn btn--primary btn--block" target="_blank" rel="noopener noreferrer">
+                            Garantir vaga agora
+                        </a>
+                    </article>
+
                     <article class="price-card" data-reveal>
                         <h3 class="price-card__name">Essencial</h3>
                         <div class="price-card__value">
@@ -580,11 +586,12 @@
                             <li>Até 2 revisões</li>
                             <li>Entrega em até 7 dias</li>
                         </ul>
-                        <a href="https://wa.me/55{{SEUNUMERO}}?text=Quero%20o%20plano%20Essencial" class="btn btn--primary btn--block" target="_blank" rel="noopener noreferrer">
+                        <a href="https://api.whatsapp.com/send/?phone=5519982800307&text=Quero%20o%20plano%20Essencial&type=phone_number&app_absent=0"
+                           class="btn btn--primary btn--block" target="_blank" rel="noopener noreferrer">
                             Começar no WhatsApp
                         </a>
                     </article>
-                    
+
                     <article class="price-card price-card--featured" data-reveal>
                         <span class="price-card__badge">Mais popular</span>
                         <h3 class="price-card__name">Profissional</h3>
@@ -602,11 +609,12 @@
                             <li>5 revisões incluídas</li>
                             <li>Suporte 30 dias</li>
                         </ul>
-                        <a href="https://wa.me/55{{SEUNUMERO}}?text=Quero%20o%20plano%20Profissional" class="btn btn--primary btn--block" target="_blank" rel="noopener noreferrer">
+                        <a href="https://api.whatsapp.com/send/?phone=5519982800307&text=Quero%20o%20plano%20Profissional&type=phone_number&app_absent=0"
+                           class="btn btn--primary btn--block" target="_blank" rel="noopener noreferrer">
                             Começar no WhatsApp
                         </a>
                     </article>
-                    
+
                     <article class="price-card" data-reveal>
                         <h3 class="price-card__name">Corporativo</h3>
                         <div class="price-card__value">
@@ -623,11 +631,12 @@
                             <li>Revisões ilimitadas</li>
                             <li>Suporte 60 dias</li>
                         </ul>
-                        <a href="https://wa.me/55{{SEUNUMERO}}?text=Quero%20o%20plano%20Corporativo" class="btn btn--primary btn--block" target="_blank" rel="noopener noreferrer">
+                        <a href="https://api.whatsapp.com/send/?phone=5519982800307&text=Quero%20o%20plano%20Corporativo&type=phone_number&app_absent=0"
+                           class="btn btn--primary btn--block" target="_blank" rel="noopener noreferrer">
                             Começar no WhatsApp
                         </a>
                     </article>
-                    
+
                     <article class="price-card" data-reveal>
                         <h3 class="price-card__name">Avançado</h3>
                         <div class="price-card__value">
@@ -644,11 +653,12 @@
                             <li>Revisões ilimitadas</li>
                             <li>Suporte 90 dias</li>
                         </ul>
-                        <a href="https://wa.me/55{{SEUNUMERO}}?text=Quero%20o%20plano%20Avançado" class="btn btn--primary btn--block" target="_blank" rel="noopener noreferrer">
+                        <a href="https://api.whatsapp.com/send/?phone=5519982800307&text=Quero%20o%20plano%20Avan%C3%A7ado&type=phone_number&app_absent=0"
+                           class="btn btn--primary btn--block" target="_blank" rel="noopener noreferrer">
                             Começar no WhatsApp
                         </a>
                     </article>
-                    
+
                     <article class="price-card" data-reveal>
                         <h3 class="price-card__name">Enterprise</h3>
                         <div class="price-card__value">
@@ -665,19 +675,22 @@
                             <li>Revisões ilimitadas</li>
                             <li>Suporte 120 dias</li>
                         </ul>
-                        <a href="https://wa.me/55{{SEUNUMERO}}?text=Quero%20o%20plano%20Enterprise" class="btn btn--secondary btn--block" target="_blank" rel="noopener noreferrer">
+                        <a href="https://api.whatsapp.com/send/?phone=5519982800307&text=Quero%20o%20plano%20Enterprise&type=phone_number&app_absent=0"
+                           class="btn btn--secondary btn--block" target="_blank" rel="noopener noreferrer">
                             Falar sobre projeto
                         </a>
                     </article>
                 </div>
             </div>
         </section>
-        
-        <!-- FAQ -->
+
+        <!-- ======================================
+             FAQ
+        ====================================== -->
         <section id="faq" class="faq">
             <div class="container">
                 <h2 class="section__title" data-reveal>Perguntas Frequentes</h2>
-                
+
                 <div class="faq__accordion" data-reveal>
                     <details class="faq__item">
                         <summary class="faq__question">
@@ -687,10 +700,10 @@
                             </svg>
                         </summary>
                         <div class="faq__answer">
-                            <p>O prazo varia de acordo com o tipo de projeto. Landing pages são entregues em até 7 dias úteis. Sites institucionais levam de 10 a 15 dias úteis. Projetos mais complexos como e-commerce podem levar até 30 dias.</p>
+                            <p>Landing pages promocionais são entregues em até 3 dias úteis. Sites institucionais levam de 10 a 15 dias úteis. Projetos mais complexos como e-commerce podem levar até 30 dias.</p>
                         </div>
                     </details>
-                    
+
                     <details class="faq__item">
                         <summary class="faq__question">
                             Quantas revisões estão incluídas?
@@ -699,10 +712,22 @@
                             </svg>
                         </summary>
                         <div class="faq__answer">
-                            <p>O número de revisões varia por plano: Essencial inclui 2 revisões, Profissional inclui 5 revisões e os planos Corporativo, Avançado e Enterprise têm revisões ilimitadas durante o desenvolvimento.</p>
+                            <p>A oferta de março inclui rodada de ajustes por até 3 dias após a entrega do layout. Nos demais planos: Essencial tem 2 revisões, Profissional tem 5, e Corporativo, Avançado e Enterprise têm revisões ilimitadas.</p>
                         </div>
                     </details>
-                    
+
+                    <details class="faq__item">
+                        <summary class="faq__question">
+                            Como funciona o pagamento da oferta de março?
+                            <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </summary>
+                        <div class="faq__answer">
+                            <p>Você paga 30% (R$&nbsp;149) no Pix para iniciar. Após aprovação do layout e ajustes finais, paga os 70% restantes (R$&nbsp;348) antes da publicação. Total: R$&nbsp;497.</p>
+                        </div>
+                    </details>
+
                     <details class="faq__item">
                         <summary class="faq__question">
                             Vocês oferecem hospedagem e domínio?
@@ -711,10 +736,10 @@
                             </svg>
                         </summary>
                         <div class="faq__answer">
-                            <p>Sim! Podemos gerenciar a hospedagem e o registro do domínio para você. A hospedagem tem custo a partir de R$ 29/mês e o domínio R$ 40/ano. Também trabalhamos com hospedagem que você já tenha.</p>
+                            <p>Sim. Podemos gerenciar a hospedagem e o registro do domínio para você. A hospedagem tem custo a partir de R$&nbsp;29/mês e o domínio R$&nbsp;40/ano. Também trabalhamos com hospedagem que você já tenha.</p>
                         </div>
                     </details>
-                    
+
                     <details class="faq__item">
                         <summary class="faq__question">
                             O site vem com integração para anúncios?
@@ -723,10 +748,10 @@
                             </svg>
                         </summary>
                         <div class="faq__answer">
-                            <p>Sim! Todos os sites são entregues com Meta Pixel, Google Analytics 4 e Google Tag Manager configurados. Também configuramos eventos de conversão personalizados para rastreamento completo das campanhas.</p>
+                            <p>Sim. Todos os sites são entregues com Meta Pixel, Google Analytics 4 e Google Tag Manager configurados, incluindo eventos de conversão personalizados para rastreamento completo das campanhas.</p>
                         </div>
                     </details>
-                    
+
                     <details class="faq__item">
                         <summary class="faq__question">
                             Como funciona a garantia?
@@ -735,10 +760,10 @@
                             </svg>
                         </summary>
                         <div class="faq__answer">
-                            <p>Oferecemos garantia de 7 dias após a entrega. Se você não ficar satisfeito com o resultado, devolvemos 100% do seu investimento. Além disso, garantimos suporte técnico conforme o plano contratado.</p>
+                            <p>Oferecemos garantia de 7 dias após a entrega. Se não ficar satisfeito com o resultado, devolvemos 100% do seu investimento. Além disso, garantimos suporte técnico conforme o plano contratado.</p>
                         </div>
                     </details>
-                    
+
                     <details class="faq__item">
                         <summary class="faq__question">
                             Posso fazer alterações depois da entrega?
@@ -747,32 +772,35 @@
                             </svg>
                         </summary>
                         <div class="faq__answer">
-                            <p>Sim! Oferecemos pacotes de manutenção mensal a partir de R$ 99 para pequenas alterações. Para mudanças maiores, fazemos um orçamento personalizado.</p>
+                            <p>Sim. Oferecemos pacotes de manutenção mensal a partir de R$&nbsp;99 para pequenas alterações. Para mudanças maiores, fazemos um orçamento personalizado.</p>
                         </div>
                     </details>
                 </div>
             </div>
         </section>
-        
-        <!-- Contato -->
+
+        <!-- ======================================
+             CONTATO
+        ====================================== -->
         <section id="contato" class="contact">
             <div class="container">
                 <h2 class="section__title" data-reveal>Vamos tirar seu projeto do papel?</h2>
                 <p class="section__subtitle" data-reveal>Entre em contato e receba um orçamento personalizado</p>
-                
+
                 <div class="contact__content">
                     <div class="contact__info" data-reveal>
                         <h3 class="contact__heading">Fale conosco</h3>
                         <p class="contact__text">Resposta em até 2 horas durante o horário comercial</p>
-                        
+
                         <div class="contact__buttons">
-                            <a href="https://wa.me/55{{SEUNUMERO}}?text=Quero%20meu%20site%20Overcode" class="btn btn--primary btn--large" target="_blank" rel="noopener noreferrer">
+                            <a href="https://api.whatsapp.com/send/?phone=5519982800307&text=Quero%20meu%20site%20Overcode&type=phone_number&app_absent=0"
+                               class="btn btn--primary btn--large" target="_blank" rel="noopener noreferrer">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM16.46 15.18L14.86 16.78C14.66 16.98 14.39 17.08 14.12 17.08C13.85 17.08 13.58 16.98 13.38 16.78L11.28 14.68C11.08 14.48 10.98 14.21 10.98 13.94V8.5C10.98 7.95 11.43 7.5 11.98 7.5C12.53 7.5 12.98 7.95 12.98 8.5V13.52L14.84 15.38C15.24 15.78 15.24 16.42 14.84 16.82Z"/>
                                 </svg>
                                 Enviar no WhatsApp
                             </a>
-                            
+
                             <a href="mailto:igororlandibarros@gmail.com" class="btn btn--secondary btn--large">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"/>
@@ -781,28 +809,28 @@
                             </a>
                         </div>
                     </div>
-                    
+
                     <form class="contact__form" action="https://formspree.io/f/mldoywlo" method="POST" data-reveal>
                         <div class="form__group">
                             <label for="name" class="form__label">Nome completo</label>
                             <input type="text" id="name" name="name" class="form__input" required>
                         </div>
-                        
+
                         <div class="form__group">
                             <label for="email" class="form__label">E-mail</label>
                             <input type="email" id="email" name="email" class="form__input" required>
                         </div>
-                        
+
                         <div class="form__group">
                             <label for="company" class="form__label">Empresa</label>
                             <input type="text" id="company" name="company" class="form__input">
                         </div>
-                        
+
                         <div class="form__group">
                             <label for="message" class="form__label">Mensagem</label>
                             <textarea id="message" name="message" class="form__textarea" rows="5" required></textarea>
                         </div>
-                        
+
                         <button type="submit" class="btn btn--primary btn--block">
                             Enviar mensagem
                         </button>
@@ -810,32 +838,33 @@
                 </div>
             </div>
         </section>
+
     </main>
-    
-    <!-- Footer -->
+
+    <!-- ==========================================
+         FOOTER
+    ========================================== -->
     <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer__content">
                 <div class="footer__brand">
-                    <!-- SEO: Alt descritivo + loading lazy -->
-                    <img src="assets/images/logo.png" 
-                         alt="Overcode - Agência de Desenvolvimento Web" 
-                         width="150" 
-                         height="auto"
-                         loading="lazy">
+                    <img src="assets/images/logo.png"
+                         alt="Overcode - Agência de Desenvolvimento Web"
+                         width="150" height="auto" loading="lazy">
                     <p class="footer__tagline">Sites belíssimos com performance absurda</p>
                 </div>
-                
+
                 <nav class="footer__nav" aria-label="Menu rodapé">
                     <ul class="footer__links">
                         <li><a href="#inicio">Início</a></li>
+                        <li><a href="#como-funciona">Como funciona</a></li>
                         <li><a href="#servicos">Serviços</a></li>
                         <li><a href="#portfolio">Portfólio</a></li>
                         <li><a href="#precos">Preços</a></li>
                         <li><a href="#contato">Contato</a></li>
                     </ul>
                 </nav>
-                
+
                 <div class="footer__social">
                     <a href="https://www.instagram.com/overcode.br/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -844,15 +873,14 @@
                     </a>
                 </div>
             </div>
-            
+
             <div class="footer__bottom">
                 <p class="footer__copy">© 2025 Overcode. Todos os direitos reservados.</p>
                 <p class="footer__made">Feito por Overcode</p>
             </div>
         </div>
     </footer>
-    
-    <!-- Scripts -->
+
     <script src="script.js" defer></script>
 </body>
 </html>

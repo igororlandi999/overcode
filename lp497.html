@@ -1,0 +1,2176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page por R$497 no Pix | Overcode — Entrega em 3 dias úteis</title>
+    <meta name="description" content="Landing Page Estratégica por R$497 no Pix. Entrega em 3 dias úteis. SEO, Pixel e estrutura pronta para anúncios. Vagas limitadas para março.">
+    <meta name="robots" content="noindex, nofollow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <meta name="theme-color" content="#6C3CF9">
+
+    <style>
+        /* ============================================
+           DESIGN TOKENS — identidade Overcode
+        ============================================ */
+        :root {
+            --purple-main: #6C3CF9;
+            --purple-light: #B18CFF;
+            --purple-dark: #4A28C7;
+            --dark: #1A1A1A;
+            --dark-secondary: #242424;
+            --dark-tertiary: #2E2E2E;
+            --white-soft: #F9F9F9;
+            --gray: #A0A0A0;
+            --gray-light: #D0D0D0;
+            --gradient-purple: linear-gradient(135deg, #6C3CF9 0%, #4A28C7 100%);
+            --gradient-dark: linear-gradient(180deg, #1A1A1A 0%, #0A0A0A 100%);
+            --gradient-glow: radial-gradient(ellipse at center, rgba(108,60,249,0.3) 0%, transparent 70%);
+            --shadow-glow: 0 0 40px rgba(108,60,249,0.4);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --transition-fast: 150ms cubic-bezier(0.4,0,0.2,1);
+            --transition-base: 300ms cubic-bezier(0.4,0,0.2,1);
+            --transition-slow: 500ms cubic-bezier(0.4,0,0.2,1);
+            --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+            --font-heading: 'Space Grotesk', system-ui, sans-serif;
+            --promo-bar-height: 44px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--dark);
+            color: var(--white-soft);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1,h2,h3,h4,h5,h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        p { margin-bottom: 1rem; }
+
+        a {
+            color: var(--purple-light);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* ============================================
+           BARRA PROMOCIONAL
+        ============================================ */
+        .promo-bar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 10100;
+            height: var(--promo-bar-height);
+            background: linear-gradient(90deg, #4A28C7 0%, #6C3CF9 55%, #8B5CF6 100%);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            overflow: hidden;
+        }
+
+        .promo-bar__inner {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            position: relative;
+        }
+
+        .promo-bar__text {
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.92);
+            text-align: center;
+            margin: 0;
+            line-height: 1;
+            white-space: nowrap;
+        }
+
+        .promo-bar__text strong { color: #fff; font-weight: 700; }
+
+        .promo-bar__tag {
+            display: inline-block;
+            background: rgba(255,255,255,0.18);
+            color: #fff;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.2rem 0.55rem;
+            border-radius: 4px;
+            margin-right: 0.4rem;
+            vertical-align: middle;
+            border: 1px solid rgba(255,255,255,0.25);
+        }
+
+        .promo-bar__btn {
+            flex-shrink: 0;
+            padding: 0.3rem 0.9rem;
+            background: #fff;
+            color: #4A28C7;
+            border-radius: var(--radius-sm);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: all 200ms ease;
+            border: 2px solid transparent;
+            line-height: 1.6;
+        }
+
+        .promo-bar__btn:hover {
+            background: transparent;
+            color: #fff;
+            border-color: rgba(255,255,255,0.65);
+        }
+
+        .promo-bar__close {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: rgba(255,255,255,0.6);
+            font-size: 1.1rem;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0.25rem 0.4rem;
+            transition: color 150ms ease;
+            border-radius: 4px;
+        }
+
+        .promo-bar__close:hover { color: #fff; }
+
+        @media (max-width: 768px) {
+            :root { --promo-bar-height: 52px; }
+            .promo-bar__text { font-size: 0.78rem; white-space: normal; text-align: left; padding-right: 1.5rem; line-height: 1.4; }
+            .promo-bar__btn { display: none; }
+        }
+
+        @media (max-width: 420px) { :root { --promo-bar-height: 60px; } }
+
+        /* ============================================
+           HEADER / NAV — idêntico ao site principal
+        ============================================ */
+        .header {
+            position: fixed;
+            top: var(--promo-bar-height);
+            left: 0; right: 0;
+            z-index: 10000;
+            padding: 0;
+            background: rgba(26,26,26,0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(108,60,249,0.1);
+            transition: all var(--transition-base);
+        }
+
+        .header--scrolled {
+            padding: 0;
+            background: rgba(26,26,26,0.98);
+        }
+
+        .nav__wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+
+        .nav__logo { display: flex; align-items: center; z-index: 1001; flex-shrink: 0; }
+        .nav__logo img { height: 120px; width: auto; display: block; }
+
+        .nav__toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; z-index: 1001; }
+        .nav__toggle-line { display: block; width: 24px; height: 2px; background: var(--white-soft); margin: 5px 0; transition: all var(--transition-base); }
+
+        .nav__menu {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 1.5rem;
+            margin: 0; padding: 0;
+            height: 100%;
+        }
+
+        .nav__menu li { display: flex; align-items: center; height: 100%; }
+
+        .nav__link {
+            color: var(--white-soft);
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            transition: color var(--transition-fast);
+            padding: 0.5rem 0;
+            display: flex; align-items: center; height: 100%;
+            white-space: nowrap;
+        }
+
+        .nav__link::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 0; height: 2px;
+            background: var(--gradient-purple);
+            transition: width var(--transition-base);
+        }
+
+        .nav__link:hover { color: var(--purple-light); }
+        .nav__link:hover::after { width: 100%; }
+
+        .nav__cta {
+            padding: 0.65rem 1.4rem;
+            background: var(--gradient-purple);
+            color: var(--white-soft);
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all var(--transition-base);
+            position: relative;
+            overflow: hidden;
+            margin-left: 1rem;
+            display: inline-flex; align-items: center;
+            white-space: nowrap;
+        }
+
+        .nav__cta:hover { transform: translateY(-2px); box-shadow: var(--shadow-glow); color: var(--white-soft); }
+
+        @media (max-width: 968px) {
+            .nav__toggle { display: block; }
+            .nav__menu {
+                position: fixed;
+                top: 0; right: -100%;
+                width: 100%; height: 100vh;
+                background: rgba(26,26,26,0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                justify-content: center;
+                padding: 2rem;
+                transition: right var(--transition-base);
+                z-index: 10050;
+            }
+            .nav__menu li { width: 100%; text-align: center; margin: 0.5rem 0; }
+            .nav__link { font-size: 1.1rem; padding: 0.75rem; justify-content: center; }
+            .nav__cta { margin-left: 0; margin-top: 1rem; justify-content: center; }
+            .nav__menu--open { right: 0; }
+            .nav__toggle--open .nav__toggle-line:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+            .nav__toggle--open .nav__toggle-line:nth-child(2) { opacity: 0; }
+            .nav__toggle--open .nav__toggle-line:nth-child(3) { transform: rotate(-45deg) translate(7px,-6px); }
+        }
+
+        /* ============================================
+           CANVAS PARTICLES
+        ============================================ */
+        #particles-canvas {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.55;
+        }
+
+        /* ============================================
+           BOTÕES
+        ============================================ */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: var(--radius-md);
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all var(--transition-base);
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+        }
+
+        .btn--primary {
+            background: var(--gradient-purple);
+            color: var(--white-soft);
+        }
+
+        .btn--primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(108,60,249,0.4);
+            color: var(--white-soft);
+        }
+
+        .btn--secondary {
+            background: transparent;
+            color: var(--purple-light);
+            border: 2px solid var(--purple-main);
+        }
+
+        .btn--secondary:hover {
+            background: rgba(108,60,249,0.1);
+            transform: translateY(-2px);
+            color: var(--purple-light);
+        }
+
+        .btn--block { width: 100%; }
+        .btn--xl { padding: 1.25rem 2.75rem; font-size: 1.15rem; border-radius: var(--radius-lg); }
+
+        .btn--cta {
+            background: linear-gradient(135deg, #6C3CF9 0%, #4A28C7 100%);
+            color: #fff;
+            font-size: 1.1rem;
+            padding: 1.1rem 2.5rem;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 8px 32px rgba(108,60,249,0.35);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn--cta::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .btn--cta:hover { transform: translateY(-3px); box-shadow: 0 16px 48px rgba(108,60,249,0.5); color: #fff; }
+        .btn--cta:hover::after { left: 100%; }
+
+        /* ============================================
+           SEÇÕES — UTILITÁRIOS
+        ============================================ */
+        section { position: relative; z-index: 11; }
+        .footer { position: relative; z-index: 11; }
+
+        .section__title {
+            font-family: var(--font-heading);
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            text-align: center;
+            margin-bottom: 1rem;
+            background: var(--gradient-purple);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section__subtitle {
+            text-align: center;
+            color: var(--gray-light);
+            font-size: 1.15rem;
+            margin-bottom: 3rem;
+        }
+
+        [data-reveal] {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        [data-reveal].reveal { opacity: 1; transform: translateY(0); }
+
+        /* ============================================
+           HERO
+        ============================================ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: calc(var(--promo-bar-height) + 110px) 0 80px;
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(108,60,249,0.22) 0%, transparent 65%),
+                linear-gradient(180deg, #111111 0%, #0A0A0A 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero__grid-bg {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(108,60,249,0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(108,60,249,0.06) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridMove 20s linear infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .hero__glow {
+            position: absolute;
+            top: 40%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 700px; height: 500px;
+            background: radial-gradient(ellipse, rgba(108,60,249,0.25) 0%, transparent 70%);
+            filter: blur(80px);
+            pointer-events: none;
+            animation: pulse 5s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        .hero__content {
+            position: relative;
+            z-index: 12;
+            text-align: center;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .hero__label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1.1rem;
+            background: rgba(108,60,249,0.12);
+            border: 1px solid rgba(108,60,249,0.4);
+            border-radius: 99px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--purple-light);
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.7s ease-out backwards;
+        }
+
+        .hero__label-dot {
+            width: 7px; height: 7px;
+            background: #6C3CF9;
+            border-radius: 50%;
+            animation: blink 1.5s ease-in-out infinite;
+        }
+
+        .hero__title {
+            font-family: var(--font-heading);
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 1.25rem;
+            color: var(--white-soft);
+            animation: fadeInUp 0.8s ease-out 0.1s backwards;
+        }
+
+        .hero__title-highlight {
+            background: linear-gradient(135deg, #fff 0%, #B18CFF 50%, #6C3CF9 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            white-space: nowrap;
+        }
+
+        .hero__subtitle {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: var(--gray-light);
+            margin-bottom: 0.75rem;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        .hero__urgency {
+            display: inline-block;
+            font-size: 0.9rem;
+            color: #ff9f43;
+            background: rgba(255,159,67,0.1);
+            border: 1px solid rgba(255,159,67,0.3);
+            padding: 0.35rem 1rem;
+            border-radius: 99px;
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 0.8s ease-out 0.3s backwards;
+            font-weight: 500;
+        }
+
+        .hero__actions {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            animation: fadeInUp 0.8s ease-out 0.4s backwards;
+        }
+
+        .hero__trust {
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.6s backwards;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.88rem;
+            color: var(--gray-light);
+        }
+
+        .trust-item svg { color: var(--purple-light); flex-shrink: 0; }
+
+        /* ============================================
+           PREÇO DESTAQUE (âncora visual)
+        ============================================ */
+        .price-anchor {
+            padding: 3.5rem 0;
+            background: linear-gradient(135deg, rgba(108,60,249,0.12) 0%, rgba(74,40,199,0.06) 100%);
+            border-top: 1px solid rgba(108,60,249,0.15);
+            border-bottom: 1px solid rgba(108,60,249,0.15);
+        }
+
+        .price-anchor__inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .price-anchor__value {
+            text-align: center;
+        }
+
+        .price-anchor__label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gray);
+            margin-bottom: 0.25rem;
+        }
+
+        .price-anchor__amount {
+            font-family: var(--font-heading);
+            font-size: clamp(3rem, 7vw, 5rem);
+            font-weight: 700;
+            background: var(--gradient-purple);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+        }
+
+        .price-anchor__sub {
+            font-size: 0.9rem;
+            color: var(--gray-light);
+        }
+
+        .price-anchor__divider {
+            width: 1px;
+            height: 80px;
+            background: rgba(108,60,249,0.25);
+        }
+
+        .price-anchor__pill {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.55rem 1.1rem;
+            background: rgba(108,60,249,0.1);
+            border: 1px solid rgba(108,60,249,0.25);
+            border-radius: 99px;
+            font-size: 0.9rem;
+            color: var(--purple-light);
+            font-weight: 500;
+        }
+
+        .pill svg { color: var(--purple-main); }
+
+        @media (max-width: 640px) {
+            .price-anchor__divider { display: none; }
+        }
+
+        /* ============================================
+           O QUE VOCÊ RECEBE
+        ============================================ */
+        .deliverables {
+            padding: 5rem 0;
+            background: linear-gradient(180deg, #0A0A0A 0%, var(--dark) 100%);
+        }
+
+        .deliverables__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.25rem;
+            margin-top: 3rem;
+        }
+
+        .deliverable-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(42,42,42,0.35);
+            border: 1px solid rgba(108,60,249,0.2);
+            border-radius: var(--radius-lg);
+            transition: all var(--transition-base);
+        }
+
+        .deliverable-item:hover {
+            border-color: var(--purple-main);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(108,60,249,0.15);
+        }
+
+        .deliverable-item__check {
+            flex-shrink: 0;
+            width: 28px; height: 28px;
+            background: rgba(108,60,249,0.15);
+            border: 1.5px solid var(--purple-main);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .deliverable-item__check svg { color: var(--purple-light); }
+
+        .deliverable-item__text {
+            font-size: 0.97rem;
+            color: var(--gray-light);
+            margin: 0;
+            padding-top: 0.25rem;
+        }
+
+        .deliverable-item__text strong { color: var(--white-soft); }
+
+        /* ============================================
+           O QUE NÃO INCLUI
+        ============================================ */
+        .not-included {
+            padding: 4rem 0;
+            background: var(--dark);
+        }
+
+        .not-included__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1rem;
+            max-width: 800px;
+            margin: 2.5rem auto 0;
+        }
+
+        .not-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.25rem;
+            background: rgba(42,42,42,0.2);
+            border: 1px solid rgba(160,160,160,0.12);
+            border-radius: var(--radius-md);
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        .not-item__icon {
+            flex-shrink: 0;
+            width: 22px; height: 22px;
+            background: rgba(160,160,160,0.08);
+            border: 1px solid rgba(160,160,160,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .not-item__icon svg { color: var(--gray); }
+
+        .not-included__note {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .not-included__note a {
+            color: var(--purple-light);
+            font-weight: 600;
+        }
+
+        /* ============================================
+           COMO FUNCIONA
+        ============================================ */
+        .process {
+            padding: 5rem 0;
+            background: linear-gradient(180deg, var(--dark-secondary) 0%, var(--dark) 100%);
+        }
+
+        .process__steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+            position: relative;
+        }
+
+        .process__steps::before {
+            content: '';
+            position: absolute;
+            top: 26px;
+            left: calc(12.5% + 20px);
+            right: calc(12.5% + 20px);
+            height: 1px;
+            background: linear-gradient(90deg, var(--purple-main), rgba(108,60,249,0.15));
+            pointer-events: none;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step__num {
+            width: 52px; height: 52px;
+            border-radius: 50%;
+            background: var(--gradient-purple);
+            color: #fff;
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 700;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 0 0 6px rgba(108,60,249,0.12);
+        }
+
+        .step__body {
+            padding: 1.5rem 1.25rem;
+            background: rgba(42,42,42,0.3);
+            border: 1px solid rgba(108,60,249,0.2);
+            border-radius: var(--radius-lg);
+            transition: all var(--transition-base);
+            min-height: 130px;
+        }
+
+        .step:hover .step__body {
+            border-color: var(--purple-main);
+            box-shadow: 0 8px 28px rgba(108,60,249,0.18);
+            transform: translateY(-4px);
+        }
+
+        .step__title {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            margin-bottom: 0.6rem;
+            color: var(--white-soft);
+        }
+
+        .step__text {
+            font-size: 0.87rem;
+            color: var(--gray-light);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        @media (max-width: 900px) {
+            .process__steps { grid-template-columns: repeat(2,1fr); gap: 2rem; }
+            .process__steps::before { display: none; }
+        }
+
+        @media (max-width: 500px) {
+            .process__steps { grid-template-columns: 1fr; }
+        }
+
+        /* ============================================
+           IDEAL PARA QUEM
+        ============================================ */
+        .target {
+            padding: 5rem 0;
+            background: linear-gradient(180deg, var(--dark) 0%, var(--dark-secondary) 100%);
+        }
+
+        .target__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.25rem;
+            max-width: 900px;
+            margin: 3rem auto 0;
+        }
+
+        .target__card {
+            padding: 1.75rem 1.5rem;
+            background: rgba(108,60,249,0.07);
+            border: 1px solid rgba(108,60,249,0.25);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            transition: all var(--transition-base);
+        }
+
+        .target__card:hover {
+            background: rgba(108,60,249,0.12);
+            border-color: var(--purple-main);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(108,60,249,0.18);
+        }
+
+        .target__card__icon {
+            width: 44px; height: 44px;
+            background: rgba(108,60,249,0.15);
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 1rem;
+            color: var(--purple-light);
+        }
+
+        .target__card__label {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--white-soft);
+            margin: 0;
+        }
+
+        /* ============================================
+           FAQ
+        ============================================ */
+        .faq {
+            padding: 5rem 0;
+            background: var(--dark);
+        }
+
+        .faq__accordion {
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .faq__item {
+            margin-bottom: 1rem;
+            background: rgba(42,42,42,0.3);
+            border: 1px solid rgba(108,60,249,0.2);
+            border-radius: var(--radius-md);
+            transition: all var(--transition-base);
+        }
+
+        .faq__item[open] {
+            background: rgba(108,60,249,0.05);
+            border-color: var(--purple-main);
+        }
+
+        .faq__question {
+            padding: 1.4rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 1.05rem;
+            list-style: none;
+            color: var(--white-soft);
+        }
+
+        .faq__question::-webkit-details-marker { display: none; }
+
+        .faq__icon { transition: transform var(--transition-base); flex-shrink: 0; margin-left: 1rem; color: var(--purple-light); }
+        .faq__item[open] .faq__icon { transform: rotate(180deg); }
+
+        .faq__answer {
+            padding: 0 1.5rem 1.4rem;
+            color: var(--gray-light);
+            line-height: 1.8;
+            font-size: 0.97rem;
+        }
+
+        .faq__answer p { margin: 0; }
+
+        /* ============================================
+           CTA FINAL
+        ============================================ */
+        .cta-final {
+            padding: 6rem 0;
+            background:
+                radial-gradient(ellipse at 50% 100%, rgba(108,60,249,0.2) 0%, transparent 60%),
+                linear-gradient(180deg, var(--dark-secondary) 0%, #080808 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-final__glow {
+            position: absolute;
+            bottom: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 600px; height: 300px;
+            background: radial-gradient(ellipse, rgba(108,60,249,0.2) 0%, transparent 70%);
+            filter: blur(60px);
+            pointer-events: none;
+        }
+
+        .cta-final__content { position: relative; z-index: 2; max-width: 700px; margin: 0 auto; }
+
+        .cta-final__title {
+            font-family: var(--font-heading);
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            color: var(--white-soft);
+            margin-bottom: 1rem;
+        }
+
+        .cta-final__title span {
+            background: var(--gradient-purple);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cta-final__sub {
+            color: var(--gray-light);
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-final__actions {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .cta-final__note {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-top: 0.75rem;
+        }
+
+        /* ============================================
+           FORMULÁRIO
+        ============================================ */
+        .form-section {
+            padding: 5rem 0;
+            background: linear-gradient(180deg, #080808 0%, var(--dark) 100%);
+        }
+
+        .form-section__inner {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .form-card {
+            background: rgba(30,30,30,0.8);
+            border: 1px solid rgba(108,60,249,0.25);
+            border-radius: var(--radius-xl);
+            padding: 3rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-card__header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .form-card__title {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            color: var(--white-soft);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-card__sub {
+            color: var(--gray-light);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .form__row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form__group { margin-bottom: 1.25rem; }
+
+        .form__label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--gray-light);
+        }
+
+        .form__label span { color: var(--purple-light); margin-left: 2px; }
+
+        .form__input,
+        .form__select,
+        .form__textarea {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            background: rgba(20,20,20,0.8);
+            border: 1px solid rgba(108,60,249,0.22);
+            border-radius: var(--radius-md);
+            color: var(--white-soft);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            transition: all var(--transition-base);
+            appearance: none;
+            -webkit-appearance: none;
+        }
+
+        .form__input:focus,
+        .form__select:focus,
+        .form__textarea:focus {
+            outline: none;
+            border-color: var(--purple-main);
+            background: rgba(20,20,20,0.95);
+            box-shadow: 0 0 0 3px rgba(108,60,249,0.1);
+        }
+
+        .form__input::placeholder,
+        .form__textarea::placeholder { color: rgba(160,160,160,0.5); }
+
+        .form__select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23A0A0A0' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; cursor: pointer; }
+
+        .form__select option { background: var(--dark); }
+
+        .form__textarea { resize: vertical; min-height: 100px; }
+
+        .form__radio-group {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .form__radio-label {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1rem;
+            background: rgba(20,20,20,0.8);
+            border: 1px solid rgba(108,60,249,0.22);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            font-size: 0.92rem;
+            color: var(--gray-light);
+            transition: all var(--transition-fast);
+            user-select: none;
+        }
+
+        .form__radio-label:hover {
+            border-color: rgba(108,60,249,0.4);
+            color: var(--purple-light);
+        }
+
+        .form__radio-label input[type="radio"] { display: none; }
+
+        .form__radio-label.selected {
+            background: rgba(108,60,249,0.12);
+            border-color: var(--purple-main);
+            color: var(--purple-light);
+        }
+
+        .form__radio-indicator {
+            width: 16px; height: 16px;
+            border: 2px solid currentColor;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .form__radio-label.selected .form__radio-indicator::after {
+            content: '';
+            width: 8px; height: 8px;
+            background: var(--purple-main);
+            border-radius: 50%;
+        }
+
+        .form__submit-wrap {
+            margin-top: 2rem;
+        }
+
+        /* ============================================
+           FOOTER — idêntico ao site principal
+        ============================================ */
+        .footer {
+            background: #0A0A0A;
+            padding: 3rem 0 1.5rem;
+            border-top: 1px solid rgba(108,60,249,0.1);
+        }
+
+        .footer__content {
+            display: grid;
+            grid-template-columns: 1fr auto auto;
+            gap: 3rem;
+            margin-bottom: 2rem;
+            align-items: start;
+        }
+
+        .footer__brand { max-width: 300px; }
+
+        .footer__brand img {
+            max-width: 150px;
+            height: auto;
+            display: block;
+        }
+
+        .footer__tagline {
+            margin-top: 1rem;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .footer__nav ul { list-style: none; }
+
+        .footer__links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer__links a {
+            color: var(--gray);
+            transition: color var(--transition-fast);
+        }
+
+        .footer__links a:hover { color: var(--purple-light); }
+
+        .footer__social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px; height: 40px;
+            border: 1px solid rgba(108,60,249,0.3);
+            border-radius: 50%;
+            color: var(--purple-light);
+            transition: all var(--transition-base);
+        }
+
+        .footer__social a:hover {
+            background: rgba(108,60,249,0.1);
+            border-color: var(--purple-main);
+        }
+
+        .footer__bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(160,160,160,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer__copy,
+        .footer__made {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .footer__content { grid-template-columns: 1fr; gap: 2rem; }
+        }
+
+        /* ============================================
+           ANIMAÇÕES
+        ============================================ */
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to   { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.1); }
+        }
+
+        @keyframes gridMove {
+            0% { transform: translate(0,0); }
+            100% { transform: translate(50px,50px); }
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        /* ============================================
+           RESPONSIVO
+        ============================================ */
+        @media (max-width: 640px) {
+            .form__row { grid-template-columns: 1fr; }
+            .form-card { padding: 2rem 1.5rem; }
+            .hero__title { font-size: 2.2rem; }
+            .price-anchor__inner { gap: 1.5rem; }
+        }
+
+        @media (max-width: 480px) {
+            .target__grid { grid-template-columns: repeat(2,1fr); }
+            .deliverables__grid { grid-template-columns: 1fr; }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--dark); }
+        ::-webkit-scrollbar-thumb { background: var(--purple-main); border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--purple-light); }
+
+        ::selection { background: var(--purple-main); color: var(--white-soft); }
+
+        :focus-visible { outline: 2px solid var(--purple-main); outline-offset: 2px; }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+<!-- BARRA PROMOCIONAL -->
+<div class="promo-bar" id="promo-bar">
+    <div class="promo-bar__inner container">
+        <p class="promo-bar__text">
+            <span class="promo-bar__tag">Março</span>
+            Landing Page Estratégica por <strong>R$&nbsp;497&nbsp;no&nbsp;Pix</strong> — Entrega em 3 dias úteis
+        </p>
+        <a href="https://api.whatsapp.com/send/?phone=5519982800307&text=Quero%20a%20promo%C3%A7%C3%A3o%20de%20mar%C3%A7o%20%E2%80%94%20Landing%20Page%20por%20R%24497&type=phone_number&app_absent=0"
+           class="promo-bar__btn" target="_blank" rel="noopener noreferrer">
+            Garantir vaga
+        </a>
+        <button class="promo-bar__close" id="promo-bar-close" aria-label="Fechar promoção">&#215;</button>
+    </div>
+</div>
+
+<!-- HEADER / NAV -->
+<header class="header" role="banner">
+    <div class="container">
+        <nav class="nav__wrapper" role="navigation" aria-label="Menu principal">
+            <a href="#inicio" class="nav__logo" aria-label="Overcode - Ir para o topo">
+                <img src="assets/images/logo.png" alt="Overcode" width="150" height="36" loading="eager">
+            </a>
+
+            <button class="nav__toggle" aria-label="Abrir menu" aria-expanded="false">
+                <span class="nav__toggle-line"></span>
+                <span class="nav__toggle-line"></span>
+                <span class="nav__toggle-line"></span>
+            </button>
+
+            <ul class="nav__menu">
+                <li><a href="#o-que-voce-recebe" class="nav__link">O que inclui</a></li>
+                <li><a href="#como-funciona" class="nav__link">Como funciona</a></li>
+                <li><a href="#para-quem" class="nav__link">Para quem</a></li>
+                <li><a href="#faq" class="nav__link">FAQ</a></li>
+                <li>
+                    <a href="https://api.whatsapp.com/send/?phone=5519982800307&text=Quero%20a%20Landing%20Page%20por%20R%24497&type=phone_number&app_absent=0"
+                       class="nav__cta" target="_blank" rel="noopener noreferrer">
+                        Falar no WhatsApp
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main role="main">
+
+    <!-- ==========================================
+         HERO
+    ========================================== -->
+    <section id="inicio" class="hero">
+        <div class="hero__grid-bg" aria-hidden="true"></div>
+        <div class="hero__glow" aria-hidden="true"></div>
+
+        <div class="container">
+            <div class="hero__content">
+                <div class="hero__label">
+                    <span class="hero__label-dot"></span>
+                    Oferta especial de março
+                </div>
+
+                <h1 class="hero__title">
+                    Landing Page Estratégica<br>
+                    por <span class="hero__title-highlight">R$&nbsp;497 no Pix</span>
+                </h1>
+
+                <p class="hero__subtitle">
+                    Entrega em 3 dias úteis &nbsp;·&nbsp; SEO configurado &nbsp;·&nbsp; Estrutura pronta para anúncios
+                </p>
+
+                <span class="hero__urgency">Vagas limitadas para março</span>
+
+                <div class="hero__actions">
+                    <a href="https://api.whatsapp.com/send/?phone=5519982800307&text=Quero%20a%20Landing%20Page%20por%20R%24497%20%E2%80%94%20promo%C3%A7%C3%A3o%20de%20mar%C3%A7o&type=phone_number&app_absent=0"
+                       class="btn btn--cta btn--xl"
+                       target="_blank" rel="noopener noreferrer">
+                        Garantir minha vaga agora
+                    </a>
+                    <a href="#como-funciona" class="btn btn--secondary">
+                        Como funciona
+                    </a>
+                </div>
+
+                <div class="hero__trust">
+                    <div class="trust-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Entrega em 3 dias úteis
+                    </div>
+                    <div class="trust-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Garantia de 7 dias
+                    </div>
+                    <div class="trust-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 13l4 4L19 7"/>
+                        </svg>
+                        +2 anos de experiência
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         ÂNCORA DE PREÇO
+    ========================================== -->
+    <div class="price-anchor" data-reveal>
+        <div class="container">
+            <div class="price-anchor__inner">
+                <div class="price-anchor__value">
+                    <p class="price-anchor__label">Investimento único</p>
+                    <p class="price-anchor__amount">R$ 497</p>
+                    <p class="price-anchor__sub">no Pix</p>
+                </div>
+
+                <div class="price-anchor__divider" aria-hidden="true"></div>
+
+                <div class="price-anchor__pill">
+                    <div class="pill">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+                        </svg>
+                        Entrega em até 3 dias úteis
+                    </div>
+                    <div class="pill">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Garantia de 7 dias
+                    </div>
+                    <div class="pill">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                        Pagamento parcelado em 2x
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         O QUE VOCÊ RECEBE
+    ========================================== -->
+    <section id="o-que-voce-recebe" class="deliverables">
+        <div class="container">
+            <h2 class="section__title" data-reveal>O que você recebe</h2>
+            <p class="section__subtitle" data-reveal>Tudo que você precisa para converter desde o primeiro dia</p>
+
+            <div class="deliverables__grid">
+                <div class="deliverable-item" data-reveal>
+                    <div class="deliverable-item__check">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M5 13l4 4L19 7"/>
+                        </svg>
+                    </div>
+                    <p class="deliverable-item__text"><strong>Até 10 seções</strong> — Hero, serviços, benefícios, depoimentos, CTA e mais</p>
+                </div>
+
+                <div class="deliverable-item" data-reveal>
+                    <div class="deliverable-item__check">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M5 13l4 4L19 7"/>
+                        </svg>
+                    </div>
+                    <p class="deliverable-item__text"><strong>Design profissional personalizado</strong> — exclusivo para o seu negócio, não é template</p>
+                </div>
+
+                <div class="deliverable-item" data-reveal>
+                    <div class="deliverable-item__check">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M5 13l4 4L19 7"/>
+                        </svg>
+                    </div>
+                    <p class="deliverable-item__text"><strong>Estrutura otimizada para conversão</strong> — copywriting de seções, hierarquia visual e CTAs estratégicos</p>
+                </div>
+
+                <div class="deliverable-item" data-reveal>
+                    <div class="deliverable-item__check">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M5 13l4 4L19 7"/>
+                        </svg>
+                    </div>
+                    <p class="deliverable-item__text"><strong>SEO básico configurado</strong> — meta tags, título, descrição e estrutura semântica</p>
+                </div>
+
+                <div class="deliverable-item" data-reveal>
+                    <div class="deliverable-item__check">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M5 13l4 4L19 7"/>
+                        </svg>
+                    </div>
+                    <p class="deliverable-item__text"><strong>Integração com WhatsApp</strong> — botão flutuante e CTA direto com mensagem pré-definida</p>
+                </div>
+
+                <div class="deliverable-item" data-reveal>
+                    <div class="deliverable-item__check">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M5 13l4 4L19 7"/>
+                        </svg>
+                    </div>
+                    <p class="deliverable-item__text"><strong>Pixel do Google e Meta configurados</strong> — rastreamento completo para suas campanhas desde o dia 1</p>
+                </div>
+
+                <div class="deliverable-item" data-reveal>
+                    <div class="deliverable-item__check">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M5 13l4 4L19 7"/>
+                        </svg>
+                    </div>
+                    <p class="deliverable-item__text"><strong>Design responsivo</strong> — perfeito em celular, tablet e desktop</p>
+                </div>
+
+                <div class="deliverable-item" data-reveal>
+                    <div class="deliverable-item__check">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M5 13l4 4L19 7"/>
+                        </svg>
+                    </div>
+                    <p class="deliverable-item__text"><strong>Rodada de ajustes</strong> — até 3 dias para revisões e acertos após a entrega do layout</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         O QUE NÃO ESTÁ INCLUSO
+    ========================================== -->
+    <section class="not-included">
+        <div class="container">
+            <h2 class="section__title" data-reveal>O que não está incluso</h2>
+            <p class="section__subtitle" data-reveal>Esta oferta é focada em landing pages. Para projetos maiores, temos outros planos.</p>
+
+            <div class="not-included__grid">
+                <div class="not-item" data-reveal>
+                    <span class="not-item__icon">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M18 6L6 18M6 6l12 12"/>
+                        </svg>
+                    </span>
+                    E-commerce
+                </div>
+                <div class="not-item" data-reveal>
+                    <span class="not-item__icon">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M18 6L6 18M6 6l12 12"/>
+                        </svg>
+                    </span>
+                    Blog
+                </div>
+                <div class="not-item" data-reveal>
+                    <span class="not-item__icon">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M18 6L6 18M6 6l12 12"/>
+                        </svg>
+                    </span>
+                    Sistemas personalizados
+                </div>
+                <div class="not-item" data-reveal>
+                    <span class="not-item__icon">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M18 6L6 18M6 6l12 12"/>
+                        </svg>
+                    </span>
+                    Área de membros
+                </div>
+            </div>
+
+            <p class="not-included__note" data-reveal>
+                Precisa de algo maior?
+                <a href="https://api.whatsapp.com/send/?phone=5519982800307&text=Quero%20um%20or%C3%A7amento%20personalizado&type=phone_number&app_absent=0"
+                   target="_blank" rel="noopener noreferrer">
+                    Fale comigo no WhatsApp
+                </a>
+                para um orçamento sob medida.
+            </p>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         COMO FUNCIONA
+    ========================================== -->
+    <section id="como-funciona" class="process">
+        <div class="container">
+            <h2 class="section__title" data-reveal>Como funciona</h2>
+            <p class="section__subtitle" data-reveal>Do pedido à publicação em menos de uma semana</p>
+
+            <div class="process__steps">
+                <article class="step" data-reveal>
+                    <div class="step__num">01</div>
+                    <div class="step__body">
+                        <h3 class="step__title">Você paga 30% via Pix</h3>
+                        <p class="step__text">Entrada de R$&nbsp;149 para iniciar o projeto imediatamente. Sem burocracia, sem contrato complexo.</p>
+                    </div>
+                </article>
+
+                <article class="step" data-reveal>
+                    <div class="step__num">02</div>
+                    <div class="step__body">
+                        <h3 class="step__title">Layout em até 3 dias úteis</h3>
+                        <p class="step__text">Desenvolvemos o layout completo da sua landing page e apresentamos para sua aprovação.</p>
+                    </div>
+                </article>
+
+                <article class="step" data-reveal>
+                    <div class="step__num">03</div>
+                    <div class="step__body">
+                        <h3 class="step__title">Até 3 dias para ajustes</h3>
+                        <p class="step__text">Rodada de revisões e ajustes finos para chegar exatamente no resultado que você quer.</p>
+                    </div>
+                </article>
+
+                <article class="step" data-reveal>
+                    <div class="step__num">04</div>
+                    <div class="step__body">
+                        <h3 class="step__title">Publicação + pagamento final</h3>
+                        <p class="step__text">Site no ar. Você paga os 70% restantes e já começa a rodar tráfego no mesmo dia.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         IDEAL PARA QUEM
+    ========================================== -->
+    <section id="para-quem" class="target">
+        <div class="container">
+            <h2 class="section__title" data-reveal>Ideal para quem</h2>
+            <p class="section__subtitle" data-reveal>Essa oferta foi feita para negócios que querem resultado rápido com tráfego pago</p>
+
+            <div class="target__grid">
+                <div class="target__card" data-reveal>
+                    <div class="target__card__icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                        </svg>
+                    </div>
+                    <p class="target__card__label">Prestadores de serviço</p>
+                </div>
+
+                <div class="target__card" data-reveal>
+                    <div class="target__card__icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <p class="target__card__label">Advogados</p>
+                </div>
+
+                <div class="target__card" data-reveal>
+                    <div class="target__card__icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                            <polyline points="9 22 9 12 15 12 15 22"/>
+                        </svg>
+                    </div>
+                    <p class="target__card__label">Clínicas e consultórios</p>
+                </div>
+
+                <div class="target__card" data-reveal>
+                    <div class="target__card__icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                        </svg>
+                    </div>
+                    <p class="target__card__label">Infoprodutores</p>
+                </div>
+
+                <div class="target__card" data-reveal>
+                    <div class="target__card__icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <p class="target__card__label">Negócios locais</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FAQ
+    ========================================== -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section__title" data-reveal>Perguntas frequentes</h2>
+
+            <div class="faq__accordion" data-reveal>
+                <details class="faq__item">
+                    <summary class="faq__question">
+                        Como funciona o pagamento?
+                        <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </summary>
+                    <div class="faq__answer">
+                        <p>Você paga 30% (R$&nbsp;149) no Pix para iniciar o projeto. Após a entrega do layout, aprovação e ajustes finais, paga os 70% restantes (R$&nbsp;348) antes da publicação. Total: R$&nbsp;497.</p>
+                    </div>
+                </details>
+
+                <details class="faq__item">
+                    <summary class="faq__question">
+                        Preciso ter domínio e hospedagem?
+                        <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </summary>
+                    <div class="faq__answer">
+                        <p>Não precisa ter. Posso gerenciar a hospedagem e o registro do domínio para você. A hospedagem tem custo a partir de R$&nbsp;29/mês e o domínio R$&nbsp;40/ano — pagos diretamente por você, separado do projeto. Também trabalho com hospedagem que você já tenha.</p>
+                    </div>
+                </details>
+
+                <details class="faq__item">
+                    <summary class="faq__question">
+                        Quantas revisões estão incluídas?
+                        <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </summary>
+                    <div class="faq__answer">
+                        <p>A oferta inclui uma rodada de ajustes por até 3 dias após a entrega do layout. Dentro desse período, todos os ajustes solicitados são feitos sem custo adicional.</p>
+                    </div>
+                </details>
+
+                <details class="faq__item">
+                    <summary class="faq__question">
+                        Tenho garantia se não gostar do resultado?
+                        <svg class="faq__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </summary>
+                    <div class="faq__answer">
+                        <p>Sim. Oferecemos garantia de 7 dias após a entrega. Se você não ficar satisfeito com o resultado, devolvemos 100% do seu investimento, sem perguntas.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         CTA FINAL
+    ========================================== -->
+    <section class="cta-final">
+        <div class="cta-final__glow" aria-hidden="true"></div>
+        <div class="container">
+            <div class="cta-final__content" data-reveal>
+                <h2 class="cta-final__title">
+                    Quer começar<br><span>ainda essa semana?</span>
+                </h2>
+                <p class="cta-final__sub">
+                    Preencha o formulário abaixo ou fale direto no WhatsApp. Resposta em até 2 horas.
+                </p>
+                <div class="cta-final__actions">
+                    <a href="https://api.whatsapp.com/send/?phone=5519982800307&text=Quero%20a%20Landing%20Page%20por%20R%24497&type=phone_number&app_absent=0"
+                       class="btn btn--cta btn--xl"
+                       target="_blank" rel="noopener noreferrer">
+                        Quero minha Landing Page por R$&nbsp;497
+                    </a>
+                    <a href="#formulario" class="btn btn--secondary">
+                        Preencher formulário
+                    </a>
+                </div>
+                <p class="cta-final__note">Garantia de 7 dias &nbsp;·&nbsp; Vagas limitadas para março</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FORMULÁRIO
+    ========================================== -->
+    <section id="formulario" class="form-section">
+        <div class="container">
+            <div class="form-section__inner">
+                <div class="form-card" data-reveal>
+                    <div class="form-card__header" id="form-card-header">
+                        <h2 class="form-card__title">Solicite sua landing page</h2>
+                        <p class="form-card__sub">Preencha abaixo e entro em contato em até 2 horas</p>
+                    </div>
+
+                    <!-- Mensagem de sucesso — fora do form -->
+                    <div id="form-success" role="status" style="display:none;text-align:center;padding:2rem 1rem;">
+                        <div style="width:64px;height:64px;background:rgba(108,60,249,0.15);border:2px solid rgba(108,60,249,0.4);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#6C3CF9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                        </div>
+                        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;color:#F9F9F9;margin-bottom:0.75rem;">Solicitação enviada!</h3>
+                        <p style="color:#D0D0D0;font-size:1rem;margin-bottom:0.5rem;">Recebi seus dados e entro em contato em até <strong style="color:#F9F9F9;">2 horas</strong> no seu WhatsApp.</p>
+                        <p style="color:#A0A0A0;font-size:0.9rem;margin-bottom:2rem;">Prefere falar agora? Me chame diretamente:</p>
+                        <a href="https://api.whatsapp.com/send/?phone=5519982800307&text=Ol%C3%A1%21+Acabei+de+preencher+o+formul%C3%A1rio+da+landing+page+e+gostaria+de+continuar+a+conversa.&type=phone_number&app_absent=0"
+                           target="_blank" rel="noopener noreferrer"
+                           class="btn btn--cta"
+                           style="display:inline-flex;gap:0.6rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                            Falar no WhatsApp agora
+                        </a>
+                    </div>
+
+                    <form id="lp-form" novalidate>
+
+                        <!-- Honeypot anti-spam — invisível para humanos -->
+                        <div style="position:absolute;left:-9999px;opacity:0;pointer-events:none;" aria-hidden="true">
+                            <label for="_hp">Deixe este campo em branco</label>
+                            <input type="text" id="_hp" name="_hp" tabindex="-1" autocomplete="off">
+                        </div>
+
+                        <div class="form__row">
+                            <div class="form__group">
+                                <label for="name" class="form__label">Nome <span>*</span></label>
+                                <input type="text" id="name" name="name" class="form__input" placeholder="Seu nome completo" autocomplete="name">
+                            </div>
+                            <div class="form__group">
+                                <label for="whatsapp" class="form__label">WhatsApp <span>*</span></label>
+                                <input type="tel" id="whatsapp" name="whatsapp" class="form__input" placeholder="(19) 99999-9999" autocomplete="tel">
+                            </div>
+                        </div>
+
+                        <div class="form__group">
+                            <label for="niche" class="form__label">Nicho / segmento <span>*</span></label>
+                            <input type="text" id="niche" name="niche" class="form__input" placeholder="Ex: clínica de estética, advogado trabalhista...">
+                        </div>
+
+                        <div class="form__group">
+                            <label for="goal" class="form__label">Objetivo da landing page <span>*</span></label>
+                            <textarea id="goal" name="goal" class="form__textarea" placeholder="Ex: captar leads para minha clínica de fisioterapia e converter para consultas..."></textarea>
+                        </div>
+
+                        <div class="form__group">
+                            <label class="form__label">Já possui domínio?</label>
+                            <div class="form__radio-group">
+                                <label class="form__radio-label" id="domain-yes">
+                                    <input type="radio" name="has_domain" value="Sim">
+                                    <span class="form__radio-indicator"></span>
+                                    Sim, já tenho
+                                </label>
+                                <label class="form__radio-label" id="domain-no">
+                                    <input type="radio" name="has_domain" value="Não">
+                                    <span class="form__radio-indicator"></span>
+                                    Ainda não tenho
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form__group">
+                            <label class="form__label">Vai rodar tráfego pago?</label>
+                            <div class="form__radio-group">
+                                <label class="form__radio-label" id="traffic-yes">
+                                    <input type="radio" name="paid_traffic" value="Sim">
+                                    <span class="form__radio-indicator"></span>
+                                    Sim
+                                </label>
+                                <label class="form__radio-label" id="traffic-no">
+                                    <input type="radio" name="paid_traffic" value="Não">
+                                    <span class="form__radio-indicator"></span>
+                                    Não / ainda não sei
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Feedback de erro de validação -->
+                        <div id="form-error" role="alert" style="display:none;margin-bottom:1rem;padding:1rem 1.25rem;background:rgba(255,107,107,0.1);border:1px solid rgba(255,107,107,0.35);border-radius:12px;color:#ff6b6b;font-size:0.9rem;"></div>
+
+                        <div class="form__submit-wrap">
+                            <button type="submit" class="btn btn--cta btn--block" id="submit-btn">
+                                <span id="submit-text">Enviar solicitação</span>
+                                <svg id="submit-spinner" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;animation:spin 0.8s linear infinite;">
+                                    <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                                </svg>
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- FOOTER — idêntico ao site principal -->
+<footer class="footer" role="contentinfo">
+    <div class="container">
+        <div class="footer__content">
+            <div class="footer__brand">
+                <img src="assets/images/logo.png"
+                     alt="Overcode - Agência de Desenvolvimento Web"
+                     width="150" height="auto" loading="lazy">
+                <p class="footer__tagline">Sites belíssimos com performance absurda</p>
+            </div>
+
+            <nav class="footer__nav" aria-label="Menu rodapé">
+                <ul class="footer__links">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#o-que-voce-recebe">O que inclui</a></li>
+                    <li><a href="#como-funciona">Como funciona</a></li>
+                    <li><a href="#para-quem">Para quem</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#formulario">Solicitar</a></li>
+                </ul>
+            </nav>
+
+            <div class="footer__social">
+                <a href="https://www.instagram.com/overcode.br/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.405a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <p class="footer__copy">© 2025 Overcode. Todos os direitos reservados.</p>
+            <p class="footer__made">Feito por Overcode</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+(function() {
+    'use strict';
+
+    // --- Particles ---
+    function initParticles() {
+        const canvas = document.getElementById('particles-canvas');
+        if (!canvas || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        const ctx = canvas.getContext('2d');
+        let particles = [], animId;
+
+        function resize() { canvas.width = innerWidth; canvas.height = innerHeight; }
+        resize();
+        window.addEventListener('resize', resize);
+
+        function Particle() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.size = Math.random() * 2 + 0.5;
+            this.sx = Math.random() * 0.4 - 0.2;
+            this.sy = Math.random() * 0.4 - 0.2;
+            this.o = Math.random() * 0.4 + 0.2;
+        }
+
+        Particle.prototype.update = function() {
+            this.x += this.sx; this.y += this.sy;
+            if (this.x < 0) this.x = canvas.width;
+            if (this.x > canvas.width) this.x = 0;
+            if (this.y < 0) this.y = canvas.height;
+            if (this.y > canvas.height) this.y = 0;
+        };
+
+        Particle.prototype.draw = function() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(108,60,249,' + this.o + ')';
+            ctx.fill();
+        };
+
+        var count = Math.min(25, Math.floor(innerWidth / 50));
+        for (var i = 0; i < count; i++) particles.push(new Particle());
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(function(p) { p.update(); p.draw(); });
+            particles.forEach(function(p, i) {
+                for (var j = i + 1; j < particles.length; j++) {
+                    var dx = particles[j].x - p.x, dy = particles[j].y - p.y;
+                    var d = Math.sqrt(dx*dx + dy*dy);
+                    if (d < 140) {
+                        ctx.beginPath();
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = 'rgba(108,60,249,' + (0.08 * (1 - d/140)) + ')';
+                        ctx.stroke();
+                    }
+                }
+            });
+            animId = requestAnimationFrame(animate);
+        }
+        animate();
+    }
+
+    // --- Promo bar ---
+    function initPromoBar() {
+        var bar = document.getElementById('promo-bar');
+        var btn = document.getElementById('promo-bar-close');
+        if (!bar || !btn) return;
+        btn.addEventListener('click', function() {
+            bar.style.display = 'none';
+            document.documentElement.style.setProperty('--promo-bar-height', '0px');
+        });
+    }
+
+    // --- Nav ---
+    function initNav() {
+        var header = document.querySelector('.header');
+        var toggle = document.querySelector('.nav__toggle');
+        var menu = document.querySelector('.nav__menu');
+        var links = document.querySelectorAll('.nav__link');
+
+        window.addEventListener('scroll', function() {
+            header.classList.toggle('header--scrolled', window.pageYOffset > 80);
+        });
+
+        if (toggle) {
+            toggle.addEventListener('click', function() {
+                var open = menu.classList.contains('nav__menu--open');
+                menu.classList.toggle('nav__menu--open', !open);
+                toggle.classList.toggle('nav__toggle--open', !open);
+                toggle.setAttribute('aria-expanded', String(!open));
+                document.body.style.overflow = open ? '' : 'hidden';
+            });
+        }
+
+        links.forEach(function(link) {
+            link.addEventListener('click', function() {
+                menu.classList.remove('nav__menu--open');
+                if (toggle) { toggle.classList.remove('nav__toggle--open'); toggle.setAttribute('aria-expanded', 'false'); }
+                document.body.style.overflow = '';
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+            a.addEventListener('click', function(e) {
+                var href = this.getAttribute('href');
+                if (href === '#') return;
+                var target = document.querySelector(href);
+                if (!target) return;
+                e.preventDefault();
+                var bar = document.getElementById('promo-bar');
+                var barH = (bar && bar.style.display !== 'none') ? bar.offsetHeight : 0;
+                window.scrollTo({ top: target.offsetTop - 80 - barH, behavior: 'smooth' });
+            });
+        });
+    }
+
+    // --- Scroll reveal ---
+    function initReveal() {
+        var els = document.querySelectorAll('[data-reveal]');
+        if (!els.length) return;
+        var obs = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry, i) {
+                if (entry.isIntersecting) {
+                    setTimeout(function() { entry.target.classList.add('reveal'); }, i * 60);
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        els.forEach(function(el) { obs.observe(el); });
+    }
+
+    // --- FAQ accordion ---
+    function initFAQ() {
+        var items = document.querySelectorAll('.faq__item');
+        items.forEach(function(item) {
+            var q = item.querySelector('.faq__question');
+            if (!q) return;
+            q.addEventListener('click', function() {
+                items.forEach(function(other) {
+                    if (other !== item && other.hasAttribute('open')) other.removeAttribute('open');
+                });
+            });
+        });
+    }
+
+    // --- Radio labels ---
+    function initRadios() {
+        document.querySelectorAll('.form__radio-group').forEach(function(group) {
+            var labels = group.querySelectorAll('.form__radio-label');
+            labels.forEach(function(label) {
+                label.addEventListener('click', function() {
+                    labels.forEach(function(l) { l.classList.remove('selected'); });
+                    label.classList.add('selected');
+                });
+            });
+        });
+    }
+
+    // --- Form — fetch para Google Apps Script ---
+    function initForm() {
+        var form = document.getElementById('lp-form');
+        if (!form) return;
+
+        // !! Cole aqui a URL gerada no deploy do Apps Script !!
+        var GAS_URL = 'https://script.google.com/macros/s/AKfycbxCCzT3QntRL9OoEXm_zazPJyOgDcSWX8rF2ELjkRBHQs5gZLtIWDoh-0FNNxYZqx8zpA/exec';
+
+        var submitBtn  = document.getElementById('submit-btn');
+        var submitText = document.getElementById('submit-text');
+        var spinner    = document.getElementById('submit-spinner');
+        var errorBox   = document.getElementById('form-error');
+        var successBox = document.getElementById('form-success');
+
+        function showError(msg) {
+            errorBox.textContent = msg;
+            errorBox.style.display = 'block';
+            errorBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function hideError() {
+            errorBox.style.display = 'none';
+            errorBox.textContent = '';
+        }
+
+        function setLoading(on) {
+            submitBtn.disabled = on;
+            submitText.textContent = on ? 'Enviando...' : 'Enviar solicitação';
+            spinner.style.display  = on ? 'inline-block' : 'none';
+        }
+
+        function highlightField(id, on) {
+            var el = document.getElementById(id);
+            if (el) el.style.borderColor = on ? '#ff6b6b' : '';
+        }
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            hideError();
+
+            var name     = document.getElementById('name').value.trim();
+            var whatsapp = document.getElementById('whatsapp').value.trim();
+            var niche    = document.getElementById('niche').value.trim();
+            var goal     = document.getElementById('goal').value.trim();
+            var hp       = document.getElementById('_hp').value;
+
+            // Validação campos obrigatórios
+            var valido = true;
+            var campos = [
+                { id: 'name',     val: name,     label: 'Nome' },
+                { id: 'whatsapp', val: whatsapp, label: 'WhatsApp' },
+                { id: 'niche',    val: niche,    label: 'Nicho / segmento' },
+                { id: 'goal',     val: goal,     label: 'Objetivo da landing page' }
+            ];
+
+            campos.forEach(function(c) {
+                if (!c.val) {
+                    highlightField(c.id, true);
+                    valido = false;
+                } else {
+                    highlightField(c.id, false);
+                }
+            });
+
+            if (!valido) {
+                showError('Preencha todos os campos obrigatórios marcados com *');
+                return;
+            }
+
+            // Honeypot — bot preencheu, rejeita silenciosamente
+            if (hp.trim() !== '') {
+                document.getElementById('lp-form').style.display = 'none';
+                document.getElementById('form-card-header').style.display = 'none';
+                document.getElementById('form-success').style.display = 'block';
+                form.reset();
+                return;
+            }
+
+            // Verifica se a URL foi configurada
+            if (GAS_URL === 'COLE_AQUI_A_URL_DO_APPS_SCRIPT') {
+                showError('Endpoint do Apps Script não configurado. Siga o passo a passo de deploy.');
+                return;
+            }
+
+            // Monta payload
+            var payload = {
+                name:        name,
+                whatsapp:    whatsapp,
+                niche:       niche,
+                goal:        goal,
+                has_domain:  (form.querySelector('input[name="has_domain"]:checked') || {}).value  || 'Não informado',
+                paid_traffic:(form.querySelector('input[name="paid_traffic"]:checked') || {}).value || 'Não informado',
+                _hp:         hp
+            };
+
+            setLoading(true);
+
+            fetch(GAS_URL, {
+                method:  'POST',
+                headers: { 'Content-Type': 'text/plain' }, // evita preflight OPTIONS no Apps Script
+                body:    JSON.stringify(payload)
+            })
+            .then(function(res) {
+                return res.json();
+            })
+            .then(function(data) {
+                setLoading(false);
+                if (data.ok) {
+                    document.getElementById('lp-form').style.display = 'none';
+                    document.getElementById('form-card-header').style.display = 'none';
+                    var successBox = document.getElementById('form-success');
+                    successBox.style.display = 'block';
+                    successBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                } else {
+                    showError('Erro ao enviar: ' + (data.error || 'tente novamente.'));
+                }
+            })
+            .catch(function(err) {
+                setLoading(false);
+                showError('Falha na conexão. Verifique sua internet e tente novamente.');
+                console.error('Form error:', err);
+            });
+        });
+    }
+
+    // --- Init ---
+    function init() {
+        initParticles();
+        initPromoBar();
+        initNav();
+        initReveal();
+        initFAQ();
+        initRadios();
+        initForm();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();
+</script>
+
+</body>
+</html>
