@@ -1824,7 +1824,7 @@
                         <div id="form-error" role="alert" style="display:none;margin-bottom:1rem;padding:1rem 1.25rem;background:rgba(255,107,107,0.1);border:1px solid rgba(255,107,107,0.35);border-radius:12px;color:#ff6b6b;font-size:0.9rem;"></div>
 
                         <div class="form__submit-wrap">
-                            <button type="submit" class="btn btn--cta btn--block" id="submit-btn">
+                            <button type="submit" class="btn btn--cta btn--block" id="submit-btn" onclick="gtag_report_conversion();">
                                 <span id="submit-text">Enviar solicitação</span>
                                 <svg id="submit-spinner" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;animation:spin 0.8s linear infinite;">
                                     <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
@@ -2179,6 +2179,22 @@
         init();
     }
 })();
+</script>
+
+<!-- Event snippet for Lead Landing 497 conversion page -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17985899897/BaaoCLijloEcEPmarIBD',
+      'event_callback': callback
+  });
+  return false;
+}
 </script>
 
 </body>
