@@ -116,16 +116,14 @@
         const navMenu = document.querySelector('.nav__menu');
         const navLinks = document.querySelectorAll('.nav__link');
 
-        // Sticky header on scroll
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 100) {
                 header.classList.add('header--scrolled');
             } else {
                 header.classList.remove('header--scrolled');
             }
-        });
+        }, { passive: true });
 
-        // Mobile menu toggle
         if (navToggle) {
             navToggle.addEventListener('click', () => {
                 const isOpen = navMenu.classList.contains('nav__menu--open');
@@ -144,7 +142,6 @@
             });
         }
 
-        // Fecha o menu mobile ao clicar em um link
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('nav__menu--open');
@@ -156,7 +153,6 @@
             });
         });
 
-        // Smooth scroll — leva em conta a altura da barra promocional
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
@@ -239,68 +235,98 @@
     }
 
     // ============================================
-    // Form Validation
+    // Form — envio assíncrono com feedback visual
     // ============================================
-    function initFormValidation() {
-        const form = document.querySelector('.contact__form');
+    function initForm() {
+        const form = document.getElementById('contact-form');
         if (!form) return;
 
-        form.addEventListener('submit', function(e) {
-            const name = form.querySelector('#name');
-            const email = form.querySelector('#email');
-            const message = form.querySelector('#message');
-            let isValid = true;
-
-            if (!name.value.trim()) {
-                showError(name, 'Por favor, insira seu nome');
-                isValid = false;
-                e.preventDefault();
-            } else {
-                removeError(name);
-            }
-
-            if (!isValidEmail(email.value)) {
-                showError(email, 'Por favor, insira um e-mail válido');
-                isValid = false;
-                e.preventDefault();
-            } else {
-                removeError(email);
-            }
-
-            if (!message.value.trim()) {
-                showError(message, 'Por favor, insira uma mensagem');
-                isValid = false;
-                e.preventDefault();
-            } else {
-                removeError(message);
-            }
-
-            if (isValid) {
-                const submitBtn = form.querySelector('button[type="submit"]');
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'Enviando...';
-            }
-        });
+        const submitBtn = document.getElementById('submit-btn');
+        const successMsg = document.getElementById('form-success');
+        const errorMsg = document.getElementById('form-error');
 
         function isValidEmail(email) {
             return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
         }
 
-        function showError(field, msg) {
-            removeError(field);
+        function showFieldError(field, msg) {
+            removeFieldError(field);
             const error = document.createElement('span');
             error.className = 'form__error';
             error.textContent = msg;
-            error.style.cssText = 'color:#ff6b6b;font-size:0.875rem;margin-top:0.25rem;display:block;';
+            error.style.cssText = 'color:#ff8080;font-size:0.85rem;margin-top:0.35rem;display:block;';
             field.parentElement.appendChild(error);
-            field.style.borderColor = '#ff6b6b';
+            field.style.borderColor = '#ff6060';
         }
 
-        function removeError(field) {
+        function removeFieldError(field) {
             const error = field.parentElement.querySelector('.form__error');
             if (error) error.remove();
             field.style.borderColor = '';
         }
+
+        function setLoading(loading) {
+            submitBtn.disabled = loading;
+            submitBtn.textContent = loading ? 'Enviando...' : 'Enviar mensagem';
+        }
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const name = form.querySelector('#name');
+            const email = form.querySelector('#email');
+            const message = form.querySelector('#message');
+            let isValid = true;
+
+            // Limpa feedbacks anteriores
+            successMsg.hidden = true;
+            errorMsg.hidden = true;
+
+            if (!name.value.trim()) {
+                showFieldError(name, 'Por favor, insira seu nome');
+                isValid = false;
+            } else {
+                removeFieldError(name);
+            }
+
+            if (!isValidEmail(email.value)) {
+                showFieldError(email, 'Por favor, insira um e-mail válido');
+                isValid = false;
+            } else {
+                removeFieldError(email);
+            }
+
+            if (!message.value.trim()) {
+                showFieldError(message, 'Por favor, insira uma mensagem');
+                isValid = false;
+            } else {
+                removeFieldError(message);
+            }
+
+            if (!isValid) return;
+
+            setLoading(true);
+
+            try {
+                const data = new FormData(form);
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    successMsg.hidden = false;
+                    form.reset();
+                } else {
+                    errorMsg.hidden = false;
+                }
+            } catch (_) {
+                errorMsg.hidden = false;
+            } finally {
+                setLoading(false);
+            }
+        });
     }
 
     // ============================================
@@ -327,7 +353,7 @@
                 requestAnimationFrame(update);
                 ticking = true;
             }
-        });
+        }, { passive: true });
     }
 
     // ============================================
@@ -399,7 +425,7 @@
         initNav();
         initScrollReveal();
         initFilters();
-        initFormValidation();
+        initForm();
         initParallax();
         initRipple();
         initFAQ();
