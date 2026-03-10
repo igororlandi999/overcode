@@ -72,7 +72,6 @@
             --dark: #1A1A1A;
             --white-soft: #F9F9F9;
             --gradient-purple: linear-gradient(135deg, #6C3CF9 0%, #4A28C7 100%);
-            --promo-bar-height: 44px;
         }
 
         * {
@@ -93,20 +92,9 @@
             overflow-x: hidden;
         }
 
-        .promo-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1100;
-            height: var(--promo-bar-height);
-            background: linear-gradient(90deg, #4A28C7 0%, #6C3CF9 60%, #8B5CF6 100%);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
         .header {
             position: fixed;
-            top: var(--promo-bar-height);
+            top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
@@ -256,21 +244,6 @@
 <body>
 
     <canvas id="particles-canvas" aria-hidden="true"></canvas>
-
-    <!-- BARRA PROMOCIONAL -->
-    <div class="promo-bar" id="promo-bar">
-        <div class="promo-bar__inner container">
-            <p class="promo-bar__text">
-                <span class="promo-bar__tag">Março</span>
-                Landing Page Estratégica por <strong>R$&nbsp;497&nbsp;no&nbsp;Pix</strong> — Entrega em 3 dias úteis
-            </p>
-            <a href="https://api.whatsapp.com/send/?phone=5519982800307&text=Quero%20a%20promo%C3%A7%C3%A3o%20de%20mar%C3%A7o%20%E2%80%94%20Landing%20Page%20por%20R%24497&type=phone_number&app_absent=0"
-                class="promo-bar__btn" target="_blank" rel="noopener noreferrer">
-                Garantir vaga
-            </a>
-            <button class="promo-bar__close" id="promo-bar-close" aria-label="Fechar promoção">&#215;</button>
-        </div>
-    </div>
 
     <!-- HEADER / NAV -->
     <header class="header" role="banner">

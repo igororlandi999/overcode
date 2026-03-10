@@ -92,40 +92,6 @@
     }
 
     // ============================================
-    // Barra Promocional
-    // ============================================
-    function initPromoBar() {
-        const bar = document.getElementById('promo-bar');
-        const closeBtn = document.getElementById('promo-bar-close');
-        const header = document.querySelector('.header');
-        if (!bar) return;
-
-        // Calcula a altura real da promo bar e ajusta o header dinamicamente
-        function syncHeaderPosition() {
-            if (bar.style.display === 'none') return;
-            const h = bar.offsetHeight;
-            document.documentElement.style.setProperty('--promo-bar-height', h + 'px');
-            if (header) header.style.top = h + 'px';
-        }
-
-        // Roda no load e no resize (rotação de tela no mobile)
-        syncHeaderPosition();
-        window.addEventListener('resize', syncHeaderPosition, { passive: true });
-
-        // Também observa mudanças de tamanho da própria barra
-        if (window.ResizeObserver) {
-            new ResizeObserver(syncHeaderPosition).observe(bar);
-        }
-
-        if (!closeBtn) return;
-        closeBtn.addEventListener('click', function() {
-            bar.style.display = 'none';
-            document.documentElement.style.setProperty('--promo-bar-height', '0px');
-            if (header) header.style.top = '0px';
-        });
-    }
-
-    // ============================================
     // Navigation
     // ============================================
     function initNav() {
@@ -180,13 +146,8 @@
                 const target = document.querySelector(href);
                 if (!target) return;
 
-                const promoBarEl = document.getElementById('promo-bar');
-                const promoBarH = (promoBarEl && promoBarEl.style.display !== 'none')
-                    ? promoBarEl.offsetHeight : 0;
-                const offset = 80 + promoBarH;
-
                 window.scrollTo({
-                    top: target.offsetTop - offset,
+                    top: target.offsetTop - 80,
                     behavior: 'smooth'
                 });
             });
@@ -435,7 +396,7 @@
             const style = document.createElement('style');
             style.textContent = `
                 a, button, [role="button"], .btn, .filter-btn, .faq__question,
-                .nav__toggle, .nav__link, .nav__cta, .promo-bar__btn, .promo-bar__close {
+                .nav__toggle, .nav__link, .nav__cta {
                     touch-action: manipulation;
                     -webkit-tap-highlight-color: transparent;
                 }
@@ -451,7 +412,6 @@
         fixTouchDelay();
         addAnimationStyles();
         initParticles();
-        initPromoBar();
         initNav();
         initScrollReveal();
         initFilters();

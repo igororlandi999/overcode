@@ -54,7 +54,6 @@
             --transition-slow: 500ms cubic-bezier(0.4,0,0.2,1);
             --font-body: 'Inter', system-ui, -apple-system, sans-serif;
             --font-heading: 'Space Grotesk', system-ui, sans-serif;
-            --promo-bar-height: 44px;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -85,106 +84,11 @@
         .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
         /* ============================================
-           BARRA PROMOCIONAL
-        ============================================ */
-        .promo-bar {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            z-index: 10100;
-            height: var(--promo-bar-height);
-            background: linear-gradient(90deg, #4A28C7 0%, #6C3CF9 55%, #8B5CF6 100%);
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-            overflow: hidden;
-        }
-
-        .promo-bar__inner {
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            position: relative;
-        }
-
-        .promo-bar__text {
-            font-size: 0.875rem;
-            color: rgba(255,255,255,0.92);
-            text-align: center;
-            margin: 0;
-            line-height: 1;
-            white-space: nowrap;
-        }
-
-        .promo-bar__text strong { color: #fff; font-weight: 700; }
-
-        .promo-bar__tag {
-            display: inline-block;
-            background: rgba(255,255,255,0.18);
-            color: #fff;
-            font-size: 0.68rem;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            padding: 0.2rem 0.55rem;
-            border-radius: 4px;
-            margin-right: 0.4rem;
-            vertical-align: middle;
-            border: 1px solid rgba(255,255,255,0.25);
-        }
-
-        .promo-bar__btn {
-            flex-shrink: 0;
-            padding: 0.3rem 0.9rem;
-            background: #fff;
-            color: #4A28C7;
-            border-radius: var(--radius-sm);
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-decoration: none;
-            white-space: nowrap;
-            transition: all 200ms ease;
-            border: 2px solid transparent;
-            line-height: 1.6;
-        }
-
-        .promo-bar__btn:hover {
-            background: transparent;
-            color: #fff;
-            border-color: rgba(255,255,255,0.65);
-        }
-
-        .promo-bar__close {
-            position: absolute;
-            right: 16px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-            color: rgba(255,255,255,0.6);
-            font-size: 1.1rem;
-            cursor: pointer;
-            line-height: 1;
-            padding: 0.25rem 0.4rem;
-            transition: color 150ms ease;
-            border-radius: 4px;
-        }
-
-        .promo-bar__close:hover { color: #fff; }
-
-        @media (max-width: 768px) {
-            :root { --promo-bar-height: 52px; }
-            .promo-bar__text { font-size: 0.78rem; white-space: normal; text-align: left; padding-right: 1.5rem; line-height: 1.4; }
-            .promo-bar__btn { display: none; }
-        }
-
-        @media (max-width: 420px) { :root { --promo-bar-height: 60px; } }
-
-        /* ============================================
            HEADER / NAV — idêntico ao site principal
         ============================================ */
         .header {
             position: fixed;
-            top: var(--promo-bar-height);
+            top: 0;
             left: 0; right: 0;
             z-index: 10000;
             padding: 0;
@@ -434,7 +338,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: calc(var(--promo-bar-height) + 110px) 0 80px;
+            padding: 110px 0 80px;
             background:
                 radial-gradient(ellipse at 50% 0%, rgba(108,60,249,0.22) 0%, transparent 65%),
                 linear-gradient(180deg, #111111 0%, #0A0A0A 100%);
@@ -1281,21 +1185,6 @@
 
 <canvas id="particles-canvas" aria-hidden="true"></canvas>
 
-<!-- BARRA PROMOCIONAL -->
-<div class="promo-bar" id="promo-bar">
-    <div class="promo-bar__inner container">
-        <p class="promo-bar__text">
-            <span class="promo-bar__tag">Março</span>
-            Landing Page Estratégica por <strong>R$&nbsp;497&nbsp;no&nbsp;Pix</strong> — Entrega em 3 dias úteis
-        </p>
-        <a href="https://api.whatsapp.com/send/?phone=5519982800307&text=Quero%20a%20promo%C3%A7%C3%A3o%20de%20mar%C3%A7o%20%E2%80%94%20Landing%20Page%20por%20R%24497&type=phone_number&app_absent=0"
-           class="promo-bar__btn" target="_blank" rel="noopener noreferrer">
-            Garantir vaga
-        </a>
-        <button class="promo-bar__close" id="promo-bar-close" aria-label="Fechar promoção">&#215;</button>
-    </div>
-</div>
-
 <!-- HEADER / NAV -->
 <header class="header" role="banner">
     <div class="container">
@@ -1971,17 +1860,6 @@
         animate();
     }
 
-    // --- Promo bar ---
-    function initPromoBar() {
-        var bar = document.getElementById('promo-bar');
-        var btn = document.getElementById('promo-bar-close');
-        if (!bar || !btn) return;
-        btn.addEventListener('click', function() {
-            bar.style.display = 'none';
-            document.documentElement.style.setProperty('--promo-bar-height', '0px');
-        });
-    }
-
     // --- Nav ---
     function initNav() {
         var header = document.querySelector('.header');
@@ -2018,9 +1896,7 @@
                 var target = document.querySelector(href);
                 if (!target) return;
                 e.preventDefault();
-                var bar = document.getElementById('promo-bar');
-                var barH = (bar && bar.style.display !== 'none') ? bar.offsetHeight : 0;
-                window.scrollTo({ top: target.offsetTop - 80 - barH, behavior: 'smooth' });
+                window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
             });
         });
     }
@@ -2195,7 +2071,6 @@
     // --- Init ---
     function init() {
         initParticles();
-        initPromoBar();
         initNav();
         initReveal();
         initFAQ();
