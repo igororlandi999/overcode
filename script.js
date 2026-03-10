@@ -6,12 +6,20 @@
 (function() {
     'use strict';
 
+    const isMobile = window.matchMedia('(max-width: 968px)').matches;
+
     // ============================================
-    // Particles Animation
+    // Particles Animation — apenas desktop
     // ============================================
     function initParticles() {
         const canvas = document.getElementById('particles-canvas');
         if (!canvas) return;
+
+        // Desabilita em mobile: consome CPU e atrasa eventos de toque
+        if (isMobile || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            canvas.style.display = 'none';
+            return;
+        }
 
         const ctx = canvas.getContext('2d');
         let particles = [];
@@ -23,7 +31,7 @@
         }
 
         resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
+        window.addEventListener('resize', resizeCanvas, { passive: true });
 
         class Particle {
             constructor() {
@@ -34,7 +42,6 @@
                 this.speedY = Math.random() * 0.5 - 0.25;
                 this.opacity = Math.random() * 0.5 + 0.3;
             }
-
             update() {
                 this.x += this.speedX;
                 this.y += this.speedY;
@@ -43,7 +50,6 @@
                 if (this.y < 0) this.y = canvas.height;
                 if (this.y > canvas.height) this.y = 0;
             }
-
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
@@ -54,16 +60,12 @@
 
         function createParticles() {
             const count = Math.min(30, Math.floor(window.innerWidth / 40));
-            for (let i = 0; i < count; i++) {
-                particles.push(new Particle());
-            }
+            for (let i = 0; i < count; i++) particles.push(new Particle());
         }
 
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-
             particles.forEach(p => { p.update(); p.draw(); });
-
             particles.forEach((p, i) => {
                 for (let j = i + 1; j < particles.length; j++) {
                     const dx = particles[j].x - p.x;
@@ -78,14 +80,11 @@
                     }
                 }
             });
-
             animationId = requestAnimationFrame(animate);
         }
 
-        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            createParticles();
-            animate();
-        }
+        createParticles();
+        animate();
 
         window.addEventListener('beforeunload', () => {
             if (animationId) cancelAnimationFrame(animationId);
@@ -98,7 +97,6 @@
     function initPromoBar() {
         const bar = document.getElementById('promo-bar');
         const closeBtn = document.getElementById('promo-bar-close');
-
         if (!bar || !closeBtn) return;
 
         closeBtn.addEventListener('click', function() {
@@ -116,6 +114,7 @@
         const navMenu = document.querySelector('.nav__menu');
         const navLinks = document.querySelectorAll('.nav__link');
 
+        // passive: true evita delay de 300ms no scroll em mobile
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 100) {
                 header.classList.add('header--scrolled');
@@ -127,7 +126,6 @@
         if (navToggle) {
             navToggle.addEventListener('click', () => {
                 const isOpen = navMenu.classList.contains('nav__menu--open');
-
                 if (isOpen) {
                     navMenu.classList.remove('nav__menu--open');
                     navToggle.classList.remove('nav__toggle--open');
@@ -153,19 +151,18 @@
             });
         });
 
+        // Smooth scroll com offset correto
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
                 if (href === '#') return;
-
                 e.preventDefault();
                 const target = document.querySelector(href);
                 if (!target) return;
 
                 const promoBarEl = document.getElementById('promo-bar');
                 const promoBarH = (promoBarEl && promoBarEl.style.display !== 'none')
-                    ? promoBarEl.offsetHeight
-                    : 0;
+                    ? promoBarEl.offsetHeight : 0;
                 const offset = 80 + promoBarH;
 
                 window.scrollTo({
@@ -203,7 +200,6 @@
     function initFilters() {
         const filterBtns = document.querySelectorAll('.filter-btn');
         const portfolioCards = document.querySelectorAll('.portfolio-card');
-
         if (!filterBtns.length) return;
 
         filterBtns.forEach(btn => {
@@ -215,9 +211,7 @@
                 let visibleIndex = 0;
 
                 portfolioCards.forEach(card => {
-                    const category = card.dataset.category;
-                    const shouldShow = filter === 'all' || category === filter;
-
+                    const shouldShow = filter === 'all' || card.dataset.category === filter;
                     if (shouldShow) {
                         card.classList.remove('hidden', 'hide');
                         setTimeout(() => {
@@ -278,40 +272,32 @@
             const message = form.querySelector('#message');
             let isValid = true;
 
-            // Limpa feedbacks anteriores
             successMsg.hidden = true;
             errorMsg.hidden = true;
 
             if (!name.value.trim()) {
                 showFieldError(name, 'Por favor, insira seu nome');
                 isValid = false;
-            } else {
-                removeFieldError(name);
-            }
+            } else { removeFieldError(name); }
 
             if (!isValidEmail(email.value)) {
                 showFieldError(email, 'Por favor, insira um e-mail válido');
                 isValid = false;
-            } else {
-                removeFieldError(email);
-            }
+            } else { removeFieldError(email); }
 
             if (!message.value.trim()) {
                 showFieldError(message, 'Por favor, insira uma mensagem');
                 isValid = false;
-            } else {
-                removeFieldError(message);
-            }
+            } else { removeFieldError(message); }
 
             if (!isValid) return;
 
             setLoading(true);
 
             try {
-                const data = new FormData(form);
                 const response = await fetch(form.action, {
                     method: 'POST',
-                    body: data,
+                    body: new FormData(form),
                     headers: { 'Accept': 'application/json' }
                 });
 
@@ -330,12 +316,15 @@
     }
 
     // ============================================
-    // Parallax
+    // Parallax — apenas desktop
+    // Em mobile causa jank e atrasa toque
     // ============================================
     function initParallax() {
+        if (isMobile) return;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
         const els = document.querySelectorAll('.hero__glow, .hero__grid');
         if (!els.length) return;
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
         let ticking = false;
 
@@ -357,9 +346,12 @@
     }
 
     // ============================================
-    // Button Ripple
+    // Button Ripple — desabilitado em mobile
+    // Cria DOM extra que atrasa eventos de toque
     // ============================================
     function initRipple() {
+        if (isMobile) return;
+
         document.querySelectorAll('.btn').forEach(button => {
             button.addEventListener('click', function(e) {
                 const rect = this.getBoundingClientRect();
@@ -407,18 +399,36 @@
     // ============================================
     function addAnimationStyles() {
         const style = document.createElement('style');
-        style.textContent = `
-            @keyframes ripple {
-                to { transform: scale(4); opacity: 0; }
-            }
-        `;
+        style.textContent = `@keyframes ripple { to { transform: scale(4); opacity: 0; } }`;
         document.head.appendChild(style);
+    }
+
+    // ============================================
+    // Touch delay fix — remove o delay de 300ms
+    // em navegadores mobile antigos
+    // ============================================
+    function fixTouchDelay() {
+        if (!isMobile) return;
+        const meta = document.querySelector('meta[name="viewport"]');
+        if (meta && !meta.content.includes('touch-action')) {
+            // touch-action: manipulation via CSS é suficiente
+            const style = document.createElement('style');
+            style.textContent = `
+                a, button, [role="button"], .btn, .filter-btn, .faq__question,
+                .nav__toggle, .nav__link, .nav__cta, .promo-bar__btn, .promo-bar__close {
+                    touch-action: manipulation;
+                    -webkit-tap-highlight-color: transparent;
+                }
+            `;
+            document.head.appendChild(style);
+        }
     }
 
     // ============================================
     // Init
     // ============================================
     function init() {
+        fixTouchDelay();
         addAnimationStyles();
         initParticles();
         initPromoBar();
