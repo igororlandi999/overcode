@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Killian & Rodrigues Advogados — Direito Previdenciário, Trabalhista e Civil · Sorocaba/SP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --forest:   #1a3a2e;
+  --forest2:  #2d5a45;
+  --forest3:  #3d7a5f;
+  --forest-l: #eaf4ef;
+  --forest-xl:#f4faf7;
+  --gold:     #c9983a;
+  --gold2:    #e8c068;
+  --gold3:    #f5dfa0;
+  --white:    #ffffff;
+  --off:      #f7f4f0;
+  --linen:    #f2ede6;
+  --text:     #12221a;
+  --muted:    #4a6558;
+  --steel:    #6b8c7a;
+  --border:   rgba(26,58,46,.1);
+  --serif:    'Lora', Georgia, serif;
+  --sans:     'Outfit', system-ui, sans-serif;
+}
+
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--text);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* ─── NAV ─── */
+nav{
+  position:fixed;inset:0 0 auto;z-index:300;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 56px;
+  transition:background .4s,box-shadow .4s;
+}
+nav.solid{
+  background:rgba(255,255,255,.97);
+  box-shadow:0 1px 0 var(--border);
+  backdrop-filter:blur(14px);
+}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo-box{
+  width:36px;height:36px;border-radius:8px;
+  background:var(--forest);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-size:13px;font-weight:700;
+  color:var(--gold2);letter-spacing:.02em;flex-shrink:0;
+}
+.nav-brand{
+  font-family:var(--serif);font-size:16px;font-weight:600;
+  color:var(--white);line-height:1.1;transition:color .4s;
+}
+.nav-brand span{
+  display:block;font-family:var(--sans);font-size:9px;font-weight:300;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(255,255,255,.45);margin-top:1px;transition:color .4s;
+}
+nav.solid .nav-brand{color:var(--forest)}
+nav.solid .nav-brand span{color:var(--steel)}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-links a{
+  font-size:13px;font-weight:400;color:rgba(255,255,255,.7);
+  text-decoration:none;transition:color .2s;
+}
+nav.solid .nav-links a{color:var(--muted)}
+.nav-links a:hover{color:var(--gold)!important}
+.nav-cta{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:10px 22px;border-radius:6px;
+  background:var(--gold);color:var(--forest)!important;
+  font-size:13px;font-weight:600;text-decoration:none;
+  transition:background .2s,transform .15s;
+}
+.nav-cta:hover{background:var(--gold2);transform:translateY(-1px)}
+
+/* ─── HERO ─── */
+#hero{
+  position:relative;min-height:100vh;
+  background:var(--forest);
+  display:grid;grid-template-columns:1fr 1fr;
+  overflow:hidden;
+}
+/* grade geométrica de fundo */
+.hero-grid{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+  background-size:52px 52px;
+}
+/* arco decorativo dourado */
+.hero-arc{
+  position:absolute;right:-180px;top:-180px;
+  width:520px;height:520px;border-radius:50%;
+  border:1px solid rgba(201,152,58,.18);
+  pointer-events:none;
+}
+.hero-arc::before{
+  content:'';position:absolute;inset:40px;border-radius:50%;
+  border:1px solid rgba(201,152,58,.1);
+}
+
+/* coluna esquerda */
+.hero-left{
+  position:relative;z-index:2;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:140px 56px 80px 56px;
+}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:11px;font-weight:400;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold2);margin-bottom:28px;
+  opacity:0;animation:fadeUp .6s .15s ease forwards;
+}
+.hero-kicker::before{content:'';width:24px;height:1px;background:var(--gold2)}
+h1{
+  font-family:var(--serif);
+  font-size:clamp(40px,5.5vw,88px);
+  font-weight:600;line-height:.98;letter-spacing:-.025em;
+  color:var(--white);
+  opacity:0;animation:fadeUp .8s .28s ease forwards;
+}
+h1 em{font-style:italic;color:var(--gold2);font-weight:400}
+h1 .sub{
+  display:block;font-size:clamp(28px,3.8vw,62px);
+  color:rgba(255,255,255,.32);font-weight:400;margin-top:4px;
+}
+.hero-desc{
+  max-width:400px;font-size:15px;font-weight:300;line-height:1.8;
+  color:rgba(255,255,255,.6);margin-top:32px;
+  opacity:0;animation:fadeUp .7s .44s ease forwards;
+}
+.hero-actions{
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  margin-top:36px;
+  opacity:0;animation:fadeUp .7s .56s ease forwards;
+}
+.btn-wpp{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:14px 28px;border-radius:8px;
+  background:#25d366;color:#fff;
+  font-size:14px;font-weight:500;text-decoration:none;
+  box-shadow:0 4px 18px rgba(37,211,102,.28);
+  transition:transform .2s,box-shadow .2s;
+}
+.btn-wpp:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(37,211,102,.36)}
+.btn-tel{
+  font-size:13px;font-weight:300;color:rgba(255,255,255,.45);
+  text-decoration:none;letter-spacing:.04em;transition:color .2s;
+}
+.btn-tel:hover{color:rgba(255,255,255,.8)}
+.hero-note{
+  display:flex;align-items:center;gap:12px;margin-top:28px;
+  font-size:11px;font-weight:300;letter-spacing:.12em;
+  color:rgba(255,255,255,.22);
+  opacity:0;animation:fadeUp .6s .68s ease forwards;
+}
+.hero-note::before{content:'';width:32px;height:1px;background:currentColor}
+
+/* coluna direita — fotos */
+.hero-right{
+  position:relative;z-index:2;
+  display:flex;align-items:flex-end;justify-content:center;
+  padding-top:80px;
+}
+.hero-photos{
+  position:relative;width:100%;max-width:560px;height:100%;
+  display:flex;align-items:flex-end;
+}
+/* foto Cláudia — maior, destaque */
+.photo-claudia{
+  position:relative;z-index:2;
+  width:58%;margin-right:-40px;
+}
+/* foto Marcelo — ligeiramente atrás */
+.photo-marcelo{
+  position:relative;z-index:1;
+  width:52%;margin-bottom:0;
+}
+.photo-claudia img,
+.photo-marcelo img{
+  display:block;width:100%;
+  object-fit:cover;object-position:top center;
+  border-radius:16px 16px 0 0;
+  filter:brightness(.92) contrast(1.05) saturate(1.05);
+  mask-image:linear-gradient(to bottom,black 65%,transparent 100%);
+  -webkit-mask-image:linear-gradient(to bottom,black 65%,transparent 100%);
+}
+.photo-claudia img{height:calc(100vh - 60px);max-height:700px}
+.photo-marcelo img{height:calc(100vh - 140px);max-height:620px}
+/* badge fundação */
+.hero-badge{
+  position:absolute;top:120px;left:-24px;z-index:3;
+  background:rgba(26,58,46,.88);backdrop-filter:blur(12px);
+  border:1px solid rgba(232,192,104,.2);border-radius:12px;
+  padding:14px 18px;min-width:160px;
+}
+.hero-badge-num{
+  font-family:var(--serif);font-size:26px;font-weight:600;
+  color:var(--gold2);line-height:1;
+}
+.hero-badge-lbl{font-size:11px;font-weight:300;color:rgba(255,255,255,.5);margin-top:3px}
+
+/* nome badge sobre foto */
+.name-tag{
+  position:absolute;bottom:28px;z-index:3;
+  background:rgba(26,58,46,.82);backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.08);border-radius:8px;
+  padding:8px 14px;
+}
+.name-tag-claudia{left:0}
+.name-tag-marcelo{right:0}
+.name-tag-name{font-size:12px;font-weight:500;color:var(--white);letter-spacing:.02em}
+.name-tag-oab{font-size:10px;font-weight:300;color:var(--gold2);margin-top:2px}
+
+/* wave */
+.hero-wave{
+  position:absolute;bottom:-1px;left:0;right:0;height:52px;
+  overflow:hidden;z-index:3;
+}
+.hero-wave svg{display:block;width:100%;height:100%}
+
+/* mobile: fotos inline */
+.hero-photos-mobile{display:none}
+
+/* ─── TRUST BAR ─── */
+#trust{
+  background:var(--white);
+  border-bottom:1px solid var(--border);
+  padding:30px 56px;
+}
+.trust-row{
+  max-width:1100px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:20px;flex-wrap:wrap;
+}
+.trust-item{display:flex;align-items:center;gap:12px}
+.trust-icon{
+  width:42px;height:42px;border-radius:10px;
+  background:var(--forest-l);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.trust-icon svg{color:var(--forest2)}
+.trust-num{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--forest);line-height:1}
+.trust-lbl{font-size:12px;font-weight:300;color:var(--steel);margin-top:1px}
+.trust-sep{width:1px;height:36px;background:var(--border);flex-shrink:0}
+
+/* ─── SEÇÕES BASE ─── */
+section{padding:96px 56px}
+.sec-max{max-width:1100px;margin:0 auto}
+.sec-label{
+  font-size:11px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:16px;
+}
+.sec-label::before{content:'';width:22px;height:1px;background:var(--gold)}
+h2{
+  font-family:var(--serif);
+  font-size:clamp(28px,3.6vw,54px);
+  font-weight:600;line-height:1.08;letter-spacing:-.02em;color:var(--forest);
+}
+h2 em{font-style:italic;color:var(--forest2);font-weight:400}
+
+/* ─── SERVIÇOS ─── */
+#servicos{background:var(--off)}
+.serv-intro{
+  display:grid;grid-template-columns:1fr 1fr;gap:64px;
+  align-items:end;margin-bottom:52px;
+}
+.serv-sub{
+  font-size:15px;font-weight:300;line-height:1.8;color:var(--muted);
+  align-self:end;
+}
+/* lista editorial — foco na dor */
+.serv-list{display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border)}
+.serv-row{
+  display:grid;grid-template-columns:52px 1fr auto;align-items:center;gap:32px;
+  padding:26px 32px;background:var(--white);
+  text-decoration:none;color:inherit;position:relative;overflow:hidden;
+  transition:background .25s,padding-left .3s;
+}
+.serv-row::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;
+  width:0;background:var(--forest);transition:width .3s;
+}
+.serv-row:hover{background:var(--forest-xl);padding-left:40px}
+.serv-row:hover::before{width:4px}
+.serv-row:hover .serv-n{color:var(--forest2)}
+.serv-row:hover .serv-title{color:var(--forest)}
+.serv-row:hover .serv-arr{color:var(--forest2);transform:translateX(6px)}
+.serv-n{
+  font-family:var(--serif);font-size:13px;font-weight:500;
+  color:var(--steel);letter-spacing:.08em;transition:color .25s;
+}
+.serv-main{display:flex;flex-direction:column;gap:4px}
+.serv-title{
+  font-family:var(--serif);font-size:22px;font-weight:600;
+  color:var(--forest);letter-spacing:-.01em;transition:color .25s;
+}
+.serv-dor{font-size:12px;font-weight:300;color:var(--steel);letter-spacing:.03em}
+.serv-arr{font-size:18px;color:var(--steel);transition:color .25s,transform .25s}
+
+/* ─── EQUIPE ─── */
+#equipe{background:var(--white)}
+.equipe-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;flex-wrap:wrap;gap:20px}
+.equipe-sub{font-size:14px;font-weight:300;color:var(--muted);max-width:280px;text-align:right;line-height:1.65}
+.equipe-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border)}
+.adv-card{background:var(--white);display:flex;gap:0;overflow:hidden}
+.adv-photo{
+  width:240px;flex-shrink:0;position:relative;
+  background:var(--forest-l);
+}
+.adv-photo img{
+  display:block;width:100%;height:100%;
+  object-fit:cover;object-position:top center;
+  min-height:320px;
+}
+.adv-photo-mobile{display:none}
+.adv-body{padding:40px 36px;display:flex;flex-direction:column;justify-content:center}
+.adv-oab{
+  font-size:10px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:10px;
+}
+.adv-name{
+  font-family:var(--serif);font-size:26px;font-weight:600;
+  color:var(--forest);line-height:1.1;margin-bottom:14px;
+}
+.adv-founded{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:12px;font-weight:400;color:var(--forest2);
+  margin-bottom:16px;
+}
+.adv-founded::before{content:'';width:16px;height:1px;background:var(--gold)}
+.adv-bio{
+  font-size:13px;font-weight:300;line-height:1.8;
+  color:var(--muted);margin-bottom:24px;
+}
+.adv-specs{display:flex;flex-wrap:wrap;gap:6px}
+.spec{
+  display:inline-flex;align-items:center;gap:5px;
+  padding:5px 12px;border-radius:100px;
+  background:var(--forest-l);border:1px solid rgba(26,58,46,.1);
+  font-size:11px;font-weight:400;color:var(--forest);
+}
+.spec-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0}
+
+/* ─── COMO FUNCIONA ─── */
+#como{background:var(--forest)}
+#como .sec-label{color:var(--gold2)}
+#como .sec-label::before{background:var(--gold2)}
+#como h2{color:var(--white)}
+#como h2 em{color:var(--gold2)}
+.como-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:96px;align-items:start}
+.como-sub{font-size:15px;font-weight:300;line-height:1.8;color:rgba(255,255,255,.55);margin:18px 0 40px}
+.como-box{
+  padding:32px;border:1px solid rgba(255,255,255,.1);border-radius:12px;
+  background:rgba(255,255,255,.04);
+}
+.como-box h3{font-family:var(--serif);font-size:21px;font-weight:600;color:var(--white);margin-bottom:8px}
+.como-box p{font-size:13px;font-weight:300;color:rgba(255,255,255,.5);line-height:1.75;margin-bottom:24px}
+.btn-wpp-sm{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 24px;border-radius:7px;
+  background:#25d366;color:#fff;font-size:13px;font-weight:500;
+  text-decoration:none;transition:opacity .2s,transform .15s;
+}
+.btn-wpp-sm:hover{opacity:.88;transform:translateY(-1px)}
+.steps{display:flex;flex-direction:column}
+.step{
+  display:grid;grid-template-columns:44px 1fr;gap:20px;
+  padding:26px 0;border-top:1px solid rgba(255,255,255,.08);
+  opacity:0;transform:translateX(12px);
+  transition:opacity .6s,transform .6s;
+}
+.step.on{opacity:1;transform:none}
+.step-n{font-family:var(--serif);font-size:13px;font-weight:600;color:var(--gold2);padding-top:4px;letter-spacing:.04em}
+.step-title{font-family:var(--serif);font-size:21px;font-weight:600;color:var(--white);margin-bottom:7px}
+.step-body{font-size:13px;font-weight:300;line-height:1.8;color:rgba(255,255,255,.55)}
+
+/* ─── BLOG ─── */
+#blog{background:var(--linen)}
+.blog-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;flex-wrap:wrap;gap:16px}
+.blog-link{
+  font-size:12px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--forest);text-decoration:none;
+  display:flex;align-items:center;gap:8px;transition:gap .2s;
+}
+.blog-link:hover{gap:14px}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.blog-card{
+  background:var(--white);border:1px solid var(--border);border-radius:12px;
+  overflow:hidden;text-decoration:none;color:inherit;display:block;
+  transition:transform .3s,box-shadow .3s;
+}
+.blog-card:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(26,58,46,.1)}
+.blog-card-img{
+  height:160px;background:var(--forest-l);overflow:hidden;
+}
+.blog-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.blog-card:hover .blog-card-img img{transform:scale(1.04)}
+.blog-card-body{padding:24px 22px}
+.blog-date{font-size:11px;font-weight:300;color:var(--steel);letter-spacing:.06em;margin-bottom:8px}
+.blog-title{font-family:var(--serif);font-size:17px;font-weight:600;color:var(--forest);line-height:1.35;margin-bottom:10px}
+.blog-excerpt{font-size:13px;font-weight:300;color:var(--muted);line-height:1.65}
+
+/* ─── CTA FINAL ─── */
+#cta{
+  background:var(--forest);padding:130px 56px;
+  text-align:center;position:relative;overflow:hidden;
+}
+#cta::before{
+  content:'';position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:560px;height:360px;border-radius:50%;
+  background:radial-gradient(ellipse,rgba(45,90,69,.5),transparent 65%);
+  pointer-events:none;
+}
+#cta::after{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px);
+  background-size:28px 28px;pointer-events:none;
+}
+.cta-in{position:relative;z-index:1}
+.cta-label{
+  font-size:11px;font-weight:400;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold2);display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:28px;
+}
+.cta-label::before,.cta-label::after{content:'';width:28px;height:1px;background:var(--gold2)}
+#cta h2{color:var(--white);margin-bottom:16px}
+#cta h2 em{color:var(--gold2)}
+#cta p{
+  font-size:16px;font-weight:300;line-height:1.8;
+  color:rgba(255,255,255,.5);max-width:420px;margin:0 auto 44px;
+}
+.cta-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:20px}
+.btn-wpp-lg{
+  display:inline-flex;align-items:center;gap:12px;
+  padding:17px 36px;border-radius:8px;
+  background:#25d366;color:#fff;font-size:15px;font-weight:500;
+  text-decoration:none;box-shadow:0 4px 22px rgba(37,211,102,.22);
+  transition:transform .2s,box-shadow .2s;
+}
+.btn-wpp-lg:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,211,102,.3)}
+.btn-tel-lg{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:17px 28px;border-radius:8px;
+  border:1px solid rgba(255,255,255,.15);
+  color:rgba(255,255,255,.75);font-size:15px;font-weight:400;
+  text-decoration:none;transition:border-color .2s,color .2s;
+}
+.btn-tel-lg:hover{border-color:rgba(255,255,255,.35);color:#fff}
+.cta-fine{font-size:11px;font-weight:300;color:rgba(255,255,255,.25);letter-spacing:.1em;text-transform:uppercase}
+
+/* ─── FOOTER ─── */
+footer{background:#0f2218;border-top:1px solid rgba(255,255,255,.07)}
+.foot-top{
+  display:grid;grid-template-columns:1.3fr 1fr 1fr 1.1fr;
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.foot-col{padding:48px 36px;border-right:1px solid rgba(255,255,255,.07)}
+.foot-col:last-child{border-right:none}
+.foot-brand{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--white);display:block;margin-bottom:5px}
+.foot-tag{font-size:10px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:18px}
+.foot-desc{font-size:13px;font-weight:300;line-height:1.75;color:rgba(255,255,255,.38)}
+.foot-ttl{
+  font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold2);margin-bottom:20px;
+  display:flex;align-items:center;gap:10px;
+}
+.foot-ttl::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.07)}
+.foot-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+.foot-links a{font-size:13px;font-weight:300;color:rgba(255,255,255,.42);text-decoration:none;transition:color .2s}
+.foot-links a:hover{color:var(--gold2)}
+.foot-addr{font-size:13px;font-weight:300;color:rgba(255,255,255,.38);line-height:1.7;margin-bottom:14px}
+.foot-addr strong{display:block;font-size:10px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:var(--gold2);margin-bottom:4px}
+.foot-bottom{
+  padding:16px 36px;display:flex;justify-content:space-between;
+  align-items:center;flex-wrap:wrap;gap:8px;
+}
+.foot-fine{font-size:11px;font-weight:300;color:rgba(255,255,255,.2)}
+
+/* ─── FLOAT WPP ─── */
+.float-wpp{
+  position:fixed;bottom:26px;right:26px;z-index:400;
+  width:52px;height:52px;border-radius:14px;
+  background:#25d366;display:flex;align-items:center;justify-content:center;
+  text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.3);
+  transition:transform .2s,box-shadow .2s;
+}
+.float-wpp:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 8px 28px rgba(37,211,102,.38)}
+.float-wpp svg{color:#fff}
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.rv.on{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:1100px){
+  .equipe-grid{grid-template-columns:1fr}
+  .adv-photo{width:200px}
+  .como-grid{grid-template-columns:1fr;gap:56px}
+  .blog-grid{grid-template-columns:1fr 1fr}
+  .foot-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:1024px){
+  #hero{grid-template-columns:1fr;padding-bottom:0}
+  .hero-left{padding:130px 40px 0}
+  .hero-right{display:none}
+  .hero-photos-mobile{
+    display:flex;align-items:flex-end;justify-content:center;
+    margin:32px -40px 0;gap:0;position:relative;
+  }
+  .hero-photos-mobile .pm-claudia{width:52%;position:relative;z-index:2;margin-right:-32px}
+  .hero-photos-mobile .pm-marcelo{width:46%;position:relative;z-index:1}
+  .hero-photos-mobile img{
+    display:block;width:100%;height:300px;
+    object-fit:cover;object-position:top center;
+    border-radius:12px 12px 0 0;
+    filter:brightness(.92) contrast(1.05);
+    mask-image:linear-gradient(to bottom,black 55%,transparent 100%);
+    -webkit-mask-image:linear-gradient(to bottom,black 55%,transparent 100%);
+  }
+  .hero-foot-mobile{padding:28px 40px 64px}
+  nav,section,#trust,#cta{padding-left:32px;padding-right:32px}
+  #cta{padding-top:90px;padding-bottom:90px}
+  .serv-intro{grid-template-columns:1fr;gap:16px}
+  .serv-sub{text-align:left}
+}
+@media(max-width:768px){
+  nav{padding:14px 20px}
+  .nav-links{display:none}
+  .hero-left{padding:110px 20px 0}
+  .hero-photos-mobile{margin:28px -20px 0}
+  .hero-foot-mobile{padding:24px 20px 52px}
+  section,#trust,#cta{padding-left:20px;padding-right:20px}
+  h1{font-size:40px}
+  h1 .sub{font-size:30px}
+  .equipe-grid{grid-template-columns:1fr}
+  .adv-card{flex-direction:column}
+  .adv-photo{width:100%;height:260px}
+  .adv-photo img{min-height:260px}
+  .blog-grid{grid-template-columns:1fr}
+  .foot-top{grid-template-columns:1fr}
+  .foot-col{border-right:none;border-bottom:1px solid rgba(255,255,255,.07)}
+  .foot-bottom{padding:14px 20px}
+  .trust-row{flex-direction:column;align-items:flex-start;gap:16px}
+  .trust-sep{display:none}
+  .cta-btns{flex-direction:column;align-items:center}
+  .serv-row{grid-template-columns:36px 1fr auto;gap:16px;padding:20px}
+  #cta{padding:72px 20px}
+  .como-grid{gap:40px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-box">KR</div>
+    <div class="nav-brand">
+      Killian & Rodrigues
+      <span>Advogados · Sorocaba/SP</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#equipe">Equipe</a></li>
+    <li><a href="#como">Como funciona</a></li>
+    <li><a href="#blog">Artigos</a></li>
+    <li>
+      <a href="https://api.whatsapp.com/send/?phone=5515998164281" class="nav-cta">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Consulta gratuita
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-arc"></div>
+
+  <!-- ESQUERDA -->
+  <div class="hero-left">
+    <div class="hero-kicker">Fundado em 2009 · OAB/SP</div>
+    <h1>
+      Seu direito<br>
+      defendido por <em>quem<br>entende</em> do assunto.
+      <span class="sub">Desde 2009.</span>
+    </h1>
+    <p class="hero-desc">
+      Especialistas em Direito Previdenciário, Trabalhista, Civil e de Família. Mais de 15 anos ajudando trabalhadores e segurados do INSS a conquistarem o que é seu por direito.
+    </p>
+    <div class="hero-actions">
+      <a href="https://api.whatsapp.com/send/?phone=5515998164281" class="btn-wpp">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Falar com advogado agora
+      </a>
+      <a href="tel:+551532322711" class="btn-tel">(15) 3232-2711</a>
+    </div>
+    <div class="hero-note">Primeira consulta gratuita · Atendemos todo o Brasil</div>
+  </div>
+
+  <!-- DIREITA — fotos desktop -->
+  <div class="hero-right">
+    <div class="hero-photos">
+      <div class="photo-claudia">
+        <img
+          src="https://killianerodrigues.adv.br/wp-content/uploads/2024/11/454606626_337655592751946_5709461309053991935_n.jpg"
+          alt="Dra. Cláudia Killian — OAB/SP 286.065"
+        >
+      </div>
+      <div class="photo-marcelo">
+        <img
+          src="https://killianerodrigues.adv.br/wp-content/uploads/2024/03/claudia_killian-320x320-1.jpg"
+          alt="Dr. Marcelo Rodrigues — OAB/SP 248.229"
+        >
+      </div>
+      <div class="hero-badge">
+        <div class="hero-badge-num">+15 anos</div>
+        <div class="hero-badge-lbl">de advocacia especializada</div>
+      </div>
+      <div class="name-tag name-tag-claudia">
+        <div class="name-tag-name">Dra. Cláudia Killian</div>
+        <div class="name-tag-oab">OAB/SP 286.065</div>
+      </div>
+      <div class="name-tag name-tag-marcelo">
+        <div class="name-tag-name">Dr. Marcelo Rodrigues</div>
+        <div class="name-tag-oab">OAB/SP 248.229</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- fotos mobile (inline no fluxo) -->
+  <div class="hero-photos-mobile">
+    <div class="pm-claudia">
+      <img src="https://killianerodrigues.adv.br/wp-content/uploads/2024/11/454606626_337655592751946_5709461309053991935_n.jpg" alt="Dra. Cláudia Killian">
+    </div>
+    <div class="pm-marcelo">
+      <img src="https://killianerodrigues.adv.br/wp-content/uploads/2024/03/claudia_killian-320x320-1.jpg" alt="Dr. Marcelo Rodrigues">
+    </div>
+  </div>
+  <div class="hero-foot-mobile"></div>
+
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 52" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,52 C480,0 960,52 1440,18 L1440,52 Z" fill="#ffffff"/>
+    </svg>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div id="trust">
+  <div class="trust-row">
+    <div class="trust-item rv">
+      <div class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+      <div><div class="trust-num">+15 anos</div><div class="trust-lbl">de atuação especializada</div></div>
+    </div>
+    <div class="trust-sep"></div>
+    <div class="trust-item rv d1">
+      <div class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div><div class="trust-num">OAB/SP</div><div class="trust-lbl">286.065 · 248.229</div></div>
+    </div>
+    <div class="trust-sep"></div>
+    <div class="trust-item rv d2">
+      <div class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+      <div><div class="trust-num">Milhares</div><div class="trust-lbl">de clientes atendidos</div></div>
+    </div>
+    <div class="trust-sep"></div>
+    <div class="trust-item rv d3">
+      <div class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+      <div><div class="trust-num">Nacional</div><div class="trust-lbl">Atendemos todo o Brasil</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVIÇOS -->
+<section id="servicos">
+  <div class="sec-max">
+    <div class="serv-intro">
+      <div>
+        <div class="sec-label rv">O que fazemos</div>
+        <h2 class="rv">Seu problema tem <em>solução.</em></h2>
+      </div>
+      <p class="serv-sub rv d1">Atuamos nas áreas em que os brasileiros mais precisam de defesa. Cada caso analisado com atenção individual.</p>
+    </div>
+    <div class="serv-list rv">
+      <a href="https://api.whatsapp.com/send/?phone=5515998164281" class="serv-row">
+        <span class="serv-n">01</span>
+        <div class="serv-main">
+          <span class="serv-title">Aposentadoria negada ou atrasada?</span>
+          <span class="serv-dor">Direito Previdenciário · Planejamento · Revisão de benefício · Pensão por morte</span>
+        </div>
+        <span class="serv-arr">→</span>
+      </a>
+      <a href="https://api.whatsapp.com/send/?phone=5515998164281" class="serv-row">
+        <span class="serv-n">02</span>
+        <div class="serv-main">
+          <span class="serv-title">Demitido sem receber o que é seu?</span>
+          <span class="serv-dor">Direito Trabalhista · Reclamatória · Rescisão indireta · Indenizações</span>
+        </div>
+        <span class="serv-arr">→</span>
+      </a>
+      <a href="https://api.whatsapp.com/send/?phone=5515998164281" class="serv-row">
+        <span class="serv-n">03</span>
+        <div class="serv-main">
+          <span class="serv-title">Doença impedindo você de trabalhar?</span>
+          <span class="serv-dor">Benefício por incapacidade · Auxílio-doença · Acidente de trabalho</span>
+        </div>
+        <span class="serv-arr">→</span>
+      </a>
+      <a href="https://api.whatsapp.com/send/?phone=5515998164281" class="serv-row">
+        <span class="serv-n">04</span>
+        <div class="serv-main">
+          <span class="serv-title">Divórcio, guarda ou herança?</span>
+          <span class="serv-dor">Direito de Família · Inventário · Pensão alimentícia · União estável</span>
+        </div>
+        <span class="serv-arr">→</span>
+      </a>
+      <a href="https://api.whatsapp.com/send/?phone=5515998164281" class="serv-row">
+        <span class="serv-n">05</span>
+        <div class="serv-main">
+          <span class="serv-title">Cobranças indevidas ou danos sofridos?</span>
+          <span class="serv-dor">Direito Civil · Consumidor · Usucapião · Indenizações · Cobranças</span>
+        </div>
+        <span class="serv-arr">→</span>
+      </a>
+      <a href="https://api.whatsapp.com/send/?phone=5515998164281" class="serv-row">
+        <span class="serv-n">06</span>
+        <div class="serv-main">
+          <span class="serv-title">Não tem certeza se tem direito?</span>
+          <span class="serv-dor">Consulta gratuita · Análise do seu caso sem compromisso</span>
+        </div>
+        <span class="serv-arr">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPE -->
+<section id="equipe">
+  <div class="sec-max">
+    <div class="equipe-header">
+      <div>
+        <div class="sec-label rv">Nossa equipe</div>
+        <h2 class="rv">Advogados reais,<br><em>comprometidos com você.</em></h2>
+      </div>
+      <p class="equipe-sub rv d1">Você fala diretamente com quem cuida do seu caso — sem intermediários.</p>
+    </div>
+    <div class="equipe-grid">
+      <!-- Cláudia -->
+      <div class="adv-card rv">
+        <div class="adv-photo">
+          <img
+            src="https://killianerodrigues.adv.br/wp-content/uploads/2024/11/454606626_337655592751946_5709461309053991935_n.jpg"
+            alt="Dra. Cláudia Killian"
+          >
+        </div>
+        <div class="adv-body">
+          <div class="adv-oab">OAB/SP 286.065</div>
+          <div class="adv-name">Dra. Cláudia Killian</div>
+          <div class="adv-founded">Co-fundadora · Desde 2009</div>
+          <p class="adv-bio">
+            Especialista em Direito Previdenciário e de Família. Co-fundadora do escritório, a Dra. Cláudia é reconhecida pelo atendimento humanizado e pela atuação estratégica em causas previdenciárias complexas — inclusive junto ao INSS e ao Judiciário.
+          </p>
+          <div class="adv-specs">
+            <span class="spec"><span class="spec-dot"></span>Direito Previdenciário</span>
+            <span class="spec"><span class="spec-dot"></span>Planejamento de Aposentadoria</span>
+            <span class="spec"><span class="spec-dot"></span>Direito de Família</span>
+          </div>
+        </div>
+      </div>
+      <!-- Marcelo -->
+      <div class="adv-card rv d1">
+        <div class="adv-photo">
+          <img
+            src="https://killianerodrigues.adv.br/wp-content/uploads/2024/03/claudia_killian-320x320-1.jpg"
+            alt="Dr. Marcelo Rodrigues"
+          >
+        </div>
+        <div class="adv-body">
+          <div class="adv-oab">OAB/SP 248.229</div>
+          <div class="adv-name">Dr. Marcelo Rodrigues</div>
+          <div class="adv-founded">Co-fundador · Desde 2009</div>
+          <p class="adv-bio">
+            Especialista em Direito Trabalhista e Civil. Com forte atuação em reclamatórias trabalhistas e defesa de servidores públicos, o Dr. Marcelo combina rigor técnico com atendimento próximo ao cliente em todas as etapas do processo.
+          </p>
+          <div class="adv-specs">
+            <span class="spec"><span class="spec-dot"></span>Direito Trabalhista</span>
+            <span class="spec"><span class="spec-dot"></span>Direito Civil</span>
+            <span class="spec"><span class="spec-dot"></span>Servidores Públicos</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section id="como">
+  <div class="sec-max">
+    <div class="como-grid">
+      <div>
+        <div class="sec-label rv">Processo</div>
+        <h2 class="rv">Como <em>resolvemos</em> seu caso</h2>
+        <p class="como-sub rv d1">Sem burocracia desnecessária. Do primeiro contato ao resultado, você sabe exatamente o que está acontecendo.</p>
+        <div class="como-box rv d2">
+          <h3>Primeira consulta gratuita</h3>
+          <p>Conte o seu problema por WhatsApp ou telefone. Um dos advogados analisa e diz com honestidade o que é possível fazer.</p>
+          <a href="https://api.whatsapp.com/send/?phone=5515998164281" class="btn-wpp-sm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Falar agora
+          </a>
+        </div>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="step-n">01</span>
+          <div>
+            <div class="step-title">Você entra em contato</div>
+            <p class="step-body">Por WhatsApp, telefone ou presencialmente em Sorocaba/SP. Uma mensagem já é suficiente para começarmos a analisar.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-n">02</span>
+          <div>
+            <div class="step-title">Analisamos o seu caso</div>
+            <p class="step-body">Um dos advogados especialistas avalia sua situação em detalhe: documentos, histórico, riscos e o melhor caminho legal disponível.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-n">03</span>
+          <div>
+            <div class="step-title">Definimos a estratégia</div>
+            <p class="step-body">Explicamos tudo com clareza: o que é possível, quais os prazos reais e as chances de sucesso — sem promessas vazias.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-n">04</span>
+          <div>
+            <div class="step-title">Atuamos até o resultado</div>
+            <p class="step-body">Do pedido administrativo à ação judicial. Você é informado em cada etapa e nunca fica no escuro sobre o andamento do processo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog">
+  <div class="sec-max">
+    <div class="blog-header">
+      <div>
+        <div class="sec-label rv">Artigos</div>
+        <h2 class="rv">Informação que <em>protege você.</em></h2>
+      </div>
+      <a href="https://killianerodrigues.adv.br/noticias-e-artigos/" class="blog-link rv d1">
+        Ver todos os artigos →
+      </a>
+    </div>
+    <div class="blog-grid">
+      <a href="https://killianerodrigues.adv.br/nova-tentativa-de-golpe-esta-usando-o-nome-do-dr-marcelo-rodrigues/" class="blog-card rv">
+        <div class="blog-card-img">
+          <img src="https://killianerodrigues.adv.br/wp-content/uploads/2025/07/IMAGENS-KR-16.jpg" alt="" onerror="this.parentElement.style.background='var(--forest-l)'">
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-date">16 jul. 2025</div>
+          <div class="blog-title">Nova tentativa de golpe usando o nome do Dr. Marcelo Rodrigues</div>
+          <p class="blog-excerpt">Com falsas informações sobre valores a receber, golpistas estão abordando clientes. Saiba como se proteger.</p>
+        </div>
+      </a>
+      <a href="https://killianerodrigues.adv.br/fraude-no-inss-veja-como-identificar-descontos-indevidos-e-se-proteger/" class="blog-card rv d1">
+        <div class="blog-card-img">
+          <img src="https://killianerodrigues.adv.br/wp-content/uploads/2025/05/imagens-Killian-Rodrigues-7.jpg" alt="" onerror="this.parentElement.style.background='var(--forest-l)'">
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-date">07 mai. 2025</div>
+          <div class="blog-title">Fraude no INSS: como identificar descontos indevidos e se proteger</div>
+          <p class="blog-excerpt">4,1 milhões de beneficiários podem ter sido atingidos. Saiba se você é um deles e o que fazer.</p>
+        </div>
+      </a>
+      <a href="https://killianerodrigues.adv.br/requerer-aposentadoria-sem-consultar-um-advogado-especialista/" class="blog-card rv d2">
+        <div class="blog-card-img">
+          <img src="https://killianerodrigues.adv.br/wp-content/uploads/2025/04/imagens-Killian-Rodrigues-5.jpg" alt="" onerror="this.parentElement.style.background='var(--forest-l)'">
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-date">22 abr. 2025</div>
+          <div class="blog-title">Os riscos de requerer aposentadoria sem advogado especialista</div>
+          <p class="blog-excerpt">Solicitar sem auxílio pode gerar dores de cabeça e prejuízo financeiro. Entenda por quê.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="cta">
+  <div class="cta-in">
+    <div class="cta-label rv">Atendimento gratuito</div>
+    <h2 class="rv">Desde 2009 defendendo<br>quem o sistema tenta <em>ignorar.</em></h2>
+    <p class="rv d1">A primeira consulta é gratuita e sem compromisso. Fale agora com um especialista e descubra o que pode ser feito pelo seu caso.</p>
+    <div class="cta-btns rv d2">
+      <a href="https://api.whatsapp.com/send/?phone=5515998164281" class="btn-wpp-lg">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Falar via WhatsApp agora
+      </a>
+      <a href="tel:+551532322711" class="btn-tel-lg">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.49 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.4 1.1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 6 6l.78-.78a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.34 16a2 2 0 0 1 .58 0z"/></svg>
+        (15) 3232-2711
+      </a>
+    </div>
+    <div class="cta-fine rv d3">Consulta gratuita · Sigilo garantido · Sem compromisso</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-top">
+    <div class="foot-col">
+      <span class="foot-brand">Killian & Rodrigues</span>
+      <div class="foot-tag">Advogados Associados · OAB/SP</div>
+      <p class="foot-desc">Fundados em 2009, defendemos os direitos de trabalhadores, segurados do INSS e famílias em Sorocaba/SP e em todo o Brasil.</p>
+    </div>
+    <div class="foot-col">
+      <div class="foot-ttl">Navegação</div>
+      <ul class="foot-links">
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#equipe">Nossa equipe</a></li>
+        <li><a href="#como">Como funciona</a></li>
+        <li><a href="#blog">Artigos</a></li>
+        <li><a href="https://api.whatsapp.com/send/?phone=5515998164281">Consulta gratuita</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <div class="foot-ttl">Áreas</div>
+      <ul class="foot-links">
+        <li><a href="#">Direito Previdenciário</a></li>
+        <li><a href="#">Direito Trabalhista</a></li>
+        <li><a href="#">Direito de Família</a></li>
+        <li><a href="#">Direito Civil</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <div class="foot-ttl">Contato</div>
+      <div class="foot-addr">
+        <strong>Escritório</strong>
+        Rua Azomar Batista de Carvalho, 109<br>
+        Jd. Seriema · Sorocaba/SP<br>
+        CEP 18075-778
+      </div>
+      <div class="foot-addr">
+        <strong>Telefone / WhatsApp</strong>
+        (15) 3232-2711<br>
+        (15) 99816-4281
+      </div>
+      <div class="foot-addr">
+        <strong>E-mail</strong>
+        killian.rodrigues@gmail.com
+      </div>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span class="foot-fine">© 2025 Killian & Rodrigues Advogados Associados. Todos os direitos reservados.</span>
+    <span class="foot-fine">Publicidade nos termos do PCED · OAB/SP</span>
+  </div>
+</footer>
+
+<!-- FLOAT WPP -->
+<a href="https://api.whatsapp.com/send/?phone=5515998164281" class="float-wpp" aria-label="WhatsApp">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('solid', scrollY > 50));
+
+const obs = new IntersectionObserver(
+  entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); }),
+  { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+);
+document.querySelectorAll('.rv, .step').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
